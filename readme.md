@@ -11,6 +11,7 @@ Gibt es neue Daten, dann werden sie runtergeladen und die Tabellen neu generiert
 Es gibt 4 Tabellen mit folgenden Primary-Keys:
 
 - Landkreise, Meldetag
+- Regierungsbezirke, Meldetag
 - Bundesländer, Meldetag
 - Deutschland, Meldetag
 - Altersgruppen, Wochen
@@ -31,9 +32,10 @@ Dieses Konzept ist im Kern das gleiche wie bei den "Data-Workers", bloß dass ni
 Die API bietet jetzt einfach nur noch Filter- und Formatierungsmöglichkeiten an:
 
 - Filtern nach einem Wert einer Spalte, z.B. nach Bundesland oder Datum, …
-- spezielles Filterflag `latest = day`, um in Zeitreihen nur den letzten Tag auszugeben
+- Wertespalten müssen explizit angegeben werden. Zeilen mit null-Werten werden nicht ausgegeben.
+- spezielles Filterflag `recent = 1day`, um in Zeitreihen nur den letzten Tag auszugeben
 - spezielles Filterflag `format = csv`, um als Datenformat csv, tsv oder json auszuwählen 
 
 Beispiel für eine Query:
 
-`https://corona-api3.interaktiv.br.de/landkreise?bundesland=bayern&latest=day`
+`https://corona-api3.interaktiv.br.de/landkreise?bundesland=bayern&recent=1week`
