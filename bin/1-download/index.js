@@ -18,23 +18,24 @@ async function update() {
 
 	let changes = false;
 
-	let workers = [
-		{ slug: 'impfungen',        workerFilename: './download-impfungen.js' },
+	let workerDefs = [
+		{ slug: 'impfungen-by',     workerFilename: './download-impfungen.js', parameter: 'by' },
+		{ slug: 'impfungen-de',     workerFilename: './download-impfungen.js', parameter: 'de' },
 		//{ slug: 'rkizahlen',        workerFilename: './download-rkizahlen.js' },
 		{ slug: 'hospitalisierung', workerFilename: './download-hospitalisierung.js' },
 	]
 
-	for (let entry of workers) {
-		console.log('starte worker: '+entry.slug);
+	for (let workerDef of workerDefs) {
+		console.log('starte worker: '+workerDef.slug);
 
-		let oldState = states[entry.slug] || {};
-		let worker = require(entry.workerFilename);
-		let response = await worker.update(oldState);
+		let oldState = states[workerDef.slug] || {};
+		let worker = require(workerDef.workerFilename);
+		let response = await worker.update(oldState, workerDef.parameter);
 
 		if (response) {
 			changes = true;
-			response.worker = entry.slug;
-			states[entry.slug] = response;
+			response.worker = workerDef.slug;
+			states[workerDef.slug] = response;
 		}
 	}
 
