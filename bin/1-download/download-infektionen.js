@@ -2,13 +2,13 @@
 
 const fs = require('fs');
 const config = require('../config.js');
-const { fetch, download, csv2array } = require('../../lib/helper.js');
+const { fetch, download, csv2array, saveNDJSON } = require('../../lib/helper.js');
 const { resolve } = require('path');
 
 
 const apiUrl = 'https://api.github.com/repos/robert-koch-institut/SARS-CoV-2_Infektionen_in_Deutschland/contents/';
-const rawFilename = resolve(config.folders.raw, `infektionen.tsv`)
-const cleanedFilename = resolve(config.folders.cleaned, 'infektionen.json');
+const rawFilename = resolve(config.folders.raw, 'infektionen.tsv')
+const cleanedFilename = resolve(config.folders.cleaned, 'infektionen.ndjson');
 
 module.exports = {
 	update,
@@ -92,7 +92,7 @@ async function update(state) {
 			anzahlGenesen: parseInt(e.AnzahlGenesen),
 		}))
 
-		fs.writeFileSync(cleanedFilename, JSON.stringify(data));
+		saveNDJSON(cleanedFilename, data);
 
 		state.times.cleanEnd = new Date();
 

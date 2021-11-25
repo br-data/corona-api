@@ -19,9 +19,8 @@ async function update() {
 	let changes = false;
 
 	let workerDefs = [
-		//{ slug: 'impfungen-by',     workerFilename: './download-impfungen.js', parameter: 'by' },
-		//{ slug: 'impfungen-de',     workerFilename: './download-impfungen.js', parameter: 'de' },
-		//{ slug: 'hospitalisierung', workerFilename: './download-hospitalisierung.js' },
+		{ slug: 'impfungen',        workerFilename: './download-impfungen.js' },
+		{ slug: 'hospitalisierung', workerFilename: './download-hospitalisierung.js' },
 		{ slug: 'infektionen',      workerFilename: './download-infektionen.js' },
 	]
 

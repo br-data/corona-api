@@ -2,13 +2,13 @@
 
 const fs = require('fs');
 const config = require('../config.js');
-const { fetch, download, csv2array } = require('../../lib/helper.js');
+const { fetch, download, csv2array, saveNDJSON } = require('../../lib/helper.js');
 const { resolve } = require('path');
 
 
 const apiUrl = 'https://api.github.com/repos/robert-koch-institut/COVID-19-Hospitalisierungen_in_Deutschland/contents/';
-const rawFilename = resolve(config.folders.raw, `hospitalisierung.tsv`)
-const cleanedFilename = resolve(config.folders.cleaned, 'hospitalisierung.json');
+const rawFilename = resolve(config.folders.raw, 'hospitalisierung.tsv')
+const cleanedFilename = resolve(config.folders.cleaned, 'hospitalisierung.ndjson');
 
 module.exports = {
 	update,
@@ -87,7 +87,7 @@ async function update(state) {
 			hospitalisierung7TInzidenz: parseFloat(e['7T_Hospitalisierung_Inzidenz']),
 		}))
 
-		fs.writeFileSync(cleanedFilename, JSON.stringify(data));
+		saveNDJSON(cleanedFilename, data);
 
 		state.times.cleanEnd = new Date();
 
