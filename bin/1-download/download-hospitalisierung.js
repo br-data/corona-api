@@ -14,53 +14,58 @@ module.exports = {
 	update,
 }
 
-async function update(state) {
+async function update(state = {}) {
 	console.log('   überprüfe hospitalisierung');
 
-	let newState = await checkData();
-	let isNewData = (state.hash !== newState.hash)
+	state.changed = false;
+	let isNewData = await checkData();
 
 	if (isNewData || !fs.existsSync(rawFilename)) {
-		await downloadData(newState.source);
-		newState.timeDownloaded = new Date();
+		await downloadData();
 	}
 
 	if (isNewData || !fs.existsSync(cleanedFilename)) {
 		await cleanData();
-		newState.timeCleaned = new Date();
 
 		console.log('   fertig mit hospitalisierung')
-		return newState;
+		state.changed = true;
+		return state;
 	}
 	
 	console.log('   überspringe hospitalisierung')
-	return false;
+	return state;
 
 
 	async function checkData() {
+		state.timeChecked = new Date();
+
 		let directory = await fetch(apiUrl, { 'User-Agent': 'curl/7.64.1' })
 		directory = JSON.parse(directory);
 		let file = directory.find(e => e.name === 'Aktuell_Deutschland_COVID-19-Hospitalisierungen.csv')
 
 		if (!file) throw Error('Could not find "https://github.com/robert-koch-institut/COVID-19-Hospitalisierungen_in_Deutschland/blob/master/Aktuell_Deutschland_COVID-19-Hospitalisierungen.csv"')
 
-		return {
-			hash: file.sha,
-			source: file.download_url,
-			timeChecked: new Date(),
-		}
+		let isNewData = (state.hash !== file.sha)
+		
+		state.hash = file.sha;
+		state.source = file.download_url;
+
+		return isNewData
 	}
 
-	async function downloadData(url) {
+	async function downloadData() {
+		state.timeDownloaded = new Date();
 
 		console.log('      runterladen');
-		await download(url, rawFilename);
+		await download(state.source, rawFilename);
 		console.log('      wurde runtergeladen');
 
 		return true;
 	}
 
 	async function cleanData() {
+		state.timeCleaned = new Date();
+
 		console.log('      daten säubern');
 
 		let data = fs.readFileSync(rawFilename, 'utf8');
