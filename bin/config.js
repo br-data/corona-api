@@ -1,8 +1,9 @@
 "use strict"
 
+const fs = require('fs');
 const { resolve } = require('path');
 
-module.exports = {
+const config = {
 	folders: {
 		data:    resolve(__dirname, '../data'),
 		raw:     resolve(__dirname, '../data/1-external-data-raw'),
@@ -14,6 +15,8 @@ module.exports = {
 	}
 }
 
+module.exports = config;
 
-
-
+fs.mkdirSync(config.folders.data,    { recursive:true });
+fs.mkdirSync(config.folders.raw,     { recursive:true });
+fs.mkdirSync(config.folders.cleaned, { recursive:true });
