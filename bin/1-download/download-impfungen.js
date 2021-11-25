@@ -53,7 +53,7 @@ async function update(state, region) {
 
 
 	async function checkData() {
-		state.times.check = new Date();
+		state.times.checkStart = new Date();
 
 		let directory = await fetch(apiUrl, { 'User-Agent': 'curl/7.64.1' })
 		directory = JSON.parse(directory);
@@ -66,21 +66,23 @@ async function update(state, region) {
 		state.hash = file.sha;
 		state.source = file.download_url;
 
+		state.times.checkEnd = new Date();
+
 		return isNewData
 	}
 
 	async function downloadData(url) {
-		state.times.download = new Date();
+		state.times.downloadStart = new Date();
 
 		console.log('      runterladen');
 		await download(state.source, rawFilename);
 		console.log('      wurde runtergeladen');
 
-		return true;
+		state.times.downloadEnd = new Date();
 	}
 
 	async function cleanData() {
-		state.times.clean = new Date();
+		state.times.cleanStart = new Date();
 
 		console.log('      daten säubern');
 
@@ -135,5 +137,7 @@ async function update(state, region) {
 		})
 
 		fs.writeFileSync(cleanedFilename, JSON.stringify(data));
+
+		state.times.cleanEnd = new Date();
 	}
 }
