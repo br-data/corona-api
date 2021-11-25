@@ -22,7 +22,7 @@ async function update() {
 		//{ slug: 'impfungen-by',     workerFilename: './download-impfungen.js', parameter: 'by' },
 		//{ slug: 'impfungen-de',     workerFilename: './download-impfungen.js', parameter: 'de' },
 		//{ slug: 'hospitalisierung', workerFilename: './download-hospitalisierung.js' },
-		//{ slug: 'rkizahlen',        workerFilename: './download-rkizahlen.js' },
+		{ slug: 'infektionen',      workerFilename: './download-infektionen.js' },
 	]
 
 	for (let workerDef of workerDefs) {
