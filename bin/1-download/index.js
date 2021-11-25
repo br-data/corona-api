@@ -29,12 +29,14 @@ async function update() {
 		console.log('starte worker: '+workerDef.slug);
 
 		let state = states[workerDef.slug] || {};
+		state = JSON.parse(JSON.stringify(state)) // deep copy
+
 		let worker = require(workerDef.workerFilename);
 		state = await worker.update(state, workerDef.parameter);
 
 		if (state.changed) {
 			changes = true;
-			response.worker = workerDef.slug;
+			state.worker = workerDef.slug;
 			states[workerDef.slug] = state;
 		}
 	}
