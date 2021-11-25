@@ -38,12 +38,17 @@ async function update() {
 			changes = true;
 			state.worker = workerDef.slug;
 			states[workerDef.slug] = state;
+			saveStates();
 		}
 	}
+	
+	saveStates()
 
 	console.log('fertig');
-
-	fs.writeFileSync(config.files.downloadStates, JSON.stringify(states, null, '\t'));
 	
 	return changes;
+
+	function saveStates() {
+		fs.writeFileSync(config.files.downloadStates, JSON.stringify(states, null, '\t'));
+	}
 }
