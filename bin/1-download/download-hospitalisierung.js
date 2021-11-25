@@ -14,10 +14,15 @@ module.exports = {
 	update,
 }
 
-async function update(state = {}) {
+async function update(state) {
 	console.log('   überprüfe hospitalisierung');
 
+	if (!state) state = {};
+	if (!state.times) state.times = {};
 	state.changed = false;
+
+
+	
 	let isNewData = await checkData();
 
 	if (isNewData || !fs.existsSync(rawFilename)) {
@@ -37,7 +42,7 @@ async function update(state = {}) {
 
 
 	async function checkData() {
-		state.timeChecked = new Date();
+		state.times.check = new Date();
 
 		let directory = await fetch(apiUrl, { 'User-Agent': 'curl/7.64.1' })
 		directory = JSON.parse(directory);
@@ -54,7 +59,7 @@ async function update(state = {}) {
 	}
 
 	async function downloadData() {
-		state.timeDownloaded = new Date();
+		state.times.download = new Date();
 
 		console.log('      runterladen');
 		await download(state.source, rawFilename);
@@ -64,7 +69,7 @@ async function update(state = {}) {
 	}
 
 	async function cleanData() {
-		state.timeCleaned = new Date();
+		state.times.clean = new Date();
 
 		console.log('      daten säubern');
 

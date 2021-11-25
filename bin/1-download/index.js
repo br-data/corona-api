@@ -19,32 +19,29 @@ async function update() {
 	let changes = false;
 
 	let workerDefs = [
-		{ slug: 'impfungen-by',     workerFilename: './download-impfungen.js', parameter: 'by' },
-		{ slug: 'impfungen-de',     workerFilename: './download-impfungen.js', parameter: 'de' },
+		//{ slug: 'impfungen-by',     workerFilename: './download-impfungen.js', parameter: 'by' },
+		//{ slug: 'impfungen-de',     workerFilename: './download-impfungen.js', parameter: 'de' },
+		//{ slug: 'hospitalisierung', workerFilename: './download-hospitalisierung.js' },
 		//{ slug: 'rkizahlen',        workerFilename: './download-rkizahlen.js' },
-		{ slug: 'hospitalisierung', workerFilename: './download-hospitalisierung.js' },
 	]
 
 	for (let workerDef of workerDefs) {
 		console.log('starte worker: '+workerDef.slug);
 
-		let oldState = states[workerDef.slug] || {};
+		let state = states[workerDef.slug] || {};
 		let worker = require(workerDef.workerFilename);
-		let response = await worker.update(oldState, workerDef.parameter);
+		state = await worker.update(state, workerDef.parameter);
 
-		if (response) {
+		if (state.changed) {
 			changes = true;
 			response.worker = workerDef.slug;
-			states[workerDef.slug] = response;
+			states[workerDef.slug] = state;
 		}
 	}
 
 	console.log('fertig');
 
-	if (changes) {
-		fs.writeFileSync(config.files.downloadStates, JSON.stringify(states, null, '\t'))
-		return true;
-	}
+	fs.writeFileSync(config.files.downloadStates, JSON.stringify(states, null, '\t'));
 	
-	return false;
+	return changes;
 }

@@ -12,8 +12,14 @@ module.exports = {
 	update,
 }
 
-async function update(state = {}, region) {
+async function update(state, region) {
+	console.log('   überprüfe impfungen-'+region);
+
+	if (!state) state = {};
+	if (!state.times) state.times = {};
 	state.changed = false;
+
+
 
 	let slug, gitFilename;
 	switch (region.toLowerCase()) {
@@ -26,8 +32,6 @@ async function update(state = {}, region) {
 
 	const rawFilename = resolve(config.folders.raw, `impfungen-${slug}.tsv`)
 	const cleanedFilename = resolve(config.folders.cleaned, `impfungen-${slug}.json`);
-
-	console.log('   überprüfe impfungen-'+region);
 
 	let isNewData = await checkData();
 
@@ -49,6 +53,8 @@ async function update(state = {}, region) {
 
 
 	async function checkData() {
+		state.times.check = new Date();
+
 		let directory = await fetch(apiUrl, { 'User-Agent': 'curl/7.64.1' })
 		directory = JSON.parse(directory);
 		let file = directory.find(e => e.name === gitFilename)
@@ -64,7 +70,7 @@ async function update(state = {}, region) {
 	}
 
 	async function downloadData(url) {
-		state.timeDownloaded = new Date();
+		state.times.download = new Date();
 
 		console.log('      runterladen');
 		await download(state.source, rawFilename);
@@ -74,7 +80,7 @@ async function update(state = {}, region) {
 	}
 
 	async function cleanData() {
-		state.timeCleaned = new Date();
+		state.times.clean = new Date();
 
 		console.log('      daten säubern');
 
