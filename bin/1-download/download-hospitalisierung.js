@@ -2,94 +2,82 @@
 
 const fs = require('fs');
 const config = require('../config.js');
-const { fetch, download, csv2array, saveNDJSON } = require('../../lib/helper.js');
+const { fetch, download, csv2array, saveJSON, checkUniqueKeys } = require('../../lib/helper.js');
 const { resolve } = require('path');
 
 
-const apiUrl = 'https://api.github.com/repos/robert-koch-institut/COVID-19-Hospitalisierungen_in_Deutschland/contents/';
-const rawFilename = resolve(config.folders.raw, 'hospitalisierung.tsv')
-const cleanedFilename = resolve(config.folders.cleaned, 'hospitalisierung.ndjson');
-
-module.exports = {
-	update,
-}
-
-async function update(state) {
-	console.log('   überprüfe hospitalisierung');
-
-	if (!state) state = {};
-	if (!state.times) state.times = {};
-	state.changed = false;
+const githubRepo = 'robert-koch-institut/COVID-19-Hospitalisierungen_in_Deutschland';
+const githubFile = 'Aktuell_Deutschland_COVID-19-Hospitalisierungen.csv';
 
 
-	
-	let isNewData = await checkData();
-
-	if (isNewData || !fs.existsSync(rawFilename)) {
-		await downloadData();
+module.exports = function Downloader() {
+	const cleanedFilenames = {
+		hospitalisierungBL: resolve(config.folders.cleaned, 'hospitalisierung-bl.json'),
+		hospitalisierungDE: resolve(config.folders.cleaned, 'hospitalisierung-de.json'),
+		hospitalisierungAlt: resolve(config.folders.cleaned, 'hospitalisierung-alt.json'),
+	}
+	return {
+		checkUpdates,
+		downloadData,
+		cleanData,
+		cleanedFilenames,
 	}
 
-	if (isNewData || !fs.existsSync(cleanedFilename)) {
-		await cleanData();
-
-		console.log('   fertig mit hospitalisierung')
-		state.changed = true;
-		return state;
-	}
-	
-	console.log('   überspringe hospitalisierung')
-	return state;
-
-
-	async function checkData() {
-		state.times.checkStart = new Date();
-
-		let directory = await fetch(apiUrl, { 'User-Agent': 'curl/7.64.1' })
+	async function checkUpdates(state) {
+		let directory = await fetch(`https://api.github.com/repos/${githubRepo}/contents/`, { 'User-Agent': 'curl/7.64.1' })
 		directory = JSON.parse(directory);
-		let file = directory.find(e => e.name === 'Aktuell_Deutschland_COVID-19-Hospitalisierungen.csv')
+		let file = directory.find(e => e.name === githubFile)
 
-		if (!file) throw Error('Could not find "https://github.com/robert-koch-institut/COVID-19-Hospitalisierungen_in_Deutschland/blob/master/Aktuell_Deutschland_COVID-19-Hospitalisierungen.csv"')
+		if (!file) throw Error(`Could not find "https://github.com/${githubRepo}/blob/master/${githubFile}"`)
 
 		let isNewData = (state.hash !== file.sha)
 		
 		state.hash = file.sha;
-		state.source = file.download_url;
+		state.sources = {
+			hospitalisierung: {
+				url:file.download_url,
+				filename:resolve(config.folders.raw, 'hospitalisierung.tsv')
+			}
+		}
 
-		state.times.checkEnd = new Date();
-
-		return isNewData
+		return isNewData;
 	}
 
-	async function downloadData() {
-		state.times.downloadStart = new Date();
-
-		console.log('      runterladen');
-		await download(state.source, rawFilename);
-		console.log('      wurde runtergeladen');
-
-		state.times.downloadStart = new Date();
+	async function downloadData(state) {
+		for (let source of Object.values(state.sources)) {
+			await download(source.url, source.filename);
+		}
 	}
 
-	async function cleanData() {
-		state.times.cleanStart = new Date();
-
-		console.log('      daten säubern');
-
-		let data = fs.readFileSync(rawFilename, 'utf8');
+	async function cleanData(state) {
+		let data = fs.readFileSync(state.sources.hospitalisierung.filename, 'utf8');
 		data = csv2array(data);
 
-		data = data.map(e => ({
-			datum: e.Datum,
-			bundesland: e.Bundesland,
-			bundeslandId: parseInt(e.Bundesland_Id,10),
-			altersgruppe: cleanAltersgruppe(e.Altersgruppe),
-			hospitalisierung7TFaelle: parseInt(e['7T_Hospitalisierung_Faelle'],10),
-			hospitalisierung7TInzidenz: parseFloat(e['7T_Hospitalisierung_Inzidenz']),
-		}))
+		let dataBL = [];
+		let dataDE = [];
+		let dataALT = [];
 
-		saveNDJSON(cleanedFilename, data);
+		data.forEach(e => {
+			let entry = {
+				datum: e.Datum,
+				bundesland: e.Bundesland,
+				bundeslandId: parseInt(e.Bundesland_Id,10),
+				altersgruppe: cleanAltersgruppe(e.Altersgruppe),
+				hospitalisierung7TFaelle: parseInt(e['7T_Hospitalisierung_Faelle'],10),
+				hospitalisierung7TInzidenz: parseFloat(e['7T_Hospitalisierung_Inzidenz']),
+			}
+			if ((entry.bundeslandId === 0) && (entry.altersgruppe === 'alle')) dataDE .push(entry);
+			if ((entry.bundeslandId  >  0) && (entry.altersgruppe === 'alle')) dataBL .push(entry);
+			if ((entry.bundeslandId === 0) && (entry.altersgruppe !== 'alle')) dataALT.push(entry);
+		})
 
-		state.times.cleanEnd = new Date();
+		if (!checkUniqueKeys(dataBL, ['datum','bundeslandId'])) throw Error();
+		if (!checkUniqueKeys(dataDE, ['datum'])) throw Error();
+		if (!checkUniqueKeys(dataALT,['datum','altersgruppe'])) throw Error();
+
+		saveJSON(cleanedFilenames.hospitalisierungBL,  dataBL);
+		saveJSON(cleanedFilenames.hospitalisierungDE,  dataDE);
+		saveJSON(cleanedFilenames.hospitalisierungAlt, dataALT);
 
 		function cleanAltersgruppe(text) {
 			switch (text) {
