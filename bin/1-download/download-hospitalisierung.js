@@ -12,8 +12,8 @@ const githubFile = 'Aktuell_Deutschland_COVID-19-Hospitalisierungen.csv';
 
 module.exports = function Downloader() {
 	const cleanedFilenames = {
-		hospitalisierungBL: resolve(config.folders.cleaned, 'hospitalisierung-bl.json'),
-		hospitalisierungDE: resolve(config.folders.cleaned, 'hospitalisierung-de.json'),
+		hospitalisierungBL:  resolve(config.folders.cleaned, 'hospitalisierung-bl.json'),
+		hospitalisierungDE:  resolve(config.folders.cleaned, 'hospitalisierung-de.json'),
 		hospitalisierungAlt: resolve(config.folders.cleaned, 'hospitalisierung-alt.json'),
 	}
 	
