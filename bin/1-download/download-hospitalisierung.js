@@ -16,6 +16,7 @@ module.exports = function Downloader() {
 		hospitalisierungDE: resolve(config.folders.cleaned, 'hospitalisierung-de.json'),
 		hospitalisierungAlt: resolve(config.folders.cleaned, 'hospitalisierung-alt.json'),
 	}
+	
 	return {
 		checkUpdates,
 		downloadData,

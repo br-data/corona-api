@@ -19,8 +19,8 @@ async function update() {
 	let changes = false;
 
 	let workerDefs = [
-		{ name: 'hospitalisierung', workerFilename: './download-hospitalisierung.js' },
-		//{ name: 'impfungen',        workerFilename: './download-impfungen.js' },
+		//{ name: 'hospitalisierung', workerFilename: './download-hospitalisierung.js' },
+		{ name: 'impfungen',        workerFilename: './download-impfungen.js' },
 		//{ name: 'infektionen',      workerFilename: './download-infektionen.js' },
 	]
 
@@ -55,7 +55,7 @@ async function update() {
 
 		let cleanedFilenames = Object.values(downloader.cleanedFilenames);
 		if (isNewData || cleanedFilenames.some(f => !fs.existsSync(f))) {
-			
+
 			console.log('      daten säubern');
 			state.times.cleanStart = new Date();
 			await downloader.cleanData(state);
