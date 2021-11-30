@@ -12,9 +12,9 @@ const githubFile = 'Aktuell_Deutschland_COVID-19-Hospitalisierungen.csv';
 
 module.exports = function Downloader() {
 	const cleanedFilenames = {
-		hospitalisierungBL:  resolve(config.folders.cleaned, 'hospitalisierung-bl.json'),
-		hospitalisierungDE:  resolve(config.folders.cleaned, 'hospitalisierung-de.json'),
-		hospitalisierungAlt: resolve(config.folders.cleaned, 'hospitalisierung-alt.json'),
+		hospitalisierungBL:    resolve(config.folders.cleaned, 'hospitalisierung-bl.json'),
+		hospitalisierungDE:    resolve(config.folders.cleaned, 'hospitalisierung-de.json'),
+		hospitalisierungDEAlt: resolve(config.folders.cleaned, 'hospitalisierung-de-alt.json'),
 	}
 	
 	return {
@@ -54,9 +54,9 @@ module.exports = function Downloader() {
 		let data = fs.readFileSync(state.sources.hospitalisierung.filename, 'utf8');
 		data = csv2array(data);
 
-		let dataBL = [];
-		let dataDE = [];
-		let dataALT = [];
+		let dataBL    = [];
+		let dataDE    = [];
+		let dataDEAlt = [];
 
 		data.forEach(e => {
 			let entry = {
@@ -67,18 +67,18 @@ module.exports = function Downloader() {
 				hospitalisierung7TFaelle: parseInt(e['7T_Hospitalisierung_Faelle'],10),
 				hospitalisierung7TInzidenz: parseFloat(e['7T_Hospitalisierung_Inzidenz']),
 			}
-			if ((entry.bundeslandId === 0) && (entry.altersgruppe === 'alle')) dataDE .push(entry);
-			if ((entry.bundeslandId  >  0) && (entry.altersgruppe === 'alle')) dataBL .push(entry);
-			if ((entry.bundeslandId === 0) && (entry.altersgruppe !== 'alle')) dataALT.push(entry);
+			if ((entry.bundeslandId  >  0) && (entry.altersgruppe === 'alle')) dataBL   .push(entry);
+			if ((entry.bundeslandId === 0) && (entry.altersgruppe === 'alle')) dataDE   .push(entry);
+			if ((entry.bundeslandId === 0) && (entry.altersgruppe !== 'alle')) dataDEAlt.push(entry);
 		})
 
-		if (!checkUniqueKeys(dataBL, ['datum','bundeslandId'])) throw Error();
-		if (!checkUniqueKeys(dataDE, ['datum'])) throw Error();
-		if (!checkUniqueKeys(dataALT,['datum','altersgruppe'])) throw Error();
+		if (!checkUniqueKeys(dataBL,   ['datum','bundeslandId'])) throw Error();
+		if (!checkUniqueKeys(dataDE,   ['datum'])) throw Error();
+		if (!checkUniqueKeys(dataDEAlt,['datum','altersgruppe'])) throw Error();
 
-		saveJSON(cleanedFilenames.hospitalisierungBL,  dataBL);
-		saveJSON(cleanedFilenames.hospitalisierungDE,  dataDE);
-		saveJSON(cleanedFilenames.hospitalisierungAlt, dataALT);
+		saveJSON(cleanedFilenames.hospitalisierungBL,    dataBL);
+		saveJSON(cleanedFilenames.hospitalisierungDE,    dataDE);
+		saveJSON(cleanedFilenames.hospitalisierungDEAlt, dataDEAlt);
 
 		function cleanAltersgruppe(text) {
 			switch (text) {
