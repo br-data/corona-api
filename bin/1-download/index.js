@@ -19,9 +19,9 @@ async function update() {
 	let changes = false;
 
 	let workerDefs = [
-		//{ name: 'hospitalisierung', workerFilename: './download-hospitalisierung.js' },
+		{ name: 'hospitalisierung', workerFilename: './download-hospitalisierung.js' },
 		{ name: 'impfungen',        workerFilename: './download-impfungen.js' },
-		//{ name: 'infektionen',      workerFilename: './download-infektionen.js' },
+		{ name: 'infektionen',      workerFilename: './download-infektionen.js' },
 	]
 
 	for (let workerDef of workerDefs) {
