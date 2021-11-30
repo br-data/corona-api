@@ -19,25 +19,58 @@ async function update() {
 	let changes = false;
 
 	let workerDefs = [
-		{ slug: 'impfungen',        workerFilename: './download-impfungen.js' },
-		{ slug: 'hospitalisierung', workerFilename: './download-hospitalisierung.js' },
-		{ slug: 'infektionen',      workerFilename: './download-infektionen.js' },
+		{ name: 'hospitalisierung', workerFilename: './download-hospitalisierung.js' },
+		//{ name: 'impfungen',        workerFilename: './download-impfungen.js' },
+		//{ name: 'infektionen',      workerFilename: './download-infektionen.js' },
 	]
 
 	for (let workerDef of workerDefs) {
-		console.log('starte worker: '+workerDef.slug);
 
-		let state = states[workerDef.slug] || {};
+		console.log('starte Downloader: '+workerDef.name);
+
+		let state = states[workerDef.name] || {};
 		state = JSON.parse(JSON.stringify(state)) // deep copy
+		if (!state.times) state.times = {};
+		state.changed = false;
+		state.worker = workerDef.name;
 
-		let worker = require(workerDef.workerFilename);
-		state = await worker.update(state, workerDef.parameter);
 
-		if (state.changed) {
-			changes = true;
-			state.worker = workerDef.slug;
-			states[workerDef.slug] = state;
+
+		let downloader = require(workerDef.workerFilename)();
+		
+		console.log('      suche nach Updates');
+		state.times.checkStart = new Date();
+		let isNewData = await downloader.checkUpdates(state);
+		state.times.checkEnd = new Date();
+		console.log('      neue Updates: '+(isNewData ? 'ja' : 'nein'));
+		
+		let rawFilenames = Object.values(state.sources).map(s => s.filename);
+		if (isNewData || rawFilenames.some(f => !fs.existsSync(f))) {
+			console.log('      runterladen');
+			state.times.downloadStart = new Date();
+			await downloader.downloadData(state);
+			state.times.downloadStart = new Date();
+			console.log('      wurde runtergeladen');
+		}
+
+		let cleanedFilenames = Object.values(downloader.cleanedFilenames);
+		if (isNewData || cleanedFilenames.some(f => !fs.existsSync(f))) {
+			
+			console.log('      daten säubern');
+			state.times.cleanStart = new Date();
+			await downloader.cleanData(state);
+			state.times.cleanEnd = new Date();
+			console.log('      daten gesäubert');
+
+			console.log('   Downloader fertig: '+workerDef.name)
+
+			state.changed = true;
+			states[workerDef.name] = state;
 			saveStates();
+
+			changes = true;
+		} else {
+			console.log('   überspringe '+workerDef.name)
 		}
 	}
 	
