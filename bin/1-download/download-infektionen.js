@@ -13,6 +13,7 @@ const githubFile = 'Aktuell_Deutschland_SarsCov2_Infektionen.csv';
 module.exports = function Downloader() {
 	const cleanedFilenames = {
 		infektionLK:    resolve(config.folders.cleaned, 'infektion-lk.json'),
+		infektionRB:    resolve(config.folders.cleaned, 'infektion-rb.json'),
 		infektionBL:    resolve(config.folders.cleaned, 'infektion-bl.json'),
 		infektionDE:    resolve(config.folders.cleaned, 'infektion-de.json'),
 		infektionDEAlt: resolve(config.folders.cleaned, 'infektion-de-alt.json'),
@@ -62,6 +63,7 @@ module.exports = function Downloader() {
 		data = csv2array(data, ',', '\r\n');
 
 		let dataLK    = summarizer(['meldedatum','landkreisId'                ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
+		let dataRB    = summarizer(['meldedatum','regierungsbezirkId'         ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
 		let dataBL    = summarizer(['meldedatum','bundeslandId'               ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
 		let dataDE    = summarizer(['meldedatum'                              ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
 		let dataBLAlt = summarizer(['meldedatum','bundeslandId','altersgruppe'], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
@@ -69,8 +71,9 @@ module.exports = function Downloader() {
 
 		data.forEach(e => {
 			let entry = {
-				bundeslandId: parseInt(e.IdLandkreis.slice(0,-3), 10),
 				landkreisId: parseInt(e.IdLandkreis, 10),
+				regierungsbezirkId: /^9\d\d\d$/.test(e.IdLandkreis) ? parseInt(e.IdLandkreis[1], 10) : 0,
+				bundeslandId: parseInt(e.IdLandkreis.slice(0,-3), 10),
 				altersgruppe: cleanAltersgruppe(e.Altersgruppe),
 				geschlecht: e.Geschlecht.toLowerCase(),
 				meldedatum: e.Meldedatum,
@@ -96,15 +99,19 @@ module.exports = function Downloader() {
 			dataDE.add(entry);
 			dataBLAlt.add(entry);
 			dataDEAlt.add(entry);
+
+			if (entry.regierungsbezirkId) dataRB.add(entry);
 		})
 
 		dataLK    = dataLK.get();
+		dataRB    = dataRB.get();
 		dataBL    = dataBL.get();
 		dataDE    = dataDE.get();
 		dataBLAlt = dataBLAlt.get();
 		dataDEAlt = dataDEAlt.get();
 
 		saveJSON(cleanedFilenames.infektionLK,    dataLK);
+		saveJSON(cleanedFilenames.infektionRB,    dataRB);
 		saveJSON(cleanedFilenames.infektionBL,    dataBL);
 		saveJSON(cleanedFilenames.infektionDE,    dataDE);
 		saveJSON(cleanedFilenames.infektionDEAlt, dataDEAlt);
