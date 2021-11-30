@@ -6,15 +6,22 @@ Alle 10 Minuten prüft der Scraper nach neuen Daten.
 
 Gibt es neue Daten, dann werden sie runtergeladen und die Tabellen neu generiert.
 
+# Ausführen
+
+Alle Daten runterladen/aktualisieren, Daten säubern und vorfiltern:
+
+`node bin/1-download`
+
 # Tabellen
 
-Es gibt 4 Tabellen mit folgenden Primary-Keys:
+Es folgende Tabellen mit folgenden Primary-Keys:
 
-- Landkreise, Meldetag
-- Regierungsbezirke, Meldetag
-- Bundesländer, Meldetag
-- Deutschland, Meldetag
-- Altersgruppen, Wochen
+- Landkreise
+- Landkreise,Altersgruppen
+- Regierungsbezirke
+- Bundesländer
+- Deutschland
+- Deutschland,Altersgruppen
 
 # Felder
 
