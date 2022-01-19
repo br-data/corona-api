@@ -1,66 +1,36 @@
 "use strict"
 
-const fs = require('fs');
-const config = require('../config.js');
-const { fetch, download, csv2array, saveJSON, checkUniqueKeys, summarizer } = require('../../lib/helper.js');
-const { resolve } = require('path');
+const { fetch, getGithubFileMeta, csv2array, checkUniqueKeys, summarizer } = require('../../lib/helper.js');
 
+module.exports = class Downloader extends require('./prototype.js') {
 
-const githubRepo = 'robert-koch-institut/SARS-CoV-2_Infektionen_in_Deutschland';
-const githubFile = 'Aktuell_Deutschland_SarsCov2_Infektionen.csv';
+	githubRepo = 'robert-koch-institut/SARS-CoV-2_Infektionen_in_Deutschland';
+	githubFile = 'Aktuell_Deutschland_SarsCov2_Infektionen.csv';
 
-
-module.exports = function Downloader() {
-	const cleanedFilenames = {
-		infektionLK:    resolve(config.folders.cleaned, 'infektion-lk.json'),
-		infektionRB:    resolve(config.folders.cleaned, 'infektion-rb.json'),
-		infektionBL:    resolve(config.folders.cleaned, 'infektion-bl.json'),
-		infektionDE:    resolve(config.folders.cleaned, 'infektion-de.json'),
-		infektionDEAlt: resolve(config.folders.cleaned, 'infektion-de-alt.json'),
-		infektionBLAlt: resolve(config.folders.cleaned, 'infektion-bl-alt.json'),
+	constructor() {
+		super('infektionen');
 	}
 
-	return {
-		checkUpdates,
-		downloadData,
-		cleanData,
-		cleanedFilenames,
-	}
+	async checkUpdates() {
+		let file = await getGithubFileMeta(this.githubRepo, this.githubFile);
 
-	async function checkUpdates(state) {
-		let directory = await fetch(`https://api.github.com/repos/${githubRepo}/contents/`, { 'User-Agent': 'curl/7.64.1' })
-		directory = JSON.parse(directory);
-		let file = directory.find(e => e.name === githubFile)
+		this.status.changed = (this.status.hash !== file.sha);
+		this.status.newHash = file.sha;
 
-		if (!file) throw Error(`Could not find "https://github.com/${githubRepo}/blob/master/${githubFile}"`)
-
-		let isNewData = (state.hash !== file.sha)
-		
-		state.hash = file.sha;
-		state.sources = {
-			infektion: {
-				url:`https://media.githubusercontent.com/media/${githubRepo}/master/${githubFile}`,
-				filename:resolve(config.folders.raw, 'infektion.tsv')
+		this.status.sources = {
+			infektionen: {
+				url:`https://media.githubusercontent.com/media/${this.githubRepo}/master/${this.githubFile}`, // Git LFS
 			}
 		}
-
-		return isNewData;
 	}
 
-	async function downloadData(state) {
-		for (let source of Object.values(state.sources)) {
-			await download(source.url, source.filename);
-		}
-	}
-
-	async function cleanData(state) {
-		let data = fs.readFileSync(state.sources.infektion.filename);
-
+	async doUpdate() {
+		let data = await fetch(this.status.sources.infektionen.url);
+		
 		// BOM
 		if (data[0] === 0xEF) data = data.slice(3);
-		data = data.toString('utf8');
-
-		data = csv2array(data, ',', '\r\n');
+		
+		data = csv2array(data.toString('utf8'), ',', '\r\n');
 
 		let dataLK    = summarizer(['meldedatum','landkreisId'                ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
 		let dataRB    = summarizer(['meldedatum','regierungsbezirkId'         ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
@@ -110,12 +80,12 @@ module.exports = function Downloader() {
 		dataBLAlt = dataBLAlt.get();
 		dataDEAlt = dataDEAlt.get();
 
-		saveJSON(cleanedFilenames.infektionLK,    dataLK);
-		saveJSON(cleanedFilenames.infektionRB,    dataRB);
-		saveJSON(cleanedFilenames.infektionBL,    dataBL);
-		saveJSON(cleanedFilenames.infektionDE,    dataDE);
-		saveJSON(cleanedFilenames.infektionDEAlt, dataDEAlt);
-		saveJSON(cleanedFilenames.infektionBLAlt, dataBLAlt);
+		this.saveTable('lk',    dataLK);
+		this.saveTable('rb',    dataRB);
+		this.saveTable('bl',    dataBL);
+		this.saveTable('de',    dataDE);
+		this.saveTable('de-alt', dataDEAlt);
+		this.saveTable('bl-alt', dataBLAlt);
 
 		function cleanAltersgruppe(text) {
 			switch (text) {
