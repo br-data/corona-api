@@ -8,7 +8,7 @@ const { fetch } = require('../../lib/helper.js');
 module.exports = class Downloader {
 	constructor(name) {
 		this.name = name;
-		this.statusFilename = resolve(config.folders.status, name+'.json');
+		this.statusFilename = resolve(config.folders.status, this.name+'.json');
 	}
 
 	loadStatus() {
@@ -23,7 +23,12 @@ module.exports = class Downloader {
 	saveStatus() {
 		this.status.name = this.name;
 		this.status.dateEnd = Date.now();
-		return fs.writeFileSync(this.statusFilename, JSON.stringify(this.status));
+
+		let file = JSON.stringify(this.status);
+		let timestamp = (new Date()).toISOString().replace(/\..*/,'').replace(/\D/g,'-');
+
+		fs.writeFileSync(this.statusFilename, file);
+		fs.writeFileSync(resolve(config.folders.log, `${this.name}-${timestamp}.json`), file);
 	}
 
 	saveTable(slug, data) {
