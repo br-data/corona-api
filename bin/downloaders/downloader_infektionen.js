@@ -1,5 +1,6 @@
 "use strict"
 
+//const fs = require('fs');
 const { fetch, getGithubFileMeta, csv2array, checkUniqueKeys, summarizer, addMetadata } = require('../../lib/helper.js');
 
 module.exports = class Downloader extends require('./prototype.js') {
@@ -26,6 +27,7 @@ module.exports = class Downloader extends require('./prototype.js') {
 
 	async doUpdate() {
 		let data = await fetch(this.status.sources.infektionen.url);
+		//let data = fs.readFileSync('temp.tmp');
 		
 		// BOM
 		if (data[0] === 0xEF) data = data.slice(3);
@@ -88,6 +90,13 @@ module.exports = class Downloader extends require('./prototype.js') {
 		addMetadata(dataDE,    ['deutschland']);
 		addMetadata(dataDEAlt, ['deutschland']);
 
+		calcInzidenzen(dataLK, ['landkreisId']);
+		//calcInzidenzen(dataRB);
+		calcInzidenzen(dataBL, ['bundeslandId']);
+		calcInzidenzen(dataDE);
+		calcInzidenzen(dataBLAlt, ['altersgruppe','bundeslandId']);
+		calcInzidenzen(dataDEAlt, ['altersgruppe']);
+
 		this.saveTable('lk',     dataLK);
 		//this.saveTable('rb',     dataRB);
 		this.saveTable('bl',     dataBL);
@@ -106,6 +115,33 @@ module.exports = class Downloader extends require('./prototype.js') {
 				case 'A80+':      return '80+';
 			}
 			throw Error('unbekannte Altersgruppe "'+text+'"')
+		}
+
+		function calcInzidenzen(data, groupKeys = []) {
+			let groups = new Map();
+			data.forEach(entry => {
+				let key = groupKeys.map(k => entry[k]).join('_');
+				if (!groups.has(key)) groups.set(key, []);
+				groups.get(key).push(entry);
+			})
+			Array.from(groups.values()).forEach(list => {
+				list.sort((a,b) => a.meldedatum < b.meldedatum ? -1 : 1);
+				for (let i = 0; i < list.length; i++) {
+					let minDatum = (new Date(Date.parse('2020-12-19 12:00') - 6*84600000)).toISOString().slice(0,10);
+					let i0 = Math.max(0, i - 6);
+					let sum = 0;
+					let count = 0;
+
+					for (let j = i0; j <= i; j++) {
+						let entry = list[j];
+						if (entry.meldedatum < minDatum) continue;
+						sum += entry.anzahlFall;
+						count++
+					}
+					let entry = list[i];
+					entry.inzidenz = Math.round(1e6*sum/entry.einwohnerzahl)/10;
+				}
+			})
 		}
 	}
 }
