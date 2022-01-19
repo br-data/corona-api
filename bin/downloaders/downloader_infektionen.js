@@ -1,6 +1,6 @@
 "use strict"
 
-const { fetch, getGithubFileMeta, csv2array, checkUniqueKeys, summarizer } = require('../../lib/helper.js');
+const { fetch, getGithubFileMeta, csv2array, checkUniqueKeys, summarizer, addMetadata } = require('../../lib/helper.js');
 
 module.exports = class Downloader extends require('./prototype.js') {
 
@@ -32,17 +32,17 @@ module.exports = class Downloader extends require('./prototype.js') {
 		
 		data = csv2array(data.toString('utf8'), ',', '\r\n');
 
-		let dataLK    = summarizer(['meldedatum','landkreisId'                ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
-		let dataRB    = summarizer(['meldedatum','regierungsbezirkId'         ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
-		let dataBL    = summarizer(['meldedatum','bundeslandId'               ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
-		let dataDE    = summarizer(['meldedatum'                              ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
-		let dataBLAlt = summarizer(['meldedatum','bundeslandId','altersgruppe'], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
-		let dataDEAlt = summarizer(['meldedatum',               'altersgruppe'], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
+		let dataLK    = summarizer(['meldedatum','bundeslandId','landkreisId'       ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
+		//let dataRB    = summarizer(['meldedatum','bundeslandId','regierungsbezirkId'], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
+		let dataBL    = summarizer(['meldedatum','bundeslandId'                     ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
+		let dataDE    = summarizer(['meldedatum'                                    ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
+		let dataBLAlt = summarizer(['meldedatum','bundeslandId','altersgruppe'      ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
+		let dataDEAlt = summarizer(['meldedatum',               'altersgruppe'      ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
 
 		data.forEach(e => {
 			let entry = {
 				landkreisId: parseInt(e.IdLandkreis, 10),
-				regierungsbezirkId: /^9\d\d\d$/.test(e.IdLandkreis) ? parseInt(e.IdLandkreis[1], 10) : 0,
+				//regierungsbezirkId: /^9\d\d\d$/.test(e.IdLandkreis) ? parseInt(e.IdLandkreis[1], 10) : 0,
 				bundeslandId: parseInt(e.IdLandkreis.slice(0,-3), 10),
 				altersgruppe: cleanAltersgruppe(e.Altersgruppe),
 				geschlecht: e.Geschlecht.toLowerCase(),
@@ -62,6 +62,7 @@ module.exports = class Downloader extends require('./prototype.js') {
 			if (entry.neuerTodesfall === -1) return;
 			if (entry.neuGenesen     === -1) return;
 
+			// fasse Berlin zusammen
 			if ((entry.landkreisId >= 11001) && (entry.landkreisId <= 11012)) entry.landkreisId = 11000;
 
 			dataLK.add(entry);
@@ -70,20 +71,27 @@ module.exports = class Downloader extends require('./prototype.js') {
 			dataBLAlt.add(entry);
 			dataDEAlt.add(entry);
 
-			if (entry.regierungsbezirkId) dataRB.add(entry);
+			//if (entry.regierungsbezirkId) dataRB.add(entry);
 		})
 
 		dataLK    = dataLK.get();
-		dataRB    = dataRB.get();
+		//dataRB    = dataRB.get();
 		dataBL    = dataBL.get();
 		dataDE    = dataDE.get();
 		dataBLAlt = dataBLAlt.get();
 		dataDEAlt = dataDEAlt.get();
 
-		this.saveTable('lk',    dataLK);
-		this.saveTable('rb',    dataRB);
-		this.saveTable('bl',    dataBL);
-		this.saveTable('de',    dataDE);
+		addMetadata(dataLK,    ['deutschland','bundesland','landkreis']);
+		//addMetadata(dataRB,    {bundesland:'bundeslandId', regierungsbezirk:'regierungsbezirkId'});
+		addMetadata(dataBL,    ['deutschland','bundesland']);
+		addMetadata(dataBLAlt, ['deutschland','bundesland']);
+		addMetadata(dataDE,    ['deutschland']);
+		addMetadata(dataDEAlt, ['deutschland']);
+
+		this.saveTable('lk',     dataLK);
+		//this.saveTable('rb',     dataRB);
+		this.saveTable('bl',     dataBL);
+		this.saveTable('de',     dataDE);
 		this.saveTable('de-alt', dataDEAlt);
 		this.saveTable('bl-alt', dataBLAlt);
 

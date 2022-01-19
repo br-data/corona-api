@@ -1,6 +1,6 @@
 "use strict"
 
-const { fetch, getGithubFileMeta, csv2array, checkUniqueKeys, summarizer } = require('../../lib/helper.js');
+const { fetch, getGithubFileMeta, csv2array, checkUniqueKeys, summarizer, addMetadata } = require('../../lib/helper.js');
 
 module.exports = class Downloader extends require('./prototype.js') {
 
@@ -47,6 +47,9 @@ module.exports = class Downloader extends require('./prototype.js') {
 		
 		if (!checkUniqueKeys(dataBL, ['datum','bundeslandId','impfstoff','impfserie'])) throw Error();
 		if (!checkUniqueKeys(dataDE, ['datum',               'impfstoff','impfserie'])) throw Error();
+		
+		addMetadata(dataBL, ['deutschland','bundesland']);
+		addMetadata(dataDE, ['deutschland']);
 
 		this.saveTable('bl', dataBL);
 		this.saveTable('de', dataDE);

@@ -1,6 +1,6 @@
 "use strict"
 
-const { fetch, getGithubFileMeta, csv2array, checkUniqueKeys } = require('../../lib/helper.js');
+const { fetch, getGithubFileMeta, csv2array, checkUniqueKeys, addMetadata } = require('../../lib/helper.js');
 
 module.exports = class Downloader extends require('./prototype.js') {
 
@@ -35,7 +35,6 @@ module.exports = class Downloader extends require('./prototype.js') {
 		data.forEach(e => {
 			let entry = {
 				datum: e.Datum,
-				bundesland: e.Bundesland,
 				bundeslandId: parseInt(e.Bundesland_Id,10),
 				altersgruppe: cleanAltersgruppe(e.Altersgruppe),
 				hospitalisierung7TFaelle: parseInt(e['7T_Hospitalisierung_Faelle'],10),
@@ -49,6 +48,10 @@ module.exports = class Downloader extends require('./prototype.js') {
 		if (!checkUniqueKeys(dataBL,   ['datum','bundeslandId'])) throw Error();
 		if (!checkUniqueKeys(dataDE,   ['datum'])) throw Error();
 		if (!checkUniqueKeys(dataDEAlt,['datum','altersgruppe'])) throw Error();
+		
+		addMetadata(dataBL,    ['deutschland','bundesland']);
+		addMetadata(dataDE,    ['deutschland']);
+		addMetadata(dataDEAlt, ['deutschland']);
 
 		this.saveTable('bl',     dataBL);
 		this.saveTable('de',     dataDE);
