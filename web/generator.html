@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Corona-API-Generator</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.5.10/jquery.loadTemplate.min.js"></script>
+	<script type="text/javascript">
+		$(() => {
+			$('[name="preview"]').click(() => generatePreview());
+			let table, fields;
+
+			getTables();
+
+			async function getTables() {
+				let container = $('#tables').empty();
+				let tables = await $.getJSON('/meta/tables');
+				tables.forEach(table => {
+					table.date = (new Date(table.date)).toLocaleString('de-DE', { timeZone: 'Europe/Berlin' });
+					container.loadTemplate('#templateTable', table, {append:true})
+					table.node = container.children().last();
+					table.node.click(() => selectTable(table));
+				})
+			}
+
+			async function selectTable(_table) {
+				table = _table;
+				$('#wrapperFields').show();
+				let container = $('#fields').empty();
+				fields = await $.getJSON('/meta/fields/'+table.name);
+				fields = fields.map(name => {
+					let field = {name}
+					container.loadTemplate('#templateField', field, {append:true})
+					field.node = container.children().last();
+					return field;
+				})
+
+				generatePreview();
+			}
+
+			async function generatePreview() {
+				let filters = [];
+				let sorters = [];
+				fields.forEach(field => {
+					let comparison = field.node.find('[name="comparison"]').val();
+					if (comparison !== '') {
+						let value = field.node.find('[name="value"]').val();
+						filters.push(`filter=${field.name}${comparison}${value}`)
+					}
+
+					let sort = field.node.find('[name="sort"]').val();
+					if (sort !== '') {
+						if (sort !== 'desc') {
+							sorters.push(`sort=${field.name}=desc`);
+						} else {
+							sorters.push(`sort=${field.name}`);
+						}
+					}
+				})
+				let query = [].concat(filters, sorters);
+
+				if ($('[name="format"]').val() === 'json') {
+					query.push('format=json');
+				}
+				
+				$('#url').text(getUrl(query));
+
+				query.push('limit=1000');
+
+				let result = await $.get(getUrl(query), {dataType:'text'});
+				$('#preview').text(result);
+				
+				function getUrl(query) {
+					let url = 'http://localhost:8080/query/'+table.name;
+					if (query.length > 0) url += '?'+query.join('&');
+					return url;
+				}
+			}
+		})
+	</script>
+	<style type="text/css">
+		html {
+			padding: 0;
+			margin: 0;
+		}
+		body {
+			background: #eee;
+			font-family: sans-serif;
+			padding: 0;
+			margin: 0;
+			font-size: 14px;
+		}
+		h1 {
+			font-weight: 200;
+			text-transform: uppercase;
+			font-size: 20px;
+			text-align: center;
+			padding: 40px 0 0;
+		}
+		p {
+			text-align: center;
+		}
+		table {
+			margin: auto;
+			border-collapse: collapse;
+		}
+			table tr:hover {
+				background: #eee;
+			}
+			table th, table td {
+				padding: 2px 10px;
+			}
+		#page {
+			max-width: 800px;
+			background: #fff;
+			margin: auto;
+			box-sizing: border-box;
+			padding: 20px;
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+			min-height: 100vh;
+		}
+		pre {
+			width: 100%;
+			background: #eee;
+			box-shadow: inset 0px 0px 10px rgba(0,0,0,0.3);
+			padding: 10px;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div id="page">
+		<h1>1. Tabelle wählen</h1>
+		<table>
+			<thead>
+				<tr><th>Name</th><th>Stand</th></tr>
+			</thead>
+			<tbody id="tables"></tbody>
+			<template id="templateTable">
+				<tr style="cursor:pointer;">
+					<td data-content="name"></td>
+					<td data-content="date"></td>
+				</tr>
+			</template>
+		</table>
+		<div id="wrapperFields" style="display:none">
+			<h1>2. Filtern und sortieren</h1>
+			<table>
+				<thead>
+					<tr><th>Feld</th><th>Filter</th><th>Sortieren</th></tr>
+				</thead>
+				<tbody id="fields"></tbody>
+				<template id="templateField">
+					<tr style="cursor:pointer;" data-value="name">
+						<td data-content="name"></td>
+						<td>
+							<select name="comparison">
+								<option value=""></option>
+								<option value="==">==</option>
+								<option value="!=">!=</option>
+								<option value="<">&lt;</option>
+								<option value="<=">&lt;=</option>
+								<option value=">=">&gt;=</option>
+								<option value=">">&gt;</option>
+							</select>
+							<input type="text" name="value"></td>
+						<td>
+							<select name="sort">
+								<option value=""></option>
+								<option value="asc">aufsteigend</option>
+								<option value="desc">absteigend</option>
+							</select>
+						</td>
+					</tr>
+				</template>
+			</table>
+			<p>Format:
+				<select name="format">
+					<option value="csv">CSV</option>
+					<option value="json">JSON</option>
+				</select>
+			</p>
+
+			<p>
+				<input type="button" name="preview" value="aktualisieren" style="font-size: 16px;" />
+			</p>
+
+			<h1>3. URL</h1>
+			<pre id="url" style="word-break: break-all; white-space: normal;"></pre>
+
+			<h1>4. Vorschau</h1>
+			<p><small>… nur die ersten 1000 Einträge …</small></p>
+			<pre id="preview" style="height: 400px;overflow: scroll;">
+				
+			</pre>
+		</div>
+	</div>
+</body>
+</html>

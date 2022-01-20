@@ -1,15 +1,13 @@
 "use strict"
 
-const port = parseInt(process.argv[2], 10) || 8080;
-
-
-
 const express = require('express');
+const { resolve } = require('path');
 const cors = require('cors');
 const Database = require('./lib/database.js');
 
 
 
+const port = parseInt(process.argv[2], 10) || 8080;
 const database = new Database();
 const app = express();
 app.use(cors())
@@ -30,6 +28,25 @@ app.get('/query/:tableName', (req, res) => {
 	}
 });
 
+app.get('/meta/tables', (req, res) => {
+	try {
+		res.status(200).json(database.getTables());
+	} catch (e) {
+		console.error(e);
+		res.status(500).send(e.message);
+	}
+});
+
+app.get('/meta/fields/:tableName', (req, res) => {
+	try {
+		res.status(200).json(database.getFields(req.params.tableName));
+	} catch (e) {
+		console.error(e);
+		res.status(500).send(e.message);
+	}
+});
+
+/*
 app.get('/status', (req, res) => {
 	try {
 		let result = database.getStatusHTML();
@@ -39,11 +56,14 @@ app.get('/status', (req, res) => {
 		res.status(500).send(e.message);
 	}
 });
+*/
 
-app.get('/builder', (req, res) => {
+app.get('/generator', (req, res) => {
 	try {
-		let result = database.getBuilderHTML();
-		res.status(200).set('Content-Type', 'text/html').send(result);
+		res
+			.status(200)
+			.set('Content-Type', 'text/html')
+			.sendFile(resolve(__dirname, '../web/generator.html'));
 	} catch (e) {
 		console.error(e);
 		res.status(500).send(e.message);
