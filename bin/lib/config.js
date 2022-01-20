@@ -10,7 +10,8 @@ const config = {
 		log:     resolve(__dirname, '../../data/log'),
 		tables:  resolve(__dirname, '../../data/tables'),
 		static:  resolve(__dirname, '../../data/static'),
-	}
+	},
+	githubAccessToken: '***REMOVED***',
 }
 
 module.exports = config;
