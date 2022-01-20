@@ -4,6 +4,7 @@ const fs = require('fs');
 const { resolve } = require('path');
 const config = require('./config.js');
 const { array2csv } = require('./helper.js');
+const updateDownloader = require('../download.js').update;
 
 module.exports = function Database() {
 
@@ -22,6 +23,8 @@ module.exports = function Database() {
 	}
 
 	async function updateData() {
+		await updateDownloader();
+
 		let folder = config.folders.tables;
 		fs.readdirSync(folder).forEach(filename => {
 			if (!filename.endsWith('.json')) return;
