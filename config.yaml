@@ -2,8 +2,9 @@ isEnabled: true
 image:
   preset: node
 build:
-  command: npm i
+  command: npm install
 run:
-  command: sleep 1h
+  command: npm start
 settings:
   type: service
+  inSecure: true
