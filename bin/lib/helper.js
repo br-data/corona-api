@@ -4,12 +4,13 @@ const fs = require('fs');
 const https = require('https');
 
 module.exports = {
+	addMetadata,
+	array2csv,
+	checkUniqueKeys,
+	csv2array,
 	fetch,
 	getGithubFileMeta,
-	csv2array,
 	summarizer,
-	checkUniqueKeys,
-	addMetadata,
 }
 
 function fetch(url, headers = {}) {
@@ -128,4 +129,15 @@ function addMetadata(data, keys) {
 	})
 }
 
-
+function array2csv(list) {
+	let keys = new Set();
+	list.forEach(obj => Object.keys(obj).forEach(key => keys.add(key)));
+	keys = Array.from(keys.values());
+	let csv = list.map(obj => keys.map(key => {
+		let value = obj[key];
+		if ((typeof value === 'string') && (value.includes(','))) value = '"'+value+'"';
+		return value;
+	}).join(','));
+	csv.unshift(keys.join(','));
+	return csv.join('\n');
+}
