@@ -13,13 +13,13 @@ module.exports = function Database() {
 	return {
 		start,
 		queryData,
-		getStatusHTML,
-		getBuilderHTML,
+		getTables,
+		getFields,
 	}
 
 	async function start() {
 		await updateData();
-		setInterval(updateData, 5*3600*1000);
+		setInterval(updateData, 10*3600*1000);
 	}
 
 	async function updateData() {
@@ -105,6 +105,12 @@ module.exports = function Database() {
 			}
 		}
 
+		// limit
+		if (query.limit) {
+			let limit = parseInt(query.limit, 10);
+			data = data.slice(0, limit);
+		}
+
 		// format
 		switch (query.format) {
 			case 'json':
@@ -123,8 +129,17 @@ module.exports = function Database() {
 		}
 	}
 	
-	function getStatusHTML() {
-
+	function getTables() {
+		let tables = Array.from(tableLookup.values());
+		tables = tables.map(t => ({name:t.name, date:t.date}));
+		tables.sort((a,b) => a.name < b.name ? -1 : 1);
+		return tables;
+	}
+	
+	function getFields(tableName) {
+		let table = tableLookup.get(tableName);
+		if (!table) throw Error(`unknown table "${tableName}". known tables: `+Array.from(tableLookup.keys()).join(','));
+		return Object.keys(table.data[0]);
 	}
 	
 	function getBuilderHTML() {
