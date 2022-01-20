@@ -1,0 +1,9 @@
+isEnabled: true
+image:
+  preset: node
+build:
+  command: npm i
+run:
+  command: sleep 1h
+settings:
+  type: service
