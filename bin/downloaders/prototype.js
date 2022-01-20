@@ -25,10 +25,11 @@ module.exports = class Downloader {
 		this.status.dateEnd = Date.now();
 
 		let file = JSON.stringify(this.status);
-		let timestamp = (new Date()).toISOString().replace(/\..*/,'').replace(/\D/g,'-');
+		let timestamp = (new Date()).toISOString().slice(0,23).replace(/\D/g,'-');
+		let logFilename = resolve(config.folders.log, `${timestamp}-${this.name}.json`);
 
 		fs.writeFileSync(this.statusFilename, file);
-		fs.writeFileSync(resolve(config.folders.log, `${this.name}-${timestamp}.json`), file);
+		fs.writeFileSync(logFilename, file);
 	}
 
 	saveTable(slug, data) {
