@@ -49,7 +49,7 @@ module.exports = class Downloader extends require('./prototype.js') {
 		if (!checkUniqueKeys(dataDE,   ['datum'])) throw Error();
 		if (!checkUniqueKeys(dataDEAlt,['datum','altersgruppe'])) throw Error();
 		
-		addMetadata(dataBL,    ['deutschland','bundesland']);
+		addMetadata(dataBL,    ['bundesland' ]);
 		addMetadata(dataDE,    ['deutschland']);
 		addMetadata(dataDEAlt, ['deutschland']);
 

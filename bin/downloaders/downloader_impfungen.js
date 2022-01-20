@@ -52,9 +52,9 @@ module.exports = class Downloader extends require('./prototype.js') {
 		dataBLSerie = dataBLSerie.get();
 		dataDESerie = dataDESerie.get();
 		
-		addMetadata(dataBLFull,  ['deutschland','bundesland']);
+		addMetadata(dataBLFull,  ['bundesland' ]);
 		addMetadata(dataDEFull,  ['deutschland']);
-		addMetadata(dataBLSerie, ['deutschland','bundesland']);
+		addMetadata(dataBLSerie, ['bundesland' ]);
 		addMetadata(dataDESerie, ['deutschland']);
 
 		this.saveTable('bl-full',  dataBLFull);
