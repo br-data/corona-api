@@ -72,7 +72,7 @@
 				$('#preview').text(result);
 				
 				function getUrl(query) {
-					let url = 'http://localhost:8080/query/'+table.name;
+					let url = 'https://corona-api.interaktiv.br.de/query/'+table.name;
 					if (query.length > 0) url += '?'+query.join('&');
 					return url;
 				}
