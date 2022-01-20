@@ -49,9 +49,9 @@ module.exports = class Downloader extends require('./prototype.js') {
 		if (!checkUniqueKeys(dataDE,   ['datum'])) throw Error();
 		if (!checkUniqueKeys(dataDEAlt,['datum','altersgruppe'])) throw Error();
 		
-		addMetadata(dataBL,    ['bundesland' ]);
-		addMetadata(dataDE,    ['deutschland']);
-		addMetadata(dataDEAlt, ['deutschland']);
+		addMetadata(dataBL,    ['bundeslaender']);
+		addMetadata(dataDE,    ['deutschland-einwohner']);
+		addMetadata(dataDEAlt, ['deutschland-alter']);
 
 		this.saveTable('bl',     dataBL);
 		this.saveTable('de',     dataDE);

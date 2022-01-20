@@ -35,7 +35,6 @@ module.exports = class Downloader extends require('./prototype.js') {
 		data = csv2array(data.toString('utf8'), ',', '\r\n');
 
 		let dataLK    = summarizer(['meldedatum','bundeslandId','landkreisId'       ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
-		//let dataRB    = summarizer(['meldedatum','bundeslandId','regierungsbezirkId'], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
 		let dataBL    = summarizer(['meldedatum','bundeslandId'                     ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
 		let dataDE    = summarizer(['meldedatum'                                    ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
 		let dataBLAlt = summarizer(['meldedatum','bundeslandId','altersgruppe'      ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
@@ -44,7 +43,6 @@ module.exports = class Downloader extends require('./prototype.js') {
 		data.forEach(e => {
 			let entry = {
 				landkreisId: parseInt(e.IdLandkreis, 10),
-				//regierungsbezirkId: /^9\d\d\d$/.test(e.IdLandkreis) ? parseInt(e.IdLandkreis[1], 10) : 0,
 				bundeslandId: parseInt(e.IdLandkreis.slice(0,-3), 10),
 				altersgruppe: cleanAltersgruppe(e.Altersgruppe),
 				geschlecht: e.Geschlecht.toLowerCase(),
@@ -72,33 +70,27 @@ module.exports = class Downloader extends require('./prototype.js') {
 			dataDE.add(entry);
 			dataBLAlt.add(entry);
 			dataDEAlt.add(entry);
-
-			//if (entry.regierungsbezirkId) dataRB.add(entry);
 		})
 
 		dataLK    = dataLK.get();
-		//dataRB    = dataRB.get();
 		dataBL    = dataBL.get();
 		dataDE    = dataDE.get();
 		dataBLAlt = dataBLAlt.get();
 		dataDEAlt = dataDEAlt.get();
 
-		addMetadata(dataLK,    ['deutschland','bundesland','landkreis']);
-		//addMetadata(dataRB,    {bundesland:'bundeslandId', regierungsbezirk:'regierungsbezirkId'});
-		addMetadata(dataBL,    ['deutschland','bundesland']);
-		addMetadata(dataBLAlt, ['deutschland','bundesland']);
-		addMetadata(dataDE,    ['deutschland']);
-		addMetadata(dataDEAlt, ['deutschland']);
+		addMetadata(dataLK,    ['bundeslaender', 'landkreise-einwohner']);
+		addMetadata(dataBL,    ['bundeslaender-einwohner']);
+		addMetadata(dataDE,    ['deutschland-einwohner']);
+		addMetadata(dataBLAlt, ['bundeslaender-alter']);
+		addMetadata(dataDEAlt, ['deutschland-alter']);
 
 		calcInzidenzen(dataLK, ['landkreisId']);
-		//calcInzidenzen(dataRB);
 		calcInzidenzen(dataBL, ['bundeslandId']);
 		calcInzidenzen(dataDE);
 		calcInzidenzen(dataBLAlt, ['altersgruppe','bundeslandId']);
 		calcInzidenzen(dataDEAlt, ['altersgruppe']);
 
 		this.saveTable('lk',     dataLK);
-		//this.saveTable('rb',     dataRB);
 		this.saveTable('bl',     dataBL);
 		this.saveTable('de',     dataDE);
 		this.saveTable('de-alt', dataDEAlt);
