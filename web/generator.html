@@ -51,7 +51,7 @@
 
 					let sort = field.node.find('[name="sort"]').val();
 					if (sort !== '') {
-						if (sort !== 'desc') {
+						if (sort === 'desc') {
 							sorters.push(`sort=${field.name}=desc`);
 						} else {
 							sorters.push(`sort=${field.name}`);
