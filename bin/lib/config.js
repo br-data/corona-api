@@ -11,6 +11,7 @@ const config = {
 		tables:  resolve(__dirname, '../../data/tables'),
 		static:  resolve(__dirname, '../../data/static'),
 	},
+	// generate on at: https://github.com/settings/tokens/new
 	githubAccessToken: 'michaelkreil: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',
 }
 
