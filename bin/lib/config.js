@@ -5,11 +5,11 @@ const { resolve } = require('path');
 
 const config = {
 	folders: {
-		data:    resolve(__dirname, '../data'),
-		status:  resolve(__dirname, '../data/status'),
-		log:     resolve(__dirname, '../data/log'),
-		tables:  resolve(__dirname, '../data/tables'),
-		static:  resolve(__dirname, '../data/static'),
+		data:    resolve(__dirname, '../../data'),
+		status:  resolve(__dirname, '../../data/status'),
+		log:     resolve(__dirname, '../../data/log'),
+		tables:  resolve(__dirname, '../../data/tables'),
+		static:  resolve(__dirname, '../../data/static'),
 	}
 }
 

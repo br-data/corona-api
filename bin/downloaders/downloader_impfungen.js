@@ -1,6 +1,6 @@
 "use strict"
 
-const { fetch, getGithubFileMeta, csv2array, checkUniqueKeys, summarizer, addMetadata } = require('../../lib/helper.js');
+const { fetch, getGithubFileMeta, csv2array, checkUniqueKeys, summarizer, addMetadata } = require('../lib/helper.js');
 
 module.exports = class Downloader extends require('./prototype.js') {
 

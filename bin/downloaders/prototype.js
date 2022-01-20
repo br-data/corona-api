@@ -1,9 +1,9 @@
 "use strict"
 
-const config = require('../config.js');
+const config = require('../lib/config.js');
 const fs = require('fs');
 const { resolve } = require('path');
-const { fetch } = require('../../lib/helper.js');
+const { fetch } = require('../lib/helper.js');
 
 module.exports = class Downloader {
 	constructor(name) {
