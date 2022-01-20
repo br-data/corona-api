@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const https = require('https');
+const { resolve } = require('path');
 const config = require('./config.js');
 
 module.exports = {
@@ -100,35 +101,36 @@ function summarizer(groupFields, sumFields) {
 }
 
 function addMetadata(data, fields) {
+	let dataFolder = resolve(__dirname, '../../data/static/');
 
 	fields.forEach(field => {
 		let cacheAltergruppen = new Map();
 
 		switch (field) {
 			case 'deutschland-einwohner': {
-				let deutschland = JSON.parse(fs.readFileSync('../data/static/deutschland-einwohner.json'));
+				let deutschland = JSON.parse(fs.readFileSync(resolve(dataFolder, 'deutschland-einwohner.json')));
 				data.forEach(e => Object.assign(e, deutschland));
 			} break;
 
 			case 'deutschland-alter': {
-				let deutschland = JSON.parse(fs.readFileSync('../data/static/deutschland-alter.json'));
+				let deutschland = JSON.parse(fs.readFileSync(resolve(dataFolder, 'deutschland-alter.json')));
 				data.forEach(e => {
 					e.einwohnerzahl = getAltergruppen(e.altersgruppe, e.altersgruppe, deutschland.einwohnerzahl)
 				});
 			} break;
 
 			case 'bundeslaender': {
-				let bundeslaender = JSON.parse(fs.readFileSync('../data/static/bundeslaender.json'));
+				let bundeslaender = JSON.parse(fs.readFileSync(resolve(dataFolder, 'bundeslaender.json')));
 				data.forEach(e => Object.assign(e, bundeslaender[e.bundeslandId]));
 			} break;
 
 			case 'bundeslaender-einwohner': {
-				let bundeslaender = JSON.parse(fs.readFileSync('../data/static/bundeslaender-einwohner.json'));
+				let bundeslaender = JSON.parse(fs.readFileSync(resolve(dataFolder, 'bundeslaender-einwohner.json')));
 				data.forEach(e => Object.assign(e, bundeslaender[e.bundeslandId]));
 			} break;
 
 			case 'bundeslaender-alter': {
-				let bundeslaender = JSON.parse(fs.readFileSync('../data/static/bundeslaender-alter.json'));
+				let bundeslaender = JSON.parse(fs.readFileSync(resolve(dataFolder, 'bundeslaender-alter.json')));
 				data.forEach(e => {
 					let obj = Object.assign({}, bundeslaender[e.bundeslandId]);
 					obj.einwohnerzahl = getAltergruppen(e.bundeslandId+'_'+e.altersgruppe, e.altersgruppe, obj.einwohnerzahl)
@@ -137,12 +139,12 @@ function addMetadata(data, fields) {
 			} break;
 
 			case 'landkreise': {
-				let landkreise = JSON.parse(fs.readFileSync('../data/static/landkreise.json'));
+				let landkreise = JSON.parse(fs.readFileSync(resolve(dataFolder, 'landkreise.json')));
 				data.forEach(e => Object.assign(e, landkreise[e.landkreisId]));
 			} break;
 
 			case 'landkreise-einwohner': {
-				let landkreise = JSON.parse(fs.readFileSync('../data/static/landkreise-einwohner.json'));
+				let landkreise = JSON.parse(fs.readFileSync(resolve(dataFolder, 'landkreise-einwohner.json')));
 				data.forEach(e => Object.assign(e, landkreise[e.landkreisId]));
 			} break;
 
