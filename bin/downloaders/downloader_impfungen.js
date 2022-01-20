@@ -28,8 +28,10 @@ module.exports = class Downloader extends require('./prototype.js') {
 		let data = await fetch(this.status.sources.impfungen.url);
 		data = csv2array(data.toString('utf8'));
 
-		let dataBL = [];
-		let dataDE = summarizer(['datum','impfstoff','impfserie'],['anzahl']);
+		let dataBLFull  = summarizer(['datum','bundeslandId','impfstoff','impfserie'],['anzahl']);
+		let dataDEFull  = summarizer(['datum',               'impfstoff','impfserie'],['anzahl']);
+		let dataBLSerie = summarizer(['datum','bundeslandId',            'impfserie'],['anzahl']);
+		let dataDESerie = summarizer(['datum',                           'impfserie'],['anzahl']);
 
 		data.forEach(e => {
 			let entry = {
@@ -39,19 +41,25 @@ module.exports = class Downloader extends require('./prototype.js') {
 				impfserie: parseInt(e.Impfserie, 10),
 				anzahl: parseInt(e.Anzahl, 10),
 			}
-			dataDE.add(entry);
-			dataBL.push(entry);
+			dataDEFull.add(entry);
+			dataBLFull.add(entry);
+			dataDESerie.add(entry);
+			dataBLSerie.add(entry);
 		})
 
-		dataDE = dataDE.get();
+		dataBLFull  = dataBLFull.get();
+		dataDEFull  = dataDEFull.get();
+		dataBLSerie = dataBLSerie.get();
+		dataDESerie = dataDESerie.get();
 		
-		if (!checkUniqueKeys(dataBL, ['datum','bundeslandId','impfstoff','impfserie'])) throw Error();
-		if (!checkUniqueKeys(dataDE, ['datum',               'impfstoff','impfserie'])) throw Error();
-		
-		addMetadata(dataBL, ['deutschland','bundesland']);
-		addMetadata(dataDE, ['deutschland']);
+		addMetadata(dataBLFull,  ['deutschland','bundesland']);
+		addMetadata(dataDEFull,  ['deutschland']);
+		addMetadata(dataBLSerie, ['deutschland','bundesland']);
+		addMetadata(dataDESerie, ['deutschland']);
 
-		this.saveTable('bl', dataBL);
-		this.saveTable('de', dataDE);
+		this.saveTable('bl-full',  dataBLFull);
+		this.saveTable('de-full',  dataDEFull);
+		this.saveTable('bl-serie', dataBLSerie);
+		this.saveTable('de-serie', dataDESerie);
 	}
 }
