@@ -76,4 +76,79 @@ module.exports = class Downloader {
 		}
 		fs.writeFileSync(filename, JSON.stringify(data));
 	}
+
+	addMetadata(data, fields) {
+		let dataFolder = config.folders.static;
+
+		fields.forEach(field => {
+			let cacheAltergruppen = new Map();
+
+			switch (field) {
+				case 'deutschland-einwohner': {
+					let deutschland = JSON.parse(fs.readFileSync(resolve(dataFolder, 'deutschland-einwohner.json')));
+					data.forEach(e => Object.assign(e, deutschland));
+				} break;
+
+				case 'deutschland-alter': {
+					let deutschland = JSON.parse(fs.readFileSync(resolve(dataFolder, 'deutschland-alter.json')));
+					data.forEach(e => {
+						e.einwohnerzahl = getAltergruppen(e.altersgruppe, e.altersgruppe, deutschland.einwohnerzahl)
+					});
+				} break;
+
+				case 'bundeslaender': {
+					let bundeslaender = JSON.parse(fs.readFileSync(resolve(dataFolder, 'bundeslaender.json')));
+					data.forEach(e => Object.assign(e, bundeslaender[e.bundeslandId]));
+				} break;
+
+				case 'bundeslaender-einwohner': {
+					let bundeslaender = JSON.parse(fs.readFileSync(resolve(dataFolder, 'bundeslaender-einwohner.json')));
+					data.forEach(e => Object.assign(e, bundeslaender[e.bundeslandId]));
+				} break;
+
+				case 'bundeslaender-alter': {
+					let bundeslaender = JSON.parse(fs.readFileSync(resolve(dataFolder, 'bundeslaender-alter.json')));
+					data.forEach(e => {
+						let obj = Object.assign({}, bundeslaender[e.bundeslandId]);
+						obj.einwohnerzahl = getAltergruppen(e.bundeslandId+'_'+e.altersgruppe, e.altersgruppe, obj.einwohnerzahl)
+						Object.assign(e, obj);
+					});
+				} break;
+
+				case 'landkreise': {
+					let landkreise = JSON.parse(fs.readFileSync(resolve(dataFolder, 'landkreise.json')));
+					data.forEach(e => Object.assign(e, landkreise[e.landkreisId]));
+				} break;
+
+				case 'landkreise-einwohner': {
+					let landkreise = JSON.parse(fs.readFileSync(resolve(dataFolder, 'landkreise-einwohner.json')));
+					data.forEach(e => Object.assign(e, landkreise[e.landkreisId]));
+				} break;
+
+				default: throw Error('unknown metadata type: '+field)
+			}
+
+			function getAltergruppen(key, gruppe, einwohnerzahl) {
+				if (gruppe === 'unbekannt') return 0;
+
+				if (cacheAltergruppen.has(key)) return cacheAltergruppen.get(key);
+
+				let match, i0 = 0, i1 = einwohnerzahl.length-1;
+				if (match = gruppe.match(/^(\d+)-(\d+)$/)) {
+					i0 = parseInt(match[1], 10);
+					i1 = parseInt(match[2], 10);
+				} else if (match = gruppe.match(/^(\d+)\+$/)) {
+					i0 = parseInt(match[1], 10);
+				} else {
+					throw Error(`unknown altersgruppe "${gruppe}"`)
+				}
+
+				let sum = 0;
+				for (let i = i0; i <= i1; i++) sum += einwohnerzahl[i];
+				cacheAltergruppen.set(key, sum);
+
+				return key;
+			}
+		})
+	}
 }

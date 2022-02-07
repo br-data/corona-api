@@ -81,11 +81,11 @@ module.exports = class Downloader extends require('./prototype.js') {
 		dataBLAlt = dataBLAlt.get();
 		dataDEAlt = dataDEAlt.get();
 
-		addMetadata(dataLK,    ['bundeslaender', 'landkreise-einwohner']);
-		addMetadata(dataBL,    ['bundeslaender-einwohner']);
-		addMetadata(dataDE,    ['deutschland-einwohner']);
-		addMetadata(dataBLAlt, ['bundeslaender-alter']);
-		addMetadata(dataDEAlt, ['deutschland-alter']);
+		this.addMetadata(dataLK,    ['bundeslaender', 'landkreise-einwohner']);
+		this.addMetadata(dataBL,    ['bundeslaender-einwohner']);
+		this.addMetadata(dataDE,    ['deutschland-einwohner']);
+		this.addMetadata(dataBLAlt, ['bundeslaender-alter']);
+		this.addMetadata(dataDEAlt, ['deutschland-alter']);
 
 		calcInzidenzen(dataLK, ['landkreisId']);
 		calcInzidenzen(dataBL, ['bundeslandId']);
