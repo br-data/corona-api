@@ -59,7 +59,7 @@ module.exports = function Database() {
 		let table = tableLookup.get(tableName);
 		if (!table) throw Error(`unknown table "${tableName}". known tables: `+Array.from(tableLookup.keys()).join(','));
 
-		let data = table.data;
+		let data = table.data.slice();
 
 		// filter
 		if (query.filter) {
@@ -134,7 +134,7 @@ module.exports = function Database() {
 	
 	function getTables() {
 		// Gebe eine Liste aller Tabellen zurück
-		
+
 		let tables = Array.from(tableLookup.values());
 		tables = tables.map(t => ({name:t.name, date:t.date}));
 		tables.sort((a,b) => a.name < b.name ? -1 : 1);
