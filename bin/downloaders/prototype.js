@@ -10,8 +10,40 @@ module.exports = class Downloader {
 		this.name = name;
 		this.statusFilename = resolve(config.folders.status, this.name+'.json');
 	}
+	
+	async run() {
+		// Lade den letzten Status
+		this.loadStatus();
+		this.status.error = false;
+
+		try {
+			console.error('   check for updates');
+			await this.checkUpdates();
+
+			if (this.status.changed) {
+				// new data
+				console.error('   update started');
+				await this.doUpdate()
+				console.error('   update finished');
+			} else {
+				// no new data
+				console.error('   no updates');
+			}
+			
+			this.status.hash = this.status.newHash;
+
+		} catch (e) {
+			// error handling
+			this.status.error = e.toString();
+			console.error(e);
+		}
+
+		// Speichere den aktuellen Status
+		this.saveStatus();
+	}
 
 	loadStatus() {
+		// Lade das letzte Status-Objekt, bzw. erstelle ein neues Status-Objekt
 		if (fs.existsSync(this.statusFilename)) {
 			this.status = JSON.parse(fs.readFileSync(this.statusFilename));
 		} else {
@@ -21,6 +53,8 @@ module.exports = class Downloader {
 	}
 
 	saveStatus() {
+		// Speicher das Status-Objekt
+
 		this.status.name = this.name;
 		this.status.dateEnd = Date.now();
 
@@ -33,38 +67,13 @@ module.exports = class Downloader {
 	}
 
 	saveTable(slug, data) {
+		// Speichere die Daten-Tabelle
+		
 		let filename = resolve(config.folders.tables, `${this.name}-${slug}.json`);
 		data = {
 			date: Date.now(),
 			data,
 		}
 		fs.writeFileSync(filename, JSON.stringify(data));
-	}
-	
-	async run() {
-		this.loadStatus();
-		this.status.error = false;
-
-		try {
-
-			console.error('   check for updates');
-			await this.checkUpdates();
-
-			if (this.status.changed) {
-				console.error('   update started');
-				await this.doUpdate()
-				console.error('   update finished');
-			} else {
-				console.error('   no updates');
-			}
-			
-			this.status.hash = this.status.newHash;
-
-		} catch (e) {
-			this.status.error = e.toString();
-			console.error(e);
-		}
-
-		this.saveStatus();
 	}
 }
