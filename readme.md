@@ -89,7 +89,23 @@ Beispiel:
 
 Die API besteht grob aus zwei Teilen: Den Downloadern und dem API-Server.
 
-Grundsätzliche Konfigurationen werden in `bin/lib/config.js` vorgenommen.
+## Verzeichnisse
+
+- `bin` enthält die zentralen Scripte
+	- `bin/download.js` führt alle Downloader aus
+	- `bin/downloaders` enthält die Downloader, jeweils einen für jede Datenquelle
+		- `bin/downloaders/prototype` ist die abstrakte Downloader-Klasse, von der die Downloader erben.
+	- `bin/server.js` ist der API-Server
+	- `bin/lib` enthält Helfer-Bibliotheken
+		- `bin/lib/config.js` enthält zentrale Konfigurationen, wie z.B. die Verzeichnisnamen für die Daten
+		- `bin/lib/database.js` verarbeitet die Queries für den API-Server
+		- `bin/lib/helper.js` enthält Hilfsfunktionen, wie z.B. einen CSV-Parser etc.
+- `data` ist das zentrale Verzeichnis für alle Daten.
+	- `data/log` sammelt Ergebnisse der Downloader
+	- `data/static` enthält statische Metadaten wie z.B. Bevölkerungszahlen für die Berechnung der Inzidenzen.
+	- `data/status` enthält die letzten Status-Informationen der Downloader.
+	- `data/tables` enthält die Tabellen, die von den Downloadern generiert werden.
+- `web` enthält statischen Web-Content, z.B. den Code für den Query-Generator.
 
 ## Die Downloader
 
