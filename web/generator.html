@@ -73,7 +73,7 @@
 				$('#preview').text(result);
 				
 				function getUrl(query) {
-					let url = 'https://corona-api.interaktiv.br.de/query/'+table.name;
+					let url = '/query/'+table.name;
 					if (query.length > 0) url += '?'+query.join('&');
 					return url;
 				}
