@@ -1,10 +1,10 @@
 # Corona-API v3.0
 
-# Intro
+# Einführung
 
-Alle 10 Minuten prüft der Scraper, ob das RKI auf GitHub neue Daten veröffentlicht hat.
-Gibt es neue Daten, dann werden sie runtergeladen und die Tabellen neu generiert.
-Über den API-Server werden diese Tabellen angeboten. Mit GET-Parameter kann man die Daten filtern, sortieren und formatieren.
+Alle 10 Minuten prüft der Scraper, ob das [RKI auf GitHub](https://github.com/robert-koch-institut) neue Daten veröffentlicht hat.
+Wenn es neue Daten gibt, dann werden sie autormatisch runtergeladen und in Tabellen konvertiert.
+Über den API-Server werden dann diese Tabellen angeboten. Mit GET-Parameter kann man die Daten filtern, sortieren und formatieren.
 
 Unter [corona-api.interaktiv.br.de/generator](https://corona-api.interaktiv.br.de/generator) findet man ein Online-Tool, um eine API-Abfrage zu generieren.
 
@@ -19,7 +19,7 @@ npm start
 
 Dadurch wird der Server an Port 3000 gestartet.
 
-Will man nur die RKI-Daten runterladen und vorbereiten, kann man den Downloader auch manuell starten mit:
+Will man nur die RKI-Daten runterladen, ohne den Server starten zu müssen, kann man den Downloader auch manuell ausführen mit:
 
 ```bash
 node bin/download.js
@@ -29,23 +29,23 @@ node bin/download.js
 
 Aktuell werden die folgenden Tabellen generiert:
 
-- Hospitalisierung:
+- Hospitalisierung: ([Datenquelle](https://github.com/robert-koch-institut/COVID-19-Hospitalisierungen_in_Deutschland))
 	- ganz Deutschland: `hospitalisierung-de`
 	- ganz Deutschland, nach Altersgruppen: `hospitalisierung-de-alt`
 	- nach Bundesländern: `hospitalisierung-bl`
-- Impfungen nach:
+- Impfungen nach: ([Datenquelle](https://github.com/robert-koch-institut/COVID-19-Impfungen_in_Deutschland))
 	- ganz Deutschland: `impfungen-de-serie`
 	- ganz Deutschland, nach Impfstoff: `impfungen-de-full`
 	- nach Bundesländern: `impfungen-bl-serie`
 	- nach Bundesländern und Impfstoff: `impfungen-bl-full`
-- Infektionen nach:
+- Infektionen nach: ([Datenquelle](https://github.com/robert-koch-institut/SARS-CoV-2_Infektionen_in_Deutschland))
 	- ganz Deutschland: `infektionen-de`
 	- ganz Deutschland, nach Altersgruppen: `infektionen-de-alt`
 	- nach Bundesländern: `infektionen-bl`
 	- nach Bundesländern und Altersgruppen: `infektionen-bl-alt`
 	- nach Landkreisen: `infektionen-lk`
 
-Jede Tabelle enthält die Daten, die vom RKI bereitgestellt werden. Darüber hinaus werden noch ggf. weitere Daten hinzugefügt, wie z.B. Landkreisename, Einwohnerzahlen, Einwohner nach Altersgruppen etc. Basis dafür sind die Daten in `data/static`.
+Jede Tabelle enthält die Daten, die vom RKI bereitgestellt werden. Darüber hinaus werden noch ggf. weitere Daten hinzugefügt, wie z.B. Landkreisname, Einwohnerzahlen, Einwohner nach Altersgruppen etc. Basis dafür sind die Daten in `data/static`.
 
 # API
 
@@ -85,8 +85,56 @@ Beispiel:
 
 [`…query/hospitalisierung-de?format=json`](https://corona-api.interaktiv.br.de/query/hospitalisierung-de?format=json)
 
-## weitere API-Calls
+# Aufbau
 
+Die API besteht grob aus zwei Teilen: Den Downloadern und dem API-Server.
+
+Grundsätzliche Konfigurationen werden in `bin/lib/config.js` vorgenommen.
+
+## Die Downloader
+
+Die Downloader können manuell aufgerufen werden mit `node bin/download.js`. Um die Entwicklung zu vereinfachen, gibt es eine abstrakte Downloader-Klasse `bin/downloaders/prototype.js`, von der die einzelnen Downloader erben. Die Methode `async run()` geht dabei folgender Maßen vor:
+
+### `loadStatus()`
+
+Lade den Status vom letzten Mal. "Status" ist dabei ein kleines Objekt, dass einige Informationen über den jeweiligen Downloader speichert. Insbesondere der Hash ist wichtig, damit sichergestellt wird, dass bereits heruntergeladene Daten nicht alle 10 Minuten neu runtergeladen werden. Der Hash wird also verwendet, um Änderungen an der Datenquelle zu überprüfen.
+
+### `checkUpdates()`
+
+Überprüfe den Hash der jeweiligen Datenquelle auf GitHub. Hat er sich geändert, dann gibt es neue Daten, die runtergeladen und verarbeitet werden müssen. Hat sich der Hash im Status nicht geändert, können alle Verarbeitungsschritte übersprungen werden.
+
+### `doUpdate()`
+
+Führe eine Aktualisierung der Daten durch. Hier unterscheiden sich die jeweiligen Downloader, da jede Datenquelle andere Verarbeitungsschritte benötigt.
+
+Das Vorgehen ist dabei immer das selbe:
+
+1. Lade die Daten von GitHub runter.
+2. Parse die Daten, z.B. wenn es sich um eine CSV-Datei handelt.
+3. Gehe alle Einträge durch, parse Sonderformate wie Datum oder Altersgruppen und sortiere die Einträge in die jeweiligen Tabellen.
+4. Füge den Tabellen weitere Metadaten hinzu, z.B. die Einwohnerzahl nach Altersgruppen etc.
+5. Führe ggf. weitere Berechnungen durch, wie z.B. die Berechnung der 7-Tage-Inzidenz.
+6. Speichere die Tabellen auf der Festplatte.
+
+### `saveStatus()`
+
+Sichere das Status-Objekt für den nächsten Durchlauf. Im Verzeichnis `data/status` sind die letzten Status-Objekte gesichert. In `data/log` sind alle historischen Objekte mt Zeitstempel gespeichert.
+
+## Server
+
+Der Server in `bin/server.js` ist die Schnittstelle nach außen. Neben der API bietet er auch weitere Funktionen an, z.B. einen Query-Generator unter [corona-api.interaktiv.br.de/generator](https://corona-api.interaktiv.br.de/generator) und weitere API-Calls, wie:
 - Array aller Tabellen mit Datenstand als JSON: […/meta/tables](https://corona-api.interaktiv.br.de/meta/tables)
 - Array aller Felder einer Tabelle als JSON, z.B.: […/meta/field/hospitalisierung-de-alt](https://corona-api.interaktiv.br.de/meta/fields/hospitalisierung-de-alt)
 
+Die eigentliche Verarbeitung der Query wird in `bin/lib/database.js` durchgeführt:
+
+### `bin/lib/database.js`
+
+Die Methode `updateData()` triggert die Downloader, und lädt dann die Daten aus `data/tables/*.json`.
+
+Die Methode `queryData(tableName, query)` ist das Herz der API. Hier wird in den folgenden Schritten eine Abfrage bearbeitet:+
+1. Hole eine Kopie der Tabelle mit dem Namen `tableName`.
+2. Filtere die Daten anhand der GET-Parameter `filter`.
+3. Sortiere die Daten anhand der GET-Parameter `sort`.
+4. Limitiere die Anzahl der Ergebnisse anhand des GET-Parameters `limit`.
+5. Formatiere die Daten anhand des GET-Parameters `format`.
