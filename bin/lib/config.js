@@ -13,6 +13,7 @@ const config = {
 	},
 	// generate on at: https://github.com/settings/tokens/new
 	githubAccessToken: 'michaelkreil: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',
+	updateEvery: 10*60*1000,
 }
 
 module.exports = config;
