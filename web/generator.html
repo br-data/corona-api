@@ -68,7 +68,8 @@
 
 				query.push('limit=1000');
 
-				let result = await $.get(getUrl(query), {dataType:'text'});
+				let result = await $.get(getUrl(query));
+				if (typeof result === 'object') result = `[\n${result.map(e => JSON.stringify(e)).join(',\n')}\n]`;
 				$('#preview').text(result);
 				
 				function getUrl(query) {
