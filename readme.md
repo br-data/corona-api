@@ -1,11 +1,9 @@
-# Corona-Deutschland-API v3
+# Corona-API v3.0
 
-# Aufbau
+# Intro
 
 Alle 10 Minuten prüft der Scraper, ob das RKI auf GitHub neue Daten veröffentlicht hat.
-
 Gibt es neue Daten, dann werden sie runtergeladen und die Tabellen neu generiert.
-
 Über den API-Server werden diese Tabellen angeboten. Mit GET-Parameter kann man die Daten filtern, sortieren und formatieren.
 
 Unter [corona-api.interaktiv.br.de/generator](https://corona-api.interaktiv.br.de/generator) findet man ein Online-Tool, um eine API-Abfrage zu generieren.
