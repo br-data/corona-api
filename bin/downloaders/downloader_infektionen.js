@@ -1,7 +1,8 @@
 "use strict"
 
-//const fs = require('fs');
 const { fetch, getGithubFileMeta, csv2array, checkUniqueKeys, summarizer, addMetadata } = require('../lib/helper.js');
+
+const version = '2';
 
 module.exports = class Downloader extends require('./prototype.js') {
 
@@ -15,8 +16,10 @@ module.exports = class Downloader extends require('./prototype.js') {
 	async checkUpdates() {
 		let file = await getGithubFileMeta(this.githubRepo, this.githubFile);
 
-		this.status.changed = (this.status.hash !== file.sha);
-		this.status.newHash = file.sha;
+		let hash = file.sha+'_'+version;
+		
+		this.status.changed = (this.status.hash !== hash);
+		this.status.newHash = hash;
 
 		this.status.sources = {
 			infektionen: {
@@ -131,6 +134,7 @@ module.exports = class Downloader extends require('./prototype.js') {
 						count++
 					}
 					let entry = list[i];
+					entry.mittlere7TageInzidenz = Math.round(1e1*sum/7)/10;
 					entry.inzidenz = Math.round(1e6*sum/entry.einwohnerzahl)/10;
 				}
 			})
