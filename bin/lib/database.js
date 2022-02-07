@@ -18,13 +18,16 @@ module.exports = function Database() {
 	}
 
 	async function start() {
+		// Initialisiere die Daten und richte ein regelmäßigen Datenupdate ein.
 		await updateData();
 		setInterval(updateData, config.updateEvery);
 	}
 
 	async function updateData() {
+		// Stelle sicher, dass die Daten vorhanden sind.
 		await updateDownloader();
 
+		// Lade die Daten
 		let folder = config.folders.tables;
 		fs.readdirSync(folder).forEach(filename => {
 			if (!filename.endsWith('.json')) return;
@@ -130,6 +133,8 @@ module.exports = function Database() {
 	}
 	
 	function getTables() {
+		// Gebe eine Liste aller Tabellen zurück
+		
 		let tables = Array.from(tableLookup.values());
 		tables = tables.map(t => ({name:t.name, date:t.date}));
 		tables.sort((a,b) => a.name < b.name ? -1 : 1);
@@ -137,12 +142,10 @@ module.exports = function Database() {
 	}
 	
 	function getFields(tableName) {
+		// Gebe eine Liste aller Felder einer Tabelle zurück
+
 		let table = tableLookup.get(tableName);
 		if (!table) throw Error(`unknown table "${tableName}". known tables: `+Array.from(tableLookup.keys()).join(','));
 		return Object.keys(table.data[0]);
-	}
-	
-	function getBuilderHTML() {
-
 	}
 }

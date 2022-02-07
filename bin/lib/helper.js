@@ -5,6 +5,8 @@ const https = require('https');
 const { resolve } = require('path');
 const config = require('./config.js');
 
+// Grundlegende Helferfunktionen
+
 module.exports = {
 	array2csv,
 	checkUniqueKeys,
