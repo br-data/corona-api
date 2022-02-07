@@ -19,7 +19,7 @@ module.exports = function Database() {
 
 	async function start() {
 		await updateData();
-		setInterval(updateData, 10*3600*1000);
+		setInterval(updateData, config.updateEvery);
 	}
 
 	async function updateData() {

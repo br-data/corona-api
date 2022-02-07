@@ -13,6 +13,7 @@ const config = {
 	},
 	// generate on at: https://github.com/settings/tokens/new
 	githubAccessToken: '***REMOVED***',
+	updateEvery: 10*60*1000,
 }
 
 module.exports = config;
