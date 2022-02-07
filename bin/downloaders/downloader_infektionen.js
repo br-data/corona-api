@@ -2,7 +2,7 @@
 
 const { fetch, getGithubFileMeta, csv2array, checkUniqueKeys, summarizer, addMetadata } = require('../lib/helper.js');
 
-const version = '2';
+const version = '2.1';
 
 module.exports = class Downloader extends require('./prototype.js') {
 
@@ -134,7 +134,7 @@ module.exports = class Downloader extends require('./prototype.js') {
 						count++
 					}
 					let entry = list[i];
-					entry.mittlere7TageInzidenz = Math.round(1e1*sum/7)/10;
+					entry.mittlere7TageInfektionen = Math.round(10*sum/7)/10;
 					entry.inzidenz = Math.round(1e6*sum/entry.einwohnerzahl)/10;
 				}
 			})
