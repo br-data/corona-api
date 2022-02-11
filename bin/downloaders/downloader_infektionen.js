@@ -32,11 +32,13 @@ module.exports = class Downloader extends require('./prototype.js') {
 	}
 
 	async doUpdate() {
+		console.error('      download');
+
 		let data = await fetch(this.status.sources.infektionen.url);
-		//let data = fs.readFileSync('temp.tmp');
-		
 		// BOM
 		if (data[0] === 0xEF) data = data.slice(3);
+
+		console.error('      process');
 		
 		data = csv2array(data.toString('utf8'), ',', '\r\n');
 
@@ -84,6 +86,8 @@ module.exports = class Downloader extends require('./prototype.js') {
 			if (entry.regierungsbezirk) dataRB.add(entry);
 		})
 
+		console.error('      finalize');
+
 		dataLK    = dataLK.get();
 		dataRB    = dataRB.get();
 		dataBL    = dataBL.get();
@@ -104,6 +108,8 @@ module.exports = class Downloader extends require('./prototype.js') {
 		calcInzidenzen(dataDE);
 		calcInzidenzen(dataBLAlt, ['altersgruppe','bundeslandId']);
 		calcInzidenzen(dataDEAlt, ['altersgruppe']);
+
+		console.error('      save');
 
 		this.saveTable('lk',     dataLK);
 		this.saveTable('rb',     dataRB);
