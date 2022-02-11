@@ -1,6 +1,6 @@
 "use strict"
 
-const { fetch, getGithubFileMeta, csv2array, checkUniqueKeys, summarizer, addMetadata } = require('../lib/helper.js');
+const { fetch, getGithubFileMeta, csv2array, summarizer } = require('../lib/helper.js');
 
 const version = '2.1';
 
@@ -48,10 +48,10 @@ module.exports = class Downloader extends require('./prototype.js') {
 				landkreisId: parseInt(e.IdLandkreis, 10),
 				bundeslandId: parseInt(e.IdLandkreis.slice(0,-3), 10),
 				altersgruppe: cleanAltersgruppe(e.Altersgruppe),
-				geschlecht: e.Geschlecht.toLowerCase(),
+				//geschlecht: e.Geschlecht.toLowerCase(),
 				meldedatum: e.Meldedatum,
-				refdatum: e.Refdatum,
-				istErkrankungsbeginn: parseInt(e.IstErkrankungsbeginn, 10),
+				//refdatum: e.Refdatum,
+				//istErkrankungsbeginn: parseInt(e.IstErkrankungsbeginn, 10),
 				neuerFall: parseInt(e.NeuerFall),
 				neuerTodesfall: parseInt(e.NeuerTodesfall),
 				neuGenesen: parseInt(e.NeuGenesen),
