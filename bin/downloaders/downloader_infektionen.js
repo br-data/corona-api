@@ -5,7 +5,9 @@ const { resolve } = require('path');
 const config = require('../lib/config.js');
 const { fetch, getGithubFileMeta, csv2array, summarizer } = require('../lib/helper.js');
 
-const version = '2.1';
+// Die Versionsnummer wird den Datei-Hashes angefügt.
+// Wenn man sie erhöht, erzwingt man einen Datenupdate.
+const version = '2.2';
 
 module.exports = class Downloader extends require('./prototype.js') {
 
