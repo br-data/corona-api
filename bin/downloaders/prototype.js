@@ -115,6 +115,17 @@ module.exports = class Downloader {
 					});
 				} break;
 
+				case 'regierungsbezirke-einwohner': {
+					let landkreise = JSON.parse(fs.readFileSync(resolve(dataFolder, 'landkreise-einwohner.json')));
+					let landkreis2regierungsbezirk = JSON.parse(fs.readFileSync(resolve(dataFolder, 'regierungsbezirke.json')));
+					let regierungsbezirke = new Map();
+					Object.entries(landkreis2regierungsbezirk).forEach(([landkreisId,regierungsbezirk]) => {
+						if (!regierungsbezirke.has(regierungsbezirk)) regierungsbezirke.set(regierungsbezirk, {einwohnerzahl:0})
+						regierungsbezirke.get(regierungsbezirk).einwohnerzahl += landkreise[landkreisId].einwohnerzahl;
+					})
+					data.forEach(e => Object.assign(e, regierungsbezirke.get(e.regierungsbezirk)));
+				} break;
+
 				case 'landkreise': {
 					let landkreise = JSON.parse(fs.readFileSync(resolve(dataFolder, 'landkreise.json')));
 					data.forEach(e => Object.assign(e, landkreise[e.landkreisId]));
