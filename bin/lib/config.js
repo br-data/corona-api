@@ -18,8 +18,4 @@ const config = {
 
 module.exports = config;
 
-fs.mkdirSync(config.folders.data,   { recursive:true });
-fs.mkdirSync(config.folders.status, { recursive:true });
-fs.mkdirSync(config.folders.log,    { recursive:true });
-fs.mkdirSync(config.folders.tables, { recursive:true });
-fs.mkdirSync(config.folders.static, { recursive:true });
+for (let folder of Object.values(config.folders)) fs.mkdirSync(folder, { recursive:true });
