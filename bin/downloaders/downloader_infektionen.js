@@ -31,7 +31,7 @@ module.exports = class Downloader extends require('./prototype.js') {
 		}
 	}
 
-	async doUpdate(opt) {
+	async doUpdate(opt = {}) {
 		console.log('      download');
 
 		let loadData = () => fetch(this.status.sources.infektionen.url);

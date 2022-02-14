@@ -11,7 +11,7 @@ module.exports = class Downloader {
 		this.statusFilename = resolve(config.folders.status, this.name+'.json');
 	}
 	
-	async run(opt) {
+	async run(opt = {}) {
 		// Lade den letzten Status
 		this.loadStatus();
 		this.status.error = false;

@@ -13,7 +13,7 @@ if (require.main === module) {
 	update({cached});
 }
 
-async function update(opt) {
+async function update(opt = {}) {
 	console.log('downloaders started');
 
 	let workers = [

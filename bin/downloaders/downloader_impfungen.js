@@ -29,7 +29,7 @@ module.exports = class Downloader extends require('./prototype.js') {
 		}
 	}
 
-	async doUpdate(opt) {
+	async doUpdate(opt = {}) {
 		let loadData = () => fetch(this.status.sources.impfungen.url);
 		let data = await (opt.cached ? cached('impfungen', loadData) : loadData());
 		data = csv2array(data.toString('utf8'));
