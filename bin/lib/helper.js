@@ -14,6 +14,7 @@ module.exports = {
 	fetch,
 	getGithubFileMeta,
 	summarizer,
+	cached,
 }
 
 function fetch(url, headers = {}) {
@@ -112,4 +113,13 @@ function array2csv(list) {
 	}).join(','));
 	csv.unshift(keys.join(','));
 	return csv.join('\n');
+}
+
+async function cached(key, cb) {
+	let cacheFilename = resolve(config.folders.cache, key+'.tmp');
+	if (fs.existsSync(cacheFilename)) return fs.readFileSync(cacheFilename);
+	let result = cb();
+	if (result.then) result = await result;
+	fs.writeFileSync(cacheFilename, result);
+	return result;
 }

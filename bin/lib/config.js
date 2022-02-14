@@ -10,6 +10,7 @@ const config = {
 		log:     resolve(__dirname, '../../data/log'),
 		tables:  resolve(__dirname, '../../data/tables'),
 		static:  resolve(__dirname, '../../data/static'),
+		cache:   resolve(__dirname, '../../data/cache'),
 	},
 	// generate on at: https://github.com/settings/tokens/new
 	githubAccessToken: '***REMOVED***',
