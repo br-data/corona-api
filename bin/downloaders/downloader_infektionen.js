@@ -32,7 +32,7 @@ module.exports = class Downloader extends require('./prototype.js') {
 	}
 
 	async doUpdate(opt) {
-		console.error('      download');
+		console.log('      download');
 
 		let loadData = () => fetch(this.status.sources.infektionen.url);
 		let data = await (opt.cached ? cached('infektionen', loadData) : loadData());
@@ -40,7 +40,7 @@ module.exports = class Downloader extends require('./prototype.js') {
 		// BOM
 		if (data[0] === 0xEF) data = data.slice(3);
 
-		console.error('      process');
+		console.log('      process');
 		
 		data = csv2array(data.toString('utf8'), ',', '\r\n');
 
@@ -88,7 +88,7 @@ module.exports = class Downloader extends require('./prototype.js') {
 			if (entry.regierungsbezirk) dataRB.add(entry);
 		})
 
-		console.error('      finalize');
+		console.log('      finalize');
 
 		dataLK    = dataLK.get();
 		dataRB    = dataRB.get();
@@ -111,7 +111,7 @@ module.exports = class Downloader extends require('./prototype.js') {
 		calcInzidenzen(dataBLAlt, ['altersgruppe','bundeslandId']);
 		calcInzidenzen(dataDEAlt, ['altersgruppe']);
 
-		console.error('      save');
+		console.log('      save');
 
 		this.saveTable('lk',     dataLK);
 		this.saveTable('rb',     dataRB);

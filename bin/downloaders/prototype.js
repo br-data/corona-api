@@ -17,17 +17,17 @@ module.exports = class Downloader {
 		this.status.error = false;
 
 		try {
-			console.error('   check for updates');
+			console.log('   check for updates');
 			await this.checkUpdates(opt);
 
 			if (this.status.changed) {
 				// new data
-				console.error('   update started');
+				console.log('   update started');
 				await this.doUpdate(opt)
-				console.error('   update finished');
+				console.log('   update finished');
 			} else {
 				// no new data
-				console.error('   no updates');
+				console.log('   no updates');
 			}
 			
 			this.status.hash = this.status.newHash;

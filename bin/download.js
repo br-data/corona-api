@@ -9,12 +9,12 @@ module.exports = {
 if (require.main === module) {
 	let args = process.argv.slice(2);
 	let cached = args.some(a => a.includes('cache'));
-	if (cached) console.error('Use caching')
+	if (cached) console.log('Use caching')
 	update({cached});
 }
 
 async function update(opt) {
-	console.error('downloaders started');
+	console.log('downloaders started');
 
 	let workers = [
 		'hospitalisierung',
@@ -23,14 +23,14 @@ async function update(opt) {
 	]
 
 	for (let worker of workers) {
-		console.error(`downloader ${worker} started`);
+		console.log(`downloader ${worker} started`);
 		
 		let Downloader = require(`./downloaders/downloader_${worker}.js`);
 		let downloader = new Downloader();
 		await downloader.run(opt);
 
-		console.error(`downloader ${worker} finished`);
+		console.log(`downloader ${worker} finished`);
 	}
 
-	console.error('downloaders finished');
+	console.log('downloaders finished');
 }
