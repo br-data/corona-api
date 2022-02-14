@@ -87,27 +87,82 @@ function checkUniqueKeys(data, keys) {
 	return true;
 }
 
-function summarizer(groupFields, sumFields) {
+function summarizer(primaryKeys, numericKeys) {
 	let map = new Map();
 
 	return { add, get }
 	
 	function add(entry) {
-		let key = groupFields.map(k => entry[k]).join(';');
-		if (!map.has(key)) {
+		let keyString = primaryKeys.map(k => entry[k]).join(';');
+		if (!map.has(keyString)) {
 			let obj = {};
-			groupFields.forEach(k => obj[k] = entry[k]);
-			sumFields.forEach(  k => obj[k] = entry[k]);
-			map.set(key, obj);
+			primaryKeys.forEach(k => obj[k] = entry[k]);
+			numericKeys.forEach(  k => obj[k] = entry[k]);
+			map.set(keyString, obj);
 		} else {
-			let obj = map.get(key);
-			sumFields.forEach(k => obj[k] += entry[k]);
+			let obj = map.get(keyString);
+			numericKeys.forEach(k => obj[k] += entry[k]);
 		}
 	}
 
-	function get() {
+	function get(opt = {}) {
+		if (opt.fillGaps) fillGaps(opt.fillGaps);
+
 		let data = Array.from(map.values());
-		return sortByKeys(data, groupFields);
+		return sortByKeys(data, primaryKeys);
+	}
+
+	function fillGaps(keys) {
+		/*
+			Fügt nicht vorhandene Primay-Key-Kombinationen hinzu. Beispiel:
+			{a:0,b:0,v:13},
+			{a:0,b:1,v:14},
+			{a:1,b:1,v:15},
+			{a:1,b:2,v:16}
+			Wären a und b die primaryKeys, dann wären für a die Werte [0,1] und b die Werte [0,1,2] definiert.
+			Damit wären 2*3=6 Kombinationen möglich, aber nur 4 sind angegeben.
+			Dementsprechend würde fillGaps die fehlenden Einträge hinzufügen und v als numericKey auf 0 setzen:
+			{a:0,b:2,v:0},
+			{a:1,b:0,v:0},
+		*/
+
+		if (!Array.isArray(keys)) keys = primaryKeys;
+
+		// scan keys
+		keys = keys.map(key => ({key,values:new Set()}));
+
+		// scan all known values for each key
+		for (let entry of map.values()) {
+			keys.forEach(({key,values}) => values.add(entry[key]));
+		}
+
+		// generate all possible combinations of key values
+		let combinations = false;
+		keys.forEach(({key,values}) => {
+			values = Array.from(values.values());
+			values.sort((a,b) => a < b ? -1 : 1);
+			if (!combinations) {
+				combinations = values.map(v => Object.fromEntries([[key,v]]));
+			} else {
+				let newCombinations = [];
+				combinations.forEach(obj => {
+					values.forEach(value => {
+						obj = Object.assign({},obj);
+						obj[key] = value;
+						newCombinations.push(obj);
+					})
+				})
+				combinations = newCombinations;
+			}
+		});
+
+		// add zeros for all sum fields
+		combinations.forEach(obj => {
+			let keyString = primaryKeys.map(k => obj[k]).join(';');
+			if (map.has(keyString)) return;
+			numericKeys.forEach(k => obj[k] = 0);
+			map.set(keyString, obj);
+		})
 	}
 }
 

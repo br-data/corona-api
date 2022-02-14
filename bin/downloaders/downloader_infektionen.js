@@ -44,12 +44,12 @@ module.exports = class Downloader extends require('./prototype.js') {
 		
 		data = csv2array(data.toString('utf8'), ',', '\r\n');
 
-		let dataLK    = summarizer(['meldedatum','bundeslandId','landkreisId'     ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
-		let dataRB    = summarizer(['meldedatum',               'regierungsbezirk'], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
-		let dataBL    = summarizer(['meldedatum','bundeslandId'                   ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
-		let dataDE    = summarizer(['meldedatum'                                  ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
-		let dataBLAlt = summarizer(['meldedatum','bundeslandId','altersgruppe'    ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
-		let dataDEAlt = summarizer(['meldedatum',               'altersgruppe'    ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
+		let dataLK    = summarizer(['meldedatum','landkreisId'                ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
+		let dataRB    = summarizer(['meldedatum','regierungsbezirk'           ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
+		let dataBL    = summarizer(['meldedatum','bundeslandId'               ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
+		let dataDE    = summarizer(['meldedatum'                              ], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
+		let dataBLAlt = summarizer(['meldedatum','bundeslandId','altersgruppe'], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
+		let dataDEAlt = summarizer(['meldedatum',               'altersgruppe'], ['anzahlFall','anzahlTodesfall','anzahlGenesen']);
 
 		let regierungsbezirke = JSON.parse(fs.readFileSync(resolve(config.folders.static, 'regierungsbezirke.json')));
 		
@@ -90,12 +90,12 @@ module.exports = class Downloader extends require('./prototype.js') {
 
 		console.log('      finalize');
 
-		dataLK    = dataLK.get();
-		dataRB    = dataRB.get();
-		dataBL    = dataBL.get();
-		dataDE    = dataDE.get();
-		dataBLAlt = dataBLAlt.get();
-		dataDEAlt = dataDEAlt.get();
+		dataLK    = dataLK.get({fillGaps:true});
+		dataRB    = dataRB.get({fillGaps:true});
+		dataBL    = dataBL.get({fillGaps:true});
+		dataDE    = dataDE.get({fillGaps:true});
+		dataBLAlt = dataBLAlt.get({fillGaps:true});
+		dataDEAlt = dataDEAlt.get({fillGaps:true});
 
 		this.addMetadata(dataLK,    ['bundeslaender', 'landkreise-einwohner']);
 		this.addMetadata(dataRB,    ['regierungsbezirke-einwohner']);
