@@ -17,6 +17,8 @@ module.exports = class Downloader extends require('./prototype.js') {
 	async checkUpdates() {
 		let file = await getGithubFileMeta(this.githubRepo, this.githubFile);
 
+		// Die Versionsnummer wird den Datei-Hashes angefügt.
+		// Wenn man sie erhöht, erzwingt man einen Datenupdate.
 		let hash = file.sha+'_'+config.version;
 		
 		this.status.changed = (this.status.hash !== hash);
