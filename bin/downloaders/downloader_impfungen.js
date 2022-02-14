@@ -53,10 +53,10 @@ module.exports = class Downloader extends require('./prototype.js') {
 			dataBLSerie.add(entry);
 		})
 
-		dataBLFull  = dataBLFull.get();
-		dataDEFull  = dataDEFull.get();
-		dataBLSerie = dataBLSerie.get();
-		dataDESerie = dataDESerie.get();
+		dataBLFull  = dataBLFull.get({fillGaps:true});
+		dataDEFull  = dataDEFull.get({fillGaps:true});
+		dataBLSerie = dataBLSerie.get({fillGaps:true});
+		dataDESerie = dataDESerie.get({fillGaps:true});
 		
 		this.addMetadata(dataBLFull,  ['bundeslaender-einwohner' ]);
 		this.addMetadata(dataDEFull,  ['deutschland-einwohner']);
