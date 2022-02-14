@@ -70,11 +70,9 @@ module.exports = class Downloader {
 		// Speichere die Daten-Tabelle
 		
 		let filename = resolve(config.folders.tables, `${this.name}-${slug}.json`);
-		data = {
-			date: Date.now(),
-			data,
-		}
-		fs.writeFileSync(filename, JSON.stringify(data));
+		data = '[\n\t'+data.map(e => JSON.stringify(e)).join(',\n\t')+'\n]';
+		data = `{"date":${Date.now()},"data":${data}}`;
+		fs.writeFileSync(filename, data);
 	}
 
 	addMetadata(data, fields) {
