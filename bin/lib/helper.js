@@ -63,6 +63,13 @@ function csv2array(text, fieldDelimiter = ',', lineDelimiter = '\n') {
 	return data.map(e => Object.fromEntries(keys.map((k,i) => [k,e[i]])));
 }
 
+function sortByKeys(data, keys) {
+	data.sort((a,b) => {
+		for (let key of keys) if (a[key] !== b[key]) return (a[key] < b[key]) ? -1 : 1;
+	})
+	return data;
+}
+
 function checkUniqueKeys(data, keys) {
 	// checks, if the combination of keys is unique
 	// e.g.:
@@ -76,6 +83,7 @@ function checkUniqueKeys(data, keys) {
 		if (unique.has(key)) return false;
 		unique.add(key);
 	}
+	sortByKeys(data, keys);
 	return true;
 }
 
@@ -98,7 +106,8 @@ function summarizer(groupFields, sumFields) {
 	}
 
 	function get() {
-		return Array.from(map.values());
+		let data = Array.from(map.values());
+		return sortByKeys(data, groupFields);
 	}
 }
 
