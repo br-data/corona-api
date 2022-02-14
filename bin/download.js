@@ -6,9 +6,14 @@ module.exports = {
 	update
 }
 
-if (require.main === module) update();
+if (require.main === module) {
+	let args = process.argv.slice(2);
+	let cached = args.some(a => a.includes('cache'));
+	if (cached) console.error('Use caching')
+	update({cached});
+}
 
-async function update() {
+async function update(opt) {
 	console.error('downloaders started');
 
 	let workers = [
@@ -22,7 +27,7 @@ async function update() {
 		
 		let Downloader = require(`./downloaders/downloader_${worker}.js`);
 		let downloader = new Downloader();
-		await downloader.run();
+		await downloader.run(opt);
 
 		console.error(`downloader ${worker} finished`);
 	}
