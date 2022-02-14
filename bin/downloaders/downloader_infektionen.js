@@ -5,10 +5,6 @@ const { resolve } = require('path');
 const config = require('../lib/config.js');
 const { fetch, getGithubFileMeta, csv2array, summarizer, cached } = require('../lib/helper.js');
 
-// Die Versionsnummer wird den Datei-Hashes angefügt.
-// Wenn man sie erhöht, erzwingt man einen Datenupdate.
-const version = '2.2';
-
 module.exports = class Downloader extends require('./prototype.js') {
 
 	githubRepo = 'robert-koch-institut/SARS-CoV-2_Infektionen_in_Deutschland';
@@ -21,7 +17,7 @@ module.exports = class Downloader extends require('./prototype.js') {
 	async checkUpdates() {
 		let file = await getGithubFileMeta(this.githubRepo, this.githubFile);
 
-		let hash = file.sha+'_'+version;
+		let hash = file.sha+'_'+config.version;
 		
 		this.status.changed = (this.status.hash !== hash);
 		this.status.newHash = hash;
