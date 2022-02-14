@@ -1,5 +1,6 @@
 "use strict"
 
+const config = require('../lib/config.js');
 const { fetch, getGithubFileMeta, csv2array, summarizer, cached } = require('../lib/helper.js');
 
 module.exports = class Downloader extends require('./prototype.js') {
@@ -14,8 +15,10 @@ module.exports = class Downloader extends require('./prototype.js') {
 	async checkUpdates() {
 		let file = await getGithubFileMeta(this.githubRepo, this.githubFile);
 
-		this.status.changed = (this.status.hash !== file.sha);
-		this.status.newHash = file.sha;
+		let hash = file.sha+'_'+config.version;
+		
+		this.status.changed = (this.status.hash !== hash);
+		this.status.newHash = hash;
 
 		this.status.sources = {
 			impfungen: {

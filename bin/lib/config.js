@@ -12,9 +12,15 @@ const config = {
 		static:  resolve(__dirname, '../../data/static'),
 		cache:   resolve(__dirname, '../../data/cache'),
 	},
+	
 	// generate on at: https://github.com/settings/tokens/new
 	githubAccessToken: '***REMOVED***',
+
 	updateEvery: 10*60*1000,
+
+	// Die Versionsnummer wird den Datei-Hashes angefügt.
+	// Wenn man sie erhöht, erzwingt man einen Datenupdate.
+	version = '2.3',
 }
 
 module.exports = config;
