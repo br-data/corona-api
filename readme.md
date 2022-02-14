@@ -109,7 +109,7 @@ Die API besteht grob aus zwei Teilen: Den Downloadern und dem API-Server.
 
 ## Die Downloader
 
-Die Downloader können manuell aufgerufen werden mit `node bin/download.js`. Um die Entwicklung zu vereinfachen, gibt es eine abstrakte Downloader-Klasse `bin/downloaders/prototype.js`, von der die einzelnen Downloader erben. Die Methode `async run()` geht dabei folgender Maßen vor:
+Die Downloader können manuell aufgerufen werden mit `node bin/download.js`. Mit dem Parameter `node bin/download.js cached` werden die Daten nicht erneut heruntergeladen, was die Verarbeitung beim Entwickeln beschleunigt. Um die Entwicklung zu vereinfachen, gibt es eine abstrakte Downloader-Klasse `bin/downloaders/prototype.js`, von der die einzelnen Downloader erben. Die Methode `async run()` geht dabei folgender Maßen vor:
 
 ### `loadStatus()`
 
