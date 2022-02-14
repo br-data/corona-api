@@ -145,20 +145,20 @@ module.exports = class Downloader extends require('./prototype.js') {
 			Array.from(groups.values()).forEach(list => {
 				list.sort((a,b) => a.meldedatum < b.meldedatum ? -1 : 1);
 				for (let i = 0; i < list.length; i++) {
-					let minDatum = (new Date(Date.parse('2020-12-19 12:00') - 6*84600000)).toISOString().slice(0,10);
-					let i0 = Math.max(0, i - 6);
+					let entry0 = list[i];
+					let minDatum = (new Date(Date.parse(entry0.meldedatum) - 6.1*84600000)).toISOString().slice(0,10);
+					let j0 = Math.max(0, i - 6);
 					let sum = 0;
 					let count = 0;
 
-					for (let j = i0; j <= i; j++) {
-						let entry = list[j];
-						if (entry.meldedatum < minDatum) continue;
-						sum += entry.anzahlFall;
+					for (let j = j0; j <= i; j++) {
+						let entry1 = list[j];
+						if (entry1.meldedatum < minDatum) continue;
+						sum += entry1.anzahlFall;
 						count++
 					}
-					let entry = list[i];
-					entry.mittlere7TageInfektionen = Math.round(10*sum/7)/10;
-					entry.inzidenz = Math.round(1e6*sum/entry.einwohnerzahl)/10;
+					entry0.mittlere7TageInfektionen = Math.round(10*sum/7)/10;
+					entry0.inzidenz = Math.round(1e6*sum/entry0.einwohnerzahl)/10;
 				}
 			})
 		}
