@@ -8,6 +8,6 @@ run:
 settings:
   type: service
   inSecure: true
-  persistentVolume:
-    size: 5
-    mountPath: /home/app/data
+#  persistentVolume:
+#    size: 5
+#    mountPath: /home/app/data
