@@ -58,6 +58,7 @@ app.get('/status', (req, res) => {
 });
 */
 
+app.use('/assets', express.static(resolve(__dirname, '../web/assets')));
 app.get('/generator', (req, res) => {
 	try {
 		res
