@@ -24,7 +24,7 @@ app.get('/query/:tableName', (req, res) => {
 		let result = database.queryData(req.params.tableName, req.query)
 		res.status(200).set('Content-Type', result.mime).send(result.body);
 	} catch (e) {
-		console.error(e);
+		console.log(e);
 		res.status(500).send(e.message);
 	}
 });
@@ -33,7 +33,7 @@ app.get('/meta/tables', (req, res) => {
 	try {
 		res.status(200).json(database.getTables());
 	} catch (e) {
-		console.error(e);
+		console.log(e);
 		res.status(500).send(e.message);
 	}
 });
@@ -42,7 +42,7 @@ app.get('/meta/fields/:tableName', (req, res) => {
 	try {
 		res.status(200).json(database.getFields(req.params.tableName));
 	} catch (e) {
-		console.error(e);
+		console.log(e);
 		res.status(500).send(e.message);
 	}
 });
@@ -51,7 +51,7 @@ app.get('/meta/logs', (req, res) => {
 	try {
 		res.status(200).json(getLogs());
 	} catch (e) {
-		console.error(e);
+		console.log(e);
 		res.status(500).send(e.message);
 	}
 });

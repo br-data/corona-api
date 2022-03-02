@@ -27,14 +27,14 @@ function fetch(url, headers = {}) {
 				if (response.statusCode === 200) {
 					resolve(buf);
 				} else {
-					console.error('url:', url);
-					console.error('response:', response);
-					console.error('Buffer: "'+buf.toString()+'"');
+					console.log('url:', url);
+					console.log('response:', response);
+					console.log('Buffer: "'+buf.toString()+'"');
 					reject(buf);
 				}
 			});
-			response.on('error', e => { console.error(e); reject(e) });
-		}).on('error', e => { console.error(e); reject(e) })
+			response.on('error', e => { console.log(e); reject(e) });
+		}).on('error', e => { console.log(e); reject(e) })
 	});
 }
 

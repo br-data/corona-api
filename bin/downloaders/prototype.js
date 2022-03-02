@@ -35,7 +35,7 @@ module.exports = class Downloader {
 		} catch (e) {
 			// error handling
 			this.status.error = e.toString();
-			console.error(e);
+			console.log(e);
 		}
 
 		// Speichere den aktuellen Status
