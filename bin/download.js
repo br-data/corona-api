@@ -2,8 +2,15 @@
 
 const fs = require('fs');
 
+const workers = [
+	'hospitalisierung',
+	'impfungen',
+	'infektionen',
+]
+
 module.exports = {
-	update
+	update,
+	getLogs,
 }
 
 if (require.main === module) {
@@ -16,12 +23,6 @@ if (require.main === module) {
 async function update(opt = {}) {
 	console.log('downloaders started');
 
-	let workers = [
-		'hospitalisierung',
-		'impfungen',
-		'infektionen',
-	]
-
 	for (let worker of workers) {
 		console.log(`downloader ${worker} started`);
 		
@@ -33,4 +34,13 @@ async function update(opt = {}) {
 	}
 
 	console.log('downloaders finished');
+}
+
+function getLogs() {
+	let status = {};
+	for (let worker of workers) {
+		let Downloader = require(`./downloaders/downloader_${worker}.js`);
+		status[worker] = (new Downloader()).getLogs();
+	}
+	return status;
 }

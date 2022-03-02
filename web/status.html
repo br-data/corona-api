@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Corona-API-Status</title>
+	<script src="/assets/jquery.min.js"></script>
+	<script src="/assets/jquery.loadTemplate.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/assets/style.css">
+	<script type="text/javascript">
+		$(async () => {
+
+			setTimeout(showLogs);
+
+			async function showLogs() {
+				const scale = 1/10000;
+				const maxAge = 3*86400000;
+
+				let logs = await $.getJSON('/meta/logs');
+				logs = Object.entries(logs);
+
+				const containerColgroup = $('#colgroup');
+				const containerHeader   = $('#header');
+				const containerOverview = $('#overview');
+				const containerTimeline = $('#timeline');
+				const colWidth = 90/logs.length;
+				const now = Date.now();
+
+				containerColgroup.append($('<col span="1" style="width:10%;">'));
+				containerHeader.append($('<th></th>'));
+				containerOverview.append($('<th></th>'));
+				let timeline = $('<td style="position:relative"></td>').css({ height: scale*maxAge });
+				let hour = Math.floor(now/3600000 - 0.1);
+				while (hour*3600000 > now-maxAge) {
+					let date = (new Date(hour*3600000));
+					let text = [
+						date.toLocaleDateString('de-DE', { month:'2-digit', day:'2-digit', timeZone:'Europe/Berlin' }),
+						date.toLocaleTimeString('de-DE', { hour:'2-digit', minute:'2-digit', timeZone:'Europe/Berlin' }),
+					].join('<br>');
+					timeline.append($('<div>'+text+'</div>').css({
+						bottom:scale*(maxAge-now+hour*3600000),
+						'border-bottom':'1px solid #aaa',
+						color:'#aaa',
+					}))
+					hour--;
+				}
+				containerTimeline.append(timeline);
+
+				logs.forEach(entry => {
+					console.log(entry);
+
+					containerColgroup.append($('<col span="1" style="width:'+colWidth+'%;">'));
+
+					let head = $('<th></th>');
+					head.text(entry[0]);
+					containerHeader.append(head);
+
+					let logs = entry[1].sort((a,b) => b.dateStart - a.dateStart);
+					let lastUpdate = logs.find(l => l.changed);
+					if (lastUpdate.dateStart > now-24*3600000) {
+						containerOverview.append('<th style="background:#cfc;color:#060;padding:10px 0">OK</th>');
+					} else {
+						containerOverview.append('<th style="background:#fcc;color:#600;padding:10px 0">FEHLER</th>');
+					}
+
+					let timeline = $('<td style="position:relative"></td>').css({ height: scale*maxAge })
+					logs.forEach(l => {
+						if (l.dateEnd < now-maxAge) return;
+
+						let color = '#ccc';
+						if (l.changed) color = '#0c0';
+						if (l.error)   color = '#c00';
+
+						let block = $('<div></div>').css({
+							top:scale*(now-l.dateEnd),
+							height:Math.ceil(scale*(l.dateEnd-l.dateStart)+1),
+							background:color,
+						}).html([
+							'Start: '+(new Date(l.dateStart)).toLocaleTimeString('de-DE', { timeZone:'Europe/Berlin' }),
+							'Ende: ' +(new Date(l.dateEnd  )).toLocaleTimeString('de-DE', { timeZone:'Europe/Berlin' }),
+							'Dauer: '+((l.dateEnd-l.dateStart)/1000).toFixed(2)+'s',
+							'Update: '+(l.changed ? 'Ja' : 'Nein'),
+							'Fehler: '+(l.error ? 'Ja' : 'Nein'),
+						].join('<br>'))
+						timeline.append(block);
+					})
+					containerTimeline.append(timeline);
+				})
+			}
+		})
+	</script>
+</head>
+<body>
+	<div id="page">
+		<table id="status">
+			<colgroup id="colgroup">
+			</colgroup>
+			<thead>
+				<tr id="header"></tr>
+				<tr id="overview"></tr>
+			</thead>
+			<tbody>
+				<tr id="timeline"></tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

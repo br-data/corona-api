@@ -160,4 +160,29 @@ module.exports = class Downloader {
 			}
 		})
 	}
+
+	getLogs() {
+		// behalte nur Logdateien, die nicht älter als 1 Woche sind
+		let minTime = Date.now() - 7*86400000;
+
+		// Lade Log-Dateien
+		let logs = [];
+		fs.readdirSync(config.folders.log).forEach(f => {
+			if (!f.endsWith(this.name+'.json')) return;
+			let filename = resolve(config.folders.log, f);
+			try {
+				let status = JSON.parse(fs.readFileSync(filename));
+
+				if (status.dateStart < minTime) return fs.rmSync(filename);
+				
+				logs.push(status);
+			} catch (e) {
+				
+			}
+		})
+
+		logs.sort((a,b) => a.dateStart - b.dateStart);
+
+		return logs;
+	}
 }
