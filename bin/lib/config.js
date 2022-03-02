@@ -26,3 +26,4 @@ const config = {
 module.exports = config;
 
 for (let folder of Object.values(config.folders)) fs.mkdirSync(folder, { recursive:true });
+
