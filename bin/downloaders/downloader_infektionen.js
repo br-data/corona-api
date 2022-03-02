@@ -104,12 +104,12 @@ module.exports = class Downloader extends require('./prototype.js') {
 		this.addMetadata(dataBLAlt, ['bundeslaender-alter']);
 		this.addMetadata(dataDEAlt, ['deutschland-alter']);
 
-		calcInzidenzen(dataLK, ['landkreisId']);
-		calcInzidenzen(dataRB, ['regierungsbezirk']);
-		calcInzidenzen(dataBL, ['bundeslandId']);
-		calcInzidenzen(dataDE);
-		calcInzidenzen(dataBLAlt, ['altersgruppe','bundeslandId']);
-		calcInzidenzen(dataDEAlt, ['altersgruppe']);
+		calcInzidenzenUndSummen(dataLK, ['landkreisId']);
+		calcInzidenzenUndSummen(dataRB, ['regierungsbezirk']);
+		calcInzidenzenUndSummen(dataBL, ['bundeslandId']);
+		calcInzidenzenUndSummen(dataDE);
+		calcInzidenzenUndSummen(dataBLAlt, ['altersgruppe','bundeslandId']);
+		calcInzidenzenUndSummen(dataDEAlt, ['altersgruppe']);
 
 		console.log('      save');
 
@@ -133,7 +133,7 @@ module.exports = class Downloader extends require('./prototype.js') {
 			throw Error('unbekannte Altersgruppe "'+text+'"')
 		}
 
-		function calcInzidenzen(data, groupKeys = []) {
+		function calcInzidenzenUndSummen(data, groupKeys = []) {
 			let groups = new Map();
 			data.forEach(entry => {
 				let key = groupKeys.map(k => entry[k]).join('_');
@@ -142,6 +142,8 @@ module.exports = class Downloader extends require('./prototype.js') {
 			})
 			Array.from(groups.values()).forEach(list => {
 				list.sort((a,b) => a.meldedatum < b.meldedatum ? -1 : 1);
+
+				// Berechne Inzidenzen
 				for (let i = 0; i < list.length; i++) {
 					let entry0 = list[i];
 					let minDatum = (new Date(Date.parse(entry0.meldedatum) - 6.1*84600000)).toISOString().slice(0,10);
@@ -157,6 +159,20 @@ module.exports = class Downloader extends require('./prototype.js') {
 					}
 					entry0.mittlere7TageInfektionen = Math.round(10*sum/7)/10;
 					entry0.inzidenz = Math.round(1e6*sum/entry0.einwohnerzahl)/10;
+				}
+
+				// Berechne aggregierte Faelle
+				for (let i = 0; i < list.length; i++) {
+					let entry = list[i];
+					entry.summeFall      = entry.anzahlFall;
+					entry.summeTodesfall = entry.anzahlTodesfall;
+					entry.summeGenesen   = entry.anzahlGenesen;
+
+					if (i === 0) continue;
+
+					entry.summeFall      += list[i-1].summeFall;
+					entry.summeTodesfall += list[i-1].summeTodesfall;
+					entry.summeGenesen   += list[i-1].summeGenesen;
 				}
 			})
 		}
