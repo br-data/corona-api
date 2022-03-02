@@ -4,6 +4,7 @@ const express = require('express');
 const { resolve } = require('path');
 const cors = require('cors');
 const Database = require('./lib/database.js');
+const { getLogs } = require('./download.js');
 
 
 
@@ -46,20 +47,18 @@ app.get('/meta/fields/:tableName', (req, res) => {
 	}
 });
 
-/*
-app.get('/status', (req, res) => {
+app.get('/meta/logs', (req, res) => {
 	try {
-		let result = database.getStatusHTML();
-		res.status(200).set('Content-Type', 'text/html').send(result);
+		res.status(200).json(getLogs());
 	} catch (e) {
 		console.error(e);
 		res.status(500).send(e.message);
 	}
 });
-*/
 
 app.use('/assets', express.static(resolve(__dirname, '../web/assets')));
 app.use('/generator', express.static(resolve(__dirname, '../web/generator.html')));
+app.use('/status', express.static(resolve(__dirname, '../web/status.html')));
 
 database.start().then(() => {
 	app.listen(port, () => {
