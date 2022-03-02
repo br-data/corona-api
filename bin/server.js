@@ -59,17 +59,7 @@ app.get('/status', (req, res) => {
 */
 
 app.use('/assets', express.static(resolve(__dirname, '../web/assets')));
-app.get('/generator', (req, res) => {
-	try {
-		res
-			.status(200)
-			.set('Content-Type', 'text/html')
-			.sendFile(resolve(__dirname, '../web/generator.html'));
-	} catch (e) {
-		console.error(e);
-		res.status(500).send(e.message);
-	}
-});
+app.use('/generator', express.static(resolve(__dirname, '../web/generator.html')));
 
 database.start().then(() => {
 	app.listen(port, () => {
