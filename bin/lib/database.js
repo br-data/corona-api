@@ -49,7 +49,7 @@ module.exports = function Database() {
 					table.data = result.data;
 					table.mtime = mtime;
 				} catch (e) {
-					console.error(e.toString());
+					console.log(e.toString());
 				}
 			}
 		})
