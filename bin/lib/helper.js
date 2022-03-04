@@ -128,8 +128,11 @@ function summarizer(primaryKeys, numericKeys) {
 
 		if (!Array.isArray(keys)) keys = primaryKeys;
 
+		if (keys.length < 2) return;
+
 		// scan keys
 		keys = keys.map(key => ({key,values:new Set()}));
+
 
 		// scan all known values for each key
 		for (let entry of map.values()) {
