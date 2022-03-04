@@ -13,7 +13,7 @@
 			setTimeout(showLogs);
 
 			async function showLogs() {
-				const scale = 1/10000;
+				const scale = 1/60000;
 				const maxAge = 3*86400000;
 
 				let logs = await $.getJSON('/meta/logs');
