@@ -44,16 +44,16 @@ module.exports = class Downloader extends require('./prototype.js') {
 		
 		data = csv2array(data.toString('utf8'), ',', '\r\n');
 
-		let dataLK    = summarizer(['meldedatum','landkreisId'                ], ['anzahlFall'   ,'anzahlTodesfall'   ,'anzahlGenesen'   ]);
-		let dataRB    = summarizer(['meldedatum','regierungsbezirk'           ], ['anzahlFall'   ,'anzahlTodesfall'   ,'anzahlGenesen'   ]);
-		let dataBL    = summarizer(['meldedatum','bundeslandId'               ], ['anzahlFall'   ,'anzahlTodesfall'   ,'anzahlGenesen'   ]);
-		let dataDE    = summarizer(['meldedatum'                              ], ['anzahlFall'   ,'anzahlTodesfall'   ,'anzahlGenesen'   ]);
-		let dataLKNeu = summarizer([             'landkreisId'                ], ['anzahlFallNeu','anzahlTodesfallNeu','anzahlGenesenNeu']);
-		let dataRBNeu = summarizer([             'regierungsbezirk'           ], ['anzahlFallNeu','anzahlTodesfallNeu','anzahlGenesenNeu']);
-		let dataBLNeu = summarizer([             'bundeslandId'               ], ['anzahlFallNeu','anzahlTodesfallNeu','anzahlGenesenNeu']);
-		let dataDENeu = summarizer([                                          ], ['anzahlFallNeu','anzahlTodesfallNeu','anzahlGenesenNeu']);
-		let dataBLAlt = summarizer(['meldedatum','bundeslandId','altersgruppe'], ['anzahlFall'   ,'anzahlTodesfall'   ,'anzahlGenesen'   ]);
-		let dataDEAlt = summarizer(['meldedatum',               'altersgruppe'], ['anzahlFall'   ,'anzahlTodesfall'   ,'anzahlGenesen'   ]);
+		let dataLK    = summarizer(['meldedatum','bundeslandId','landkreisId'     ], ['anzahlFall'   ,'anzahlTodesfall'   ,'anzahlGenesen'   ]);
+		let dataRB    = summarizer(['meldedatum','bundeslandId','regierungsbezirk'], ['anzahlFall'   ,'anzahlTodesfall'   ,'anzahlGenesen'   ]);
+		let dataBL    = summarizer(['meldedatum','bundeslandId'                   ], ['anzahlFall'   ,'anzahlTodesfall'   ,'anzahlGenesen'   ]);
+		let dataDE    = summarizer(['meldedatum'                                  ], ['anzahlFall'   ,'anzahlTodesfall'   ,'anzahlGenesen'   ]);
+		let dataLKNeu = summarizer([             'bundeslandId','landkreisId'     ], ['anzahlFallNeu','anzahlTodesfallNeu','anzahlGenesenNeu']);
+		let dataRBNeu = summarizer([             'bundeslandId','regierungsbezirk'], ['anzahlFallNeu','anzahlTodesfallNeu','anzahlGenesenNeu']);
+		let dataBLNeu = summarizer([             'bundeslandId'                   ], ['anzahlFallNeu','anzahlTodesfallNeu','anzahlGenesenNeu']);
+		let dataDENeu = summarizer([                                              ], ['anzahlFallNeu','anzahlTodesfallNeu','anzahlGenesenNeu']);
+		let dataBLAlt = summarizer(['meldedatum','bundeslandId','altersgruppe'    ], ['anzahlFall'   ,'anzahlTodesfall'   ,'anzahlGenesen'   ]);
+		let dataDEAlt = summarizer(['meldedatum',               'altersgruppe'    ], ['anzahlFall'   ,'anzahlTodesfall'   ,'anzahlGenesen'   ]);
 
 		let regierungsbezirke = JSON.parse(fs.readFileSync(resolve(config.folders.static, 'regierungsbezirke.json')));
 		
@@ -103,36 +103,34 @@ module.exports = class Downloader extends require('./prototype.js') {
 
 		console.log('      finalize');
 
-		dataLK    = dataLK.get({fillGaps:true});
-		dataRB    = dataRB.get({fillGaps:true});
+		dataLK    = dataLK.get();
+		dataRB    = dataRB.get();
 		dataBL    = dataBL.get({fillGaps:true});
 		dataDE    = dataDE.get({fillGaps:true});
-		dataLKNeu = dataLKNeu.get({fillGaps:true});
-		dataRBNeu = dataRBNeu.get({fillGaps:true});
-		dataBLNeu = dataBLNeu.get({fillGaps:true});
-		dataDENeu = dataDENeu.get({fillGaps:true});
+		dataLKNeu = dataLKNeu.get();
+		dataRBNeu = dataRBNeu.get();
+		dataBLNeu = dataBLNeu.get();
+		dataDENeu = dataDENeu.get();
 		dataBLAlt = dataBLAlt.get({fillGaps:true});
 		dataDEAlt = dataDEAlt.get({fillGaps:true});
 
 		this.addMetadata(dataLK,    ['bundeslaender', 'landkreise-einwohner']);
-		this.addMetadata(dataRB,    ['regierungsbezirke-einwohner']);
+		this.addMetadata(dataRB,    ['bundeslaender', 'regierungsbezirke-einwohner']);
 		this.addMetadata(dataBL,    ['bundeslaender-einwohner']);
 		this.addMetadata(dataDE,    ['deutschland-einwohner']);
 		this.addMetadata(dataLKNeu, ['bundeslaender', 'landkreise-einwohner']);
-		this.addMetadata(dataRBNeu, ['regierungsbezirke-einwohner']);
+		this.addMetadata(dataRBNeu, ['bundeslaender', 'regierungsbezirke-einwohner']);
 		this.addMetadata(dataBLNeu, ['bundeslaender']);
 		this.addMetadata(dataDENeu, []);
 		this.addMetadata(dataBLAlt, ['bundeslaender-alter']);
 		this.addMetadata(dataDEAlt, ['deutschland-alter']);
-
-		calcInzidenzenUndSummen(dataLK, ['landkreisId']);
-		calcInzidenzenUndSummen(dataRB, ['regierungsbezirk']);
-		calcInzidenzenUndSummen(dataBL, ['bundeslandId']);
+		
+		calcInzidenzenUndSummen(dataLK,    ['landkreisId']);
+		calcInzidenzenUndSummen(dataRB,    ['regierungsbezirk']);
+		calcInzidenzenUndSummen(dataBL,    ['bundeslandId']);
 		calcInzidenzenUndSummen(dataDE);
 		calcInzidenzenUndSummen(dataBLAlt, ['altersgruppe','bundeslandId']);
 		calcInzidenzenUndSummen(dataDEAlt, ['altersgruppe']);
-
-		console.log('      save');
 
 		this.saveTable('lk',     dataLK);
 		this.saveTable('rb',     dataRB);
@@ -140,10 +138,12 @@ module.exports = class Downloader extends require('./prototype.js') {
 		this.saveTable('de',     dataDE);
 		this.saveTable('lk-neu', dataLKNeu);
 		this.saveTable('rb-neu', dataRBNeu);
-		this.saveTable('de-neu', dataDENeu);
 		this.saveTable('bl-neu', dataBLNeu);
-		this.saveTable('de-alt', dataDEAlt);
+		this.saveTable('de-neu', dataDENeu);
 		this.saveTable('bl-alt', dataBLAlt);
+		this.saveTable('de-alt', dataDEAlt);
+
+
 
 		function cleanAltersgruppe(text) {
 			switch (text) {
