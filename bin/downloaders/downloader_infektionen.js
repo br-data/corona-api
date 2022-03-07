@@ -48,10 +48,12 @@ module.exports = class Downloader extends require('./prototype.js') {
 		let dataRB    = summarizer(['meldedatum','regierungsbezirk'           ], ['anzahlFall'   ,'anzahlTodesfall'   ,'anzahlGenesen'   ]);
 		let dataBL    = summarizer(['meldedatum','bundeslandId'               ], ['anzahlFall'   ,'anzahlTodesfall'   ,'anzahlGenesen'   ]);
 		let dataDE    = summarizer(['meldedatum'                              ], ['anzahlFall'   ,'anzahlTodesfall'   ,'anzahlGenesen'   ]);
-		let dataBLAlt = summarizer(['meldedatum','bundeslandId','altersgruppe'], ['anzahlFall'   ,'anzahlTodesfall'   ,'anzahlGenesen'   ]);
-		let dataDEAlt = summarizer(['meldedatum',               'altersgruppe'], ['anzahlFall'   ,'anzahlTodesfall'   ,'anzahlGenesen'   ]);
+		let dataLKNeu = summarizer([             'landkreisId'                ], ['anzahlFallNeu','anzahlTodesfallNeu','anzahlGenesenNeu']);
+		let dataRBNeu = summarizer([             'regierungsbezirk'           ], ['anzahlFallNeu','anzahlTodesfallNeu','anzahlGenesenNeu']);
 		let dataBLNeu = summarizer([             'bundeslandId'               ], ['anzahlFallNeu','anzahlTodesfallNeu','anzahlGenesenNeu']);
 		let dataDENeu = summarizer([                                          ], ['anzahlFallNeu','anzahlTodesfallNeu','anzahlGenesenNeu']);
+		let dataBLAlt = summarizer(['meldedatum','bundeslandId','altersgruppe'], ['anzahlFall'   ,'anzahlTodesfall'   ,'anzahlGenesen'   ]);
+		let dataDEAlt = summarizer(['meldedatum',               'altersgruppe'], ['anzahlFall'   ,'anzahlTodesfall'   ,'anzahlGenesen'   ]);
 
 		let regierungsbezirke = JSON.parse(fs.readFileSync(resolve(config.folders.static, 'regierungsbezirke.json')));
 		
@@ -89,10 +91,14 @@ module.exports = class Downloader extends require('./prototype.js') {
 			if (entry.regierungsbezirk) dataRB.add(entry);
 			dataBL.add(entry);
 			dataDE.add(entry);
-			dataBLAlt.add(entry);
-			dataDEAlt.add(entry);
+
+			dataLKNeu.add(entry);
+			if (entry.regierungsbezirk) dataRBNeu.add(entry);
 			dataBLNeu.add(entry);
 			dataDENeu.add(entry);
+			
+			dataBLAlt.add(entry);
+			dataDEAlt.add(entry);
 		})
 
 		console.log('      finalize');
@@ -101,19 +107,23 @@ module.exports = class Downloader extends require('./prototype.js') {
 		dataRB    = dataRB.get({fillGaps:true});
 		dataBL    = dataBL.get({fillGaps:true});
 		dataDE    = dataDE.get({fillGaps:true});
-		dataBLAlt = dataBLAlt.get({fillGaps:true});
-		dataDEAlt = dataDEAlt.get({fillGaps:true});
+		dataLKNeu = dataLKNeu.get({fillGaps:true});
+		dataRBNeu = dataRBNeu.get({fillGaps:true});
 		dataBLNeu = dataBLNeu.get({fillGaps:true});
 		dataDENeu = dataDENeu.get({fillGaps:true});
+		dataBLAlt = dataBLAlt.get({fillGaps:true});
+		dataDEAlt = dataDEAlt.get({fillGaps:true});
 
 		this.addMetadata(dataLK,    ['bundeslaender', 'landkreise-einwohner']);
 		this.addMetadata(dataRB,    ['regierungsbezirke-einwohner']);
 		this.addMetadata(dataBL,    ['bundeslaender-einwohner']);
 		this.addMetadata(dataDE,    ['deutschland-einwohner']);
-		this.addMetadata(dataBLAlt, ['bundeslaender-alter']);
-		this.addMetadata(dataDEAlt, ['deutschland-alter']);
+		this.addMetadata(dataLKNeu, ['bundeslaender', 'landkreise-einwohner']);
+		this.addMetadata(dataRBNeu, ['regierungsbezirke-einwohner']);
 		this.addMetadata(dataBLNeu, ['bundeslaender']);
 		this.addMetadata(dataDENeu, []);
+		this.addMetadata(dataBLAlt, ['bundeslaender-alter']);
+		this.addMetadata(dataDEAlt, ['deutschland-alter']);
 
 		calcInzidenzenUndSummen(dataLK, ['landkreisId']);
 		calcInzidenzenUndSummen(dataRB, ['regierungsbezirk']);
@@ -128,10 +138,12 @@ module.exports = class Downloader extends require('./prototype.js') {
 		this.saveTable('rb',     dataRB);
 		this.saveTable('bl',     dataBL);
 		this.saveTable('de',     dataDE);
-		this.saveTable('de-alt', dataDEAlt);
-		this.saveTable('bl-alt', dataBLAlt);
+		this.saveTable('lk-neu', dataLKNeu);
+		this.saveTable('rb-neu', dataRBNeu);
 		this.saveTable('de-neu', dataDENeu);
 		this.saveTable('bl-neu', dataBLNeu);
+		this.saveTable('de-alt', dataDEAlt);
+		this.saveTable('bl-alt', dataBLAlt);
 
 		function cleanAltersgruppe(text) {
 			switch (text) {
