@@ -114,6 +114,8 @@ module.exports = class Downloader extends require('./prototype.js') {
 		dataBLAlt = dataBLAlt.get({fillGaps:true});
 		dataDEAlt = dataDEAlt.get({fillGaps:true});
 
+		console.log('      add meta data');
+
 		this.addMetadata(dataLK,    ['bundeslaender', 'landkreise-einwohner']);
 		this.addMetadata(dataRB,    ['bundeslaender', 'regierungsbezirke-einwohner']);
 		this.addMetadata(dataBL,    ['bundeslaender-einwohner']);
@@ -124,6 +126,8 @@ module.exports = class Downloader extends require('./prototype.js') {
 		this.addMetadata(dataDENeu, []);
 		this.addMetadata(dataBLAlt, ['bundeslaender-alter']);
 		this.addMetadata(dataDEAlt, ['deutschland-alter']);
+
+		console.log('      calculate incidences');
 		
 		calcInzidenzenUndSummen(dataLK,    ['landkreisId']);
 		calcInzidenzenUndSummen(dataRB,    ['regierungsbezirk']);
@@ -131,6 +135,8 @@ module.exports = class Downloader extends require('./prototype.js') {
 		calcInzidenzenUndSummen(dataDE);
 		calcInzidenzenUndSummen(dataBLAlt, ['altersgruppe','bundeslandId']);
 		calcInzidenzenUndSummen(dataDEAlt, ['altersgruppe']);
+		
+		console.log('      save');
 
 		this.saveTable('lk',     dataLK);
 		this.saveTable('rb',     dataRB);
