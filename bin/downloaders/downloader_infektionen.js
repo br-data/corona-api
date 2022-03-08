@@ -23,6 +23,7 @@ module.exports = class Downloader extends require('./prototype.js') {
 		
 		this.status.changed = (this.status.hash !== hash);
 		this.status.newHash = hash;
+		this.status.lastCommitDate = file.lastCommitDate;
 
 		this.status.sources = {
 			infektionen: {
