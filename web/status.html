@@ -47,8 +47,6 @@
 				containerTimeline.append(timeline);
 
 				logs.forEach(entry => {
-					console.log(entry);
-
 					containerColgroup.append($('<col span="1" style="width:'+colWidth+'%;">'));
 
 					let head = $('<th></th>');
@@ -57,11 +55,15 @@
 
 					let logs = entry[1].sort((a,b) => b.dateStart - a.dateStart);
 					let lastUpdate = logs.find(l => l.changed);
+					head = false;
 					if (lastUpdate.dateStart > now-24*3600000) {
-						containerOverview.append('<th style="background:#cfc;color:#060;padding:10px 0">OK</th>');
+						head = $('<th style="background:#cfc;color:#060;padding:10px 0"><span>OK</span></th>');
 					} else {
-						containerOverview.append('<th style="background:#fcc;color:#600;padding:10px 0">FEHLER</th>');
+						head = $('<th style="background:#fcc;color:#600;padding:10px 0"><span>FEHLER</span></th>');
 					}
+					containerOverview.append(head);
+					head.append('<small>last commit: '+formatDateTime(new Date(lastUpdate.lastCommitDate))+'</small>');
+					head.append('<small>downloaded: '+formatDateTime(new Date(lastUpdate.dateStart))+'</small>');
 
 					let timeline = $('<td style="position:relative"></td>').css({ height: scale*maxAge })
 					logs.forEach(l => {
@@ -80,15 +82,33 @@
 							'Ende: ' +(new Date(l.dateEnd  )).toLocaleTimeString('de-DE', { timeZone:'Europe/Berlin' }),
 							'Dauer: '+((l.dateEnd-l.dateStart)/1000).toFixed(2)+'s',
 							'Update: '+(l.changed ? 'Ja' : 'Nein'),
-							'Fehler: '+(l.error ? 'Ja' : 'Nein'),
+							'Fehler: '+(l.error   ? 'Ja' : 'Nein'),
 						].join('<br>'))
 						timeline.append(block);
 					})
 					containerTimeline.append(timeline);
+
+					function formatDateTime(d) {
+						return d.toLocaleString('de-DE', { dateStyle:'short', timeStyle:'short', timeZone:'Europe/Berlin' });
+					}
 				})
 			}
 		})
 	</script>
+	<style type="text/css">
+		#header {
+			text-transform: capitalize;
+		}
+		#overview span {
+			display: block;
+			margin-bottom: 5px;
+		}
+		#overview small {
+			display: block;
+			font-size: 10px;
+			font-weight: normal;
+		}
+	</style>
 </head>
 <body>
 	<div id="page">
