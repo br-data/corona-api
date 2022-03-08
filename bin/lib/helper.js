@@ -5,6 +5,13 @@ const https = require('https');
 const { resolve } = require('path');
 const config = require('./config.js');
 
+const gitHubAPIHeader = {
+	'User-Agent': 'curl/7.64.1',
+	'Authorization':'Basic '+Buffer.from(config.githubAccessToken).toString('base64'),
+	'Content-Type': 'application/json;charset=UTF-8',
+	'Accept': 'application/vnd.github.+json',
+}
+
 // Grundlegende Helferfunktionen
 
 module.exports = {
@@ -39,19 +46,17 @@ function fetch(url, headers = {}) {
 }
 
 async function getGithubFileMeta(repo, filename) {
-	let directory = await fetch(
-		`https://api.github.com/repos/${repo}/contents/`,
-		{
-			'User-Agent': 'curl/7.64.1',
-			'Authorization':'Basic '+Buffer.from(config.githubAccessToken).toString('base64'),
-			'Content-Type': 'application/json;charset=UTF-8',
-			'Accept': 'application/vnd.github.+json',
-		}
-	)
+	let directory = await fetch(`https://api.github.com/repos/${repo}/contents`, gitHubAPIHeader)
 	directory = JSON.parse(directory);
 	let file = directory.find(e => e.name === filename)
-
+	
 	if (!file) throw Error(`Could not find "https://github.com/${repo}/blob/master/${filename}"`)
+
+	let commits = await fetch(`https://api.github.com/repos/${repo}/commits?path=${filename}&per_page=1`, gitHubAPIHeader);
+	commits = JSON.parse(commits);
+	file.lastCommit = commits[0];
+
+	if (file.lastCommit) file.lastCommitDate = file.lastCommit.commit.committer.date;
 
 	return file;
 }
