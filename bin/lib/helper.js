@@ -5,6 +5,7 @@ const https = require('https');
 const { resolve } = require('path');
 const config = require('./config.js');
 
+// Header für GitHub-API-Requests
 const gitHubAPIHeader = {
 	'User-Agent': 'curl/7.64.1',
 	'Authorization':'Basic '+Buffer.from(config.githubAccessToken).toString('base64'),
@@ -12,8 +13,15 @@ const gitHubAPIHeader = {
 	'Accept': 'application/vnd.github.+json',
 }
 
-// Grundlegende Helferfunktionen
+// Damit werden alle Requests gecachet, was das Entwickeln vereinfacht.
+// Einfach als Parameter angeben: node download.js --cached
+let cacheRequests = process.argv.slice(2).some(a => a.includes('cache'));
+if (cacheRequests) console.log('cache requests')
+let fetch = cacheRequests ? fetchCached : fetchDirectly;
 
+
+
+// Grundlegende Helferfunktionen
 module.exports = {
 	array2csv,
 	checkUniqueKeys,
@@ -21,10 +29,20 @@ module.exports = {
 	fetch,
 	getGithubFileMeta,
 	summarizer,
-	cached,
 }
 
-function fetch(url, headers = {}) {
+
+
+async function fetchCached(url, headers = {}) {
+	let cacheFilename = resolve(config.folders.cache, url.replace(/[^0-9a-z]+/gi,'-')+'.tmp');
+	if (fs.existsSync(cacheFilename)) return fs.readFileSync(cacheFilename);
+
+	let data = await fetchDirectly(url, headers);
+	fs.writeFileSync(cacheFilename, data);
+	return data;
+}
+
+function fetchDirectly(url, headers = {}) {
 	return new Promise((resolve, reject) => {
 		https.get(url, {headers}, response => {
 			let buf = [];
@@ -185,13 +203,4 @@ function array2csv(list) {
 	}).join(','));
 	csv.unshift(keys.join(','));
 	return csv.join('\n');
-}
-
-async function cached(key, cb) {
-	let cacheFilename = resolve(config.folders.cache, key+'.tmp');
-	if (fs.existsSync(cacheFilename)) return fs.readFileSync(cacheFilename);
-	let result = cb();
-	if (result.then) result = await result;
-	fs.writeFileSync(cacheFilename, result);
-	return result;
 }

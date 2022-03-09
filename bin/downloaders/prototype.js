@@ -11,19 +11,19 @@ module.exports = class Downloader {
 		this.statusFilename = resolve(config.folders.status, this.name+'.json');
 	}
 	
-	async run(opt = {}) {
+	async run() {
 		// Lade den letzten Status
 		this.loadStatus();
 		this.status.error = false;
 
 		try {
 			console.log('   check for updates');
-			await this.checkUpdates(opt);
+			await this.checkUpdates();
 
 			if (this.status.changed) {
 				// new data
 				console.log('   update started');
-				await this.doUpdate(opt)
+				await this.doUpdate()
 				console.log('   update finished');
 			} else {
 				// no new data

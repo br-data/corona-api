@@ -3,7 +3,7 @@
 const fs = require('fs');
 const { resolve } = require('path');
 const config = require('../lib/config.js');
-const { fetch, getGithubFileMeta, csv2array, summarizer, cached } = require('../lib/helper.js');
+const { fetch, getGithubFileMeta, csv2array, summarizer } = require('../lib/helper.js');
 
 module.exports = class Downloader extends require('./prototype.js') {
 
@@ -32,11 +32,10 @@ module.exports = class Downloader extends require('./prototype.js') {
 		}
 	}
 
-	async doUpdate(opt = {}) {
+	async doUpdate() {
 		console.log('      download');
 
-		let loadData = () => fetch(this.status.sources.infektionen.url);
-		let data = await (opt.cached ? cached('infektionen', loadData) : loadData());
+		let data = await fetch(this.status.sources.infektionen.url);
 		
 		// BOM
 		if (data[0] === 0xEF) data = data.slice(3);
