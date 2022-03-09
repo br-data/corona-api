@@ -20,7 +20,7 @@ const config = {
 
 	// Die Versionsnummer wird den Datei-Hashes angefügt.
 	// Wenn man sie erhöht, erzwingt man einen Datenupdate.
-	version: '3.2',
+	version: '3.3',
 }
 
 module.exports = config;
