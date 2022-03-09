@@ -323,6 +323,7 @@
 	"10044": { "landkreis":"Saarlouis", "landkreisTyp":"Landkreis" },
 	"10045": { "landkreis":"Saarpfalz-Kreis", "landkreisTyp":"Landkreis" },
 	"10046": { "landkreis":"St. Wendel", "landkreisTyp":"Landkreis" },
+	"11000": { "landkreis":"Berlin", "landkreisTyp":"Stadt" },
 	"12051": { "landkreis":"Brandenburg an der Havel", "landkreisTyp":"Stadt" },
 	"12052": { "landkreis":"Cottbus", "landkreisTyp":"Stadt" },
 	"12053": { "landkreis":"Frankfurt (Oder)", "landkreisTyp":"Stadt" },
