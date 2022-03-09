@@ -1,7 +1,7 @@
 "use strict"
 
 const config = require('../lib/config.js');
-const { fetch, getGithubFileMeta, csv2array, summarizer, cached } = require('../lib/helper.js');
+const { fetch, getGithubFileMeta, csv2array, summarizer } = require('../lib/helper.js');
 
 module.exports = class Downloader extends require('./prototype.js') {
 
@@ -30,9 +30,8 @@ module.exports = class Downloader extends require('./prototype.js') {
 		}
 	}
 
-	async doUpdate(opt = {}) {
-		let loadData = () => fetch(this.status.sources.impfungen.url);
-		let data = await (opt.cached ? cached('impfungen', loadData) : loadData());
+	async doUpdate() {
+		let data = await fetch(this.status.sources.impfungen.url);
 		data = csv2array(data.toString('utf8'));
 
 		let dataBLFull  = summarizer(['datum','bundeslandId','impfstoff','impfserie'],['anzahl']);

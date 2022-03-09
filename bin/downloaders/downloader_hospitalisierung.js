@@ -1,7 +1,7 @@
 "use strict"
 
 const config = require('../lib/config.js');
-const { fetch, getGithubFileMeta, csv2array, checkUniqueKeys, cached } = require('../lib/helper.js');
+const { fetch, getGithubFileMeta, csv2array, checkUniqueKeys } = require('../lib/helper.js');
 
 module.exports = class Downloader extends require('./prototype.js') {
 
@@ -30,9 +30,8 @@ module.exports = class Downloader extends require('./prototype.js') {
 		}
 	}
 
-	async doUpdate(opt = {}) {
-		let loadData = () => fetch(this.status.sources.hospitalisierung.url);
-		let data = await (opt.cached ? cached('hospitalisierung', loadData) : loadData());
+	async doUpdate() {
+		let data = await fetch(this.status.sources.hospitalisierung.url);
 		data = csv2array(data.toString('utf8'));
 
 		let dataBL    = [];

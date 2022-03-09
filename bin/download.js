@@ -13,14 +13,9 @@ module.exports = {
 	getLogs,
 }
 
-if (require.main === module) {
-	let args = process.argv.slice(2);
-	let cached = args.some(a => a.includes('cache'));
-	if (cached) console.log('Use caching')
-	update({cached});
-}
+if (require.main === module) update();
 
-async function update(opt = {}) {
+async function update() {
 	console.log('downloaders started');
 
 	for (let worker of workers) {
@@ -28,7 +23,7 @@ async function update(opt = {}) {
 		
 		let Downloader = require(`./downloaders/downloader_${worker}.js`);
 		let downloader = new Downloader();
-		await downloader.run(opt);
+		await downloader.run();
 
 		console.log(`downloader ${worker} finished`);
 	}
