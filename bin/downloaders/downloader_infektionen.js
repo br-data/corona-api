@@ -57,6 +57,8 @@ module.exports = class Downloader extends require('./prototype.js') {
 
 		let regierungsbezirke = JSON.parse(fs.readFileSync(resolve(config.folders.static, 'regierungsbezirke.json')));
 		
+		let dateMin = '2020-01-01';
+		let dateMax = '2020-01-01';
 		data.forEach(e => {
 			let landkreisId     = parseInt(e.IdLandkreis, 10);
 
@@ -83,6 +85,8 @@ module.exports = class Downloader extends require('./prototype.js') {
 				anzahlTodesfallNeu: ((neuerTodesfall === -1) || (neuerTodesfall === 1)) ? anzahlTodesfall : 0,
 				anzahlGenesenNeu:   ((neuGenesen     === -1) || (neuGenesen     === 1)) ? anzahlGenesen   : 0,
 			}
+			if (dateMin > entry.meldedatum) dateMin = entry.meldedatum;
+			if (dateMax < entry.meldedatum) dateMax = entry.meldedatum;
 
 			// fasse Berlin zusammen
 			if ((entry.landkreisId >= 11001) && (entry.landkreisId <= 11012)) entry.landkreisId = 11000;
@@ -129,12 +133,12 @@ module.exports = class Downloader extends require('./prototype.js') {
 
 		console.log('      calculate incidences');
 		
-		calcInzidenzenUndSummen(dataLK,    ['landkreisId']);
-		calcInzidenzenUndSummen(dataRB,    ['regierungsbezirk']);
-		calcInzidenzenUndSummen(dataBL,    ['bundeslandId']);
-		calcInzidenzenUndSummen(dataDE);
-		calcInzidenzenUndSummen(dataBLAlt, ['altersgruppe','bundeslandId']);
-		calcInzidenzenUndSummen(dataDEAlt, ['altersgruppe']);
+		dataLK    = calcInzidenzenUndSummen(dataLK,    ['landkreisId']);
+		dataRB    = calcInzidenzenUndSummen(dataRB,    ['regierungsbezirk']);
+		dataBL    = calcInzidenzenUndSummen(dataBL,    ['bundeslandId']);
+		dataDE    = calcInzidenzenUndSummen(dataDE);
+		dataBLAlt = calcInzidenzenUndSummen(dataBLAlt, ['altersgruppe','bundeslandId']);
+		dataDEAlt = calcInzidenzenUndSummen(dataDEAlt, ['altersgruppe']);
 		
 		console.log('      save');
 
@@ -171,7 +175,23 @@ module.exports = class Downloader extends require('./prototype.js') {
 				if (!groups.has(key)) groups.set(key, []);
 				groups.get(key).push(entry);
 			})
+
+			let result = [];
 			Array.from(groups.values()).forEach(list => {
+				// Vervollständige die Daten.
+				// Tage ohne Eintrag werden hinzugefügt, wobei die Werte alle Null sind.
+				let dateLookup = new Map(list.map(e => [e.meldedatum,e]));
+				let obj0 = list[0];
+				forEachDate(dateMin, dateMax, date => {
+					if (dateLookup.has(date)) return;
+					let obj = Object.assign({}, obj0);
+					obj.meldedatum = date;
+					obj.anzahlFall = 0;
+					obj.anzahlTodesfall = 0;
+					obj.anzahlGenesen = 0;
+					list.push(obj);
+				})
+
 				list.sort((a,b) => a.meldedatum < b.meldedatum ? -1 : 1);
 
 				// Berechne Inzidenzen
@@ -205,7 +225,19 @@ module.exports = class Downloader extends require('./prototype.js') {
 					entry.summeTodesfall += list[i-1].summeTodesfall;
 					entry.summeGenesen   += list[i-1].summeGenesen;
 				}
+
+				result.push(list);
 			})
+
+			return result.flat();
+		}
+
+		function forEachDate(dateMin, dateMax, cb) {
+			let d0 = Math.floor(Date.parse(dateMin)/86400000+0.5);
+			let d1 = Math.floor(Date.parse(dateMax)/86400000+0.5);
+			for (let d = d0; d <= d1; d++) {
+				cb((new Date((d+0.5)*86400000)).toISOString().slice(0,10));
+			}
 		}
 	}
 }
