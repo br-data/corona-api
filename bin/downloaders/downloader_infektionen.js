@@ -234,6 +234,27 @@ module.exports = class Downloader extends require('./prototype.js') {
 					entry.summeGenesen   += list[i-1].summeGenesen;
 				}
 
+				// Berechne aktive Fälle und Genesene (Copyright: Niels-Magie)
+				list.map((d, i) => {
+					d.aktuellGenesen = i < 14 ? 0 : list[i - 14].summeFall - d.summeTodesfall;
+					d.aktuellInfiziert = d.summeFall - d.aktuellGenesen - d.summeTodesfall;
+				})
+
+				list.map((d, i) => {
+					const schwereFaelle = Math.floor(d.aktuellGenesen * 0.2);
+					d.aktuellGenesen -= schwereFaelle;
+					d.aktuellInfiziert += schwereFaelle;
+
+					for (let ii = 0; ii < schwereFaelle; ii++) {
+						const delay = Math.floor(Math.random() * 28) + 1;
+						if (i + delay < list.length) {
+							list[i + delay].aktuellGenesen += 1;
+							list[i + delay].aktuellInfiziert -= 1;
+						}
+					}
+				})
+
+				// Füge das Ergebnis hinzu
 				result.push(list);
 			})
 
