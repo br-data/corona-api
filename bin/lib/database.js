@@ -108,6 +108,11 @@ module.exports = function Database() {
 			}
 		}
 
+		if (query.fieldList) {
+			let fields = query.fieldList.split(',');
+			data = data.map(entry => Object.fromEntries(fields.map(field => [field,entry[field]])));
+		}
+
 		// limit
 		if (query.limit) {
 			let limit = parseInt(query.limit, 10);
