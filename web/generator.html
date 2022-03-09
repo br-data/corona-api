@@ -10,9 +10,10 @@
 	<script type="text/javascript">
 		$(() => {
 			$('[name="preview"]').click(() => generatePreview());
-			let table, fields;
+			let table, fields, fieldList;
 
 			getTables();
+			$('[name="fieldListReset"]').click(() => $('[name="fieldList"]').val(fieldList));
 
 			async function getTables() {
 				let container = $('#tables').empty();
@@ -30,12 +31,15 @@
 				$('#wrapperFields').show();
 				let container = $('#fields').empty();
 				fields = await $.getJSON('/meta/fields/'+table.name);
+				fieldList = fields.join(',');
 				fields = fields.map(name => {
 					let field = {name}
 					container.loadTemplate('#templateField', field, {append:true})
 					field.node = container.children().last();
 					return field;
 				})
+
+				$('[name="fieldList"]').val(fieldList)
 
 				generatePreview();
 			}
@@ -64,6 +68,11 @@
 				if ($('[name="format"]').val() === 'json') {
 					query.push('format=json');
 				}
+
+				let fieldListValue = ''+$('[name="fieldList"]').val();
+				fieldListValue = fieldListValue.replace(/(\s|,)+/g,',');
+				fieldListValue = fieldListValue.replace(/^,+|,+$/g,'');
+				if ((fieldListValue !== '') && (fieldListValue !== fieldList)) query.push('fieldList='+fieldListValue);
 				
 				$('#url').text(getUrl(query));
 
@@ -92,7 +101,7 @@
 			<tbody id="tables"></tbody>
 			<template id="templateTable">
 				<tr style="cursor:pointer;">
-					<td data-content="name"></td>
+					<td data-content="name" style="font-family:monospace"></td>
 					<td data-content="date"></td>
 				</tr>
 			</template>
@@ -106,7 +115,7 @@
 				<tbody id="fields"></tbody>
 				<template id="templateField">
 					<tr style="cursor:pointer;" data-value="name">
-						<td data-content="name"></td>
+						<td data-content="name" style="font-family:monospace"></td>
 						<td>
 							<select name="comparison">
 								<option value=""></option>
@@ -128,7 +137,14 @@
 					</tr>
 				</template>
 			</table>
-			<p>Format:
+
+			<p style="margin-top:20px">
+				Manuelle Anpassung der Felderauswahl und -reihenfolge:<br>
+				<textarea type="text" name="fieldList" rows="3" style="width:calc(100% - 50px); font-family:monospace; resize:none;" spellcheck="false"></textarea>
+				<input type="button" name="fieldListReset" style="vertical-align:top;" value="&#8634;">
+			</p>
+			
+			<p style="margin-top:20px">Format:
 				<select name="format">
 					<option value="csv">CSV</option>
 					<option value="json">JSON</option>
@@ -136,7 +152,7 @@
 			</p>
 
 			<p>
-				<input type="button" name="preview" value="aktualisieren" style="font-size: 16px;" />
+				<input type="button" name="preview" value="aktualisieren" style="font-size:16px; font-weight:bold; color:#600; padding:10px;" />
 			</p>
 
 			<h1>3. URL</h1>
