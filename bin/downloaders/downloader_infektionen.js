@@ -139,6 +139,10 @@ module.exports = class Downloader extends require('./prototype.js') {
 		dataDE    = calcInzidenzenUndSummen(dataDE);
 		dataBLAlt = calcInzidenzenUndSummen(dataBLAlt, ['altersgruppe','bundeslandId']);
 		dataDEAlt = calcInzidenzenUndSummen(dataDEAlt, ['altersgruppe']);
+		addLatestMeldedatum(dataLKNeu);
+		addLatestMeldedatum(dataRBNeu);
+		addLatestMeldedatum(dataBLNeu);
+		addLatestMeldedatum(dataDENeu);
 		
 		console.log('      save');
 
@@ -166,6 +170,10 @@ module.exports = class Downloader extends require('./prototype.js') {
 				case 'A80+':      return '80+';
 			}
 			throw Error('unbekannte Altersgruppe "'+text+'"')
+		}
+
+		function addLatestMeldedatum(list) {
+			list.forEach(e => e.meldedatum = dateMax);
 		}
 
 		function calcInzidenzenUndSummen(data, groupKeys = []) {
