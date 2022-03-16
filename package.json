@@ -1,12 +1,12 @@
 {
-  "name": "corona-deutschland-api3",
-  "version": "1.0.0",
+  "name": "corona-api",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node bin/server.js 3000"
   },
-  "author": "BR Data, Michael Kreil",
+  "author": "Michael Kreil",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
