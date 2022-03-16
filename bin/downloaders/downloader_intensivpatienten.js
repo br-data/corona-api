@@ -63,15 +63,15 @@ module.exports = class Downloader extends require('./prototype.js') {
 					bundesland: states[d.Bundesland].bundesland,
 					bundeslandId: states[d.Bundesland].bundeslandId,
 				}),
-				anzahlIntensivpatienten: d['Aktuelle_COVID_Faelle_ITS'],
-				anzahlMeldebereiche: d['Anzahl_Meldebereiche'],
-				bettenBelegt: d['Belegte_Intensivbetten'],
-				bettenFrei: d['Freie_Intensivbetten'],
-				bettenReserve: d['7_Tage_Notfallreserve'],
-				situationNormal: d['Betriebssituation_Regulaerer_Betrieb'],
-				situationEingeschraenkt: d['Betriebssituation_Teilweise_Eingeschraenkt'],
-				situationTeilweiseEingeschraenkt: d['Betriebssituation_Eingeschraenkt'],
-				situationUnbekannt: d['Betriebssituation_Keine_Angabe']
+				anzahlIntensivpatienten: parseInt(d.Aktuelle_COVID_Faelle_ITS),
+				anzahlMeldebereiche: parseInt(d.Anzahl_Meldebereiche),
+				bettenBelegt: parseInt(d.Belegte_Intensivbetten),
+				bettenFrei: parseInt(d.Freie_Intensivbetten),
+				bettenReserve: parseInt(d['7_Tage_Notfallreserve']),
+				situationNormal: parseInt(d.Betriebssituation_Regulaerer_Betrieb),
+				situationEingeschraenkt: parseInt(d.Betriebssituation_Teilweise_Eingeschraenkt),
+				situationTeilweiseEingeschraenkt: parseInt(d.Betriebssituation_Eingeschraenkt),
+				situationUnbekannt: parseInt(d.Betriebssituation_Keine_Angabe),
 			}))
 	}
 }
