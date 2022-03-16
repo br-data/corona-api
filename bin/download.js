@@ -1,8 +1,7 @@
 "use strict"
 
-const fs = require('fs');
-
 const workers = [
+	'intensivpatienten',
 	'hospitalisierung',
 	'impfungen',
 	'infektionen',
