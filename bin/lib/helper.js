@@ -81,7 +81,10 @@ async function getGithubFileMeta(repo, filename) {
 
 function csv2array(text, fieldDelimiter = ',', lineDelimiter = '\n') {
 	// converts a CSV into an array of objects
-	let data = text.split(lineDelimiter).filter(l => l.length > 0).map(l => l.split(fieldDelimiter));
+	let data = text
+		.split(lineDelimiter)
+		.filter(line => line.length > 0)
+		.map(line => line.replace(/"/g, '').split(fieldDelimiter));
 	let keys = data.shift();
 	return data.map(e => Object.fromEntries(keys.map((k,i) => [k,e[i]])));
 }
