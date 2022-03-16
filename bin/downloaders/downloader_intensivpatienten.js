@@ -55,21 +55,23 @@ module.exports = class Downloader extends require('./prototype.js') {
 			resolve(config.folders.static, 'bundeslaender-divi.json')
 		)) : [];
 
-		return data.map(d => ({
-			datum: d.Datum.split('T')[0],
-			...(hasStates && {
-				bundesland: states[d.Bundesland].bundesland,
-				bundeslandId: states[d.Bundesland].bundeslandId,
-			}),
-			anzahlIntensivpatienten: d['Aktuelle_COVID_Faelle_ITS'],
-			anzahlMeldebereiche: d['Anzahl_Meldebereiche'],
-			bettenBelegt: d['Belegte_Intensivbetten'],
-			bettenFrei: d['Freie_Intensivbetten'],
-			bettenReserve: d['7_Tage_Notfallreserve'],
-			situationNormal: d['Betriebssituation_Regulaerer_Betrieb'],
-			situationEingeschraenkt: d['Betriebssituation_Teilweise_Eingeschraenkt'],
-			situationTeilweiseEingeschraenkt: d['Betriebssituation_Eingeschraenkt'],
-			situationUnbekannt: d['Betriebssituation_Keine_Angabe']
-		}))
+		return data
+			.filter(d => d.Behandlungsgruppe === "ERWACHSENE")
+			.map(d => ({
+				datum: d.Datum.split('T')[0],
+				...(hasStates && {
+					bundesland: states[d.Bundesland].bundesland,
+					bundeslandId: states[d.Bundesland].bundeslandId,
+				}),
+				anzahlIntensivpatienten: d['Aktuelle_COVID_Faelle_ITS'],
+				anzahlMeldebereiche: d['Anzahl_Meldebereiche'],
+				bettenBelegt: d['Belegte_Intensivbetten'],
+				bettenFrei: d['Freie_Intensivbetten'],
+				bettenReserve: d['7_Tage_Notfallreserve'],
+				situationNormal: d['Betriebssituation_Regulaerer_Betrieb'],
+				situationEingeschraenkt: d['Betriebssituation_Teilweise_Eingeschraenkt'],
+				situationTeilweiseEingeschraenkt: d['Betriebssituation_Eingeschraenkt'],
+				situationUnbekannt: d['Betriebssituation_Keine_Angabe']
+			}))
 	}
 }
