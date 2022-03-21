@@ -15,6 +15,8 @@ module.exports = class Downloader extends require('./prototype.js') {
 		this.status.changed = true;
 
 		// @TODO Implement version checks to prevent unnecessary updates
+		// Check timestamp against https://www.intensivregister.de/#/aktuelle-lage/downloads
+
 		// const hash = file.sha+'_'+config.version;
 		// this.status.changed = (this.status.hash !== hash);
 		// this.status.newHash = hash;
@@ -63,15 +65,15 @@ module.exports = class Downloader extends require('./prototype.js') {
 					bundesland: states[d.Bundesland].bundesland,
 					bundeslandId: states[d.Bundesland].bundeslandId,
 				}),
-				anzahlIntensivpatienten: parseInt(d.Aktuelle_COVID_Faelle_ITS),
-				anzahlMeldebereiche: parseInt(d.Anzahl_Meldebereiche),
-				bettenBelegt: parseInt(d.Belegte_Intensivbetten),
-				bettenFrei: parseInt(d.Freie_Intensivbetten),
-				bettenReserve: parseInt(d['7_Tage_Notfallreserve']),
-				situationNormal: parseInt(d.Betriebssituation_Regulaerer_Betrieb),
-				situationEingeschraenkt: parseInt(d.Betriebssituation_Teilweise_Eingeschraenkt),
-				situationTeilweiseEingeschraenkt: parseInt(d.Betriebssituation_Eingeschraenkt),
-				situationUnbekannt: parseInt(d.Betriebssituation_Keine_Angabe),
+				anzahlIntensivpatienten: parseInt(d.Aktuelle_COVID_Faelle_ITS, 10),
+				anzahlMeldebereiche: parseInt(d.Anzahl_Meldebereiche, 10),
+				bettenBelegt: parseInt(d.Belegte_Intensivbetten, 10),
+				bettenFrei: parseInt(d.Freie_Intensivbetten, 10),
+				bettenReserve: parseInt(d['7_Tage_Notfallreserve'], 10),
+				situationNormal: parseInt(d.Betriebssituation_Regulaerer_Betrieb, 10),
+				situationEingeschraenkt: parseInt(d.Betriebssituation_Teilweise_Eingeschraenkt, 10),
+				situationTeilweiseEingeschraenkt: parseInt(d.Betriebssituation_Eingeschraenkt, 10),
+				situationUnbekannt: parseInt(d.Betriebssituation_Keine_Angabe, 10),
 			}))
 	}
 }
