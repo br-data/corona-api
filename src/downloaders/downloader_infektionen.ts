@@ -36,8 +36,6 @@ export class DownloaderInfektionen extends Downloader {
 
     const csv = await fetch(this.status.sources.infektionen.url);
 
-    fs.writeFileSync('test.csv', csv);
-
     console.log('      process');
 
     const data = csv2array(csv.toString(), ',', '\r\n');

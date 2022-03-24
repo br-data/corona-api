@@ -8,22 +8,27 @@ Wenn es neue Daten gibt, dann werden sie autormatisch runtergeladen und in Tabel
 
 Unter [corona-api.interaktiv.br.de/generator](https://corona-api.interaktiv.br.de/generator) findet man ein Online-Tool, um eine API-Abfrage zu generieren.
 
-## Installieren und Ausführen
+## Verwendung
 
-```bash
-git clone git@github.com:br-data/corona-api.git
-cd corona-api
-npm install
-npm start
+1. Repository klonen `git clone https://...`
+2. Erforderliche Module installieren `npm install`
+3. Github-Access-Token erstellen
+4. Entwicklungsserver starten `npm start:dev`
+5. Live-Server starten `npm start`
+
+Um die Module installieren und die Entwicklerwerkzeuge nutzen zu können, muss vorher die JavaScript-Runtime [Node.js](https://nodejs.org/en/download/) installiert werden.
+
+Der Web-Service (API) wird auf Port 3000 gestartet.
+
+### Github Token erstellen
+
+Damit die Daten von Github abgeholt werden können, muss vorher ein [persönlicher Github-Access-Token](https://github.com/settings/tokens/new) erstellt werden. Dieser muss im Format `benutzername:token` in einer `.env`-Datei im Hauptverzeichnis des Projekts gespeichert werden. Beispiel für eine `.env`-Datei (dies ist jedoch kein gültiger Token):
+
+```text
+GITHUB_ACCESS_TOKEN=br-data-user:ghp_dmCfolCdmoPCa5FOyKZrMSYnygNRla0al6P9
 ```
 
-Dadurch wird der Server an Port 3000 gestartet.
-
-Will man nur die RKI-Daten runterladen, ohne den Server starten zu müssen, kann man den Downloader auch manuell ausführen mit:
-
-```bash
-node bin/download.js
-```
+Für Deployments in der GoogleCloud wird der entsprechende Token automatisch von der [Cloud Deploy Action](https://github.com/br-data/cloud-deploy-action) mittels [Berglas](https://github.com/GoogleCloudPlatform/berglas) als ENV-Variable aus dem Secret Manager bereitgestellt.
 
 ## Tabellen
 
