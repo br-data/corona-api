@@ -5,6 +5,9 @@ build:
   command: npm install
 run:
   command: npm start
+  envs:
+    - name: GITHUB_ACCESS_TOKEN
+      value: 'sm://{{.projectId}}/github-access-token'
 settings:
   type: service
   inSecure: true
