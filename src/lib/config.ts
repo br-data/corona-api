@@ -10,15 +10,15 @@ export const config = {
     static: resolve(__dirname, '../../static'),
     cache: resolve(__dirname, '../../data/cache')
   },
-
-  // generate on at: https://github.com/settings/tokens/new
-  githubAccessToken: '***REMOVED***',
+  
+  // generate one at: https://github.com/settings/tokens/new
+  githubAccessToken: process.env.GITHUB_ACCESS_TOKEN,
 
   updateEvery: 10 * 60 * 1000,
 
   // Die Versionsnummer wird den Datei-Hashes angefügt.
   // Wenn man sie erhöht, erzwingt man einen Datenupdate.
-  version: '3.3'
+  version: '2.0.0'
 };
 
 // @TODO Move this to a preparation script

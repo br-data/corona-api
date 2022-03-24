@@ -5,7 +5,7 @@ import { resolve } from 'path';
 import { Database } from './lib/database';
 import { getLogs } from './download';
 
-const port = parseInt(process.argv[2], 10) || 8080;
+const port = parseInt(process.argv[2], 10) || 3000;
 const database = Database();
 const app = express();
 

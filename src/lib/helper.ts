@@ -2,15 +2,6 @@ import https from 'https';
 import { GenericObject, GithubFile, GithubCommit } from './types';
 import { config } from './config';
 
-// Header für GitHub-API-Requests
-const gitHubAPIHeader = {
-  'User-Agent': 'curl/7.64.1',
-  Authorization:
-    'Basic ' + Buffer.from(config.githubAccessToken).toString('base64'),
-  'Content-Type': 'application/json;charset=UTF-8',
-  Accept: 'application/vnd.github.+json'
-};
-
 // @TODO Replace with node-fetch or a similar lib
 export async function fetch(url: string, headers = {}): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -43,6 +34,19 @@ export async function fetch(url: string, headers = {}): Promise<string> {
 
 // @TODO Use Github client library instead
 export async function getGithubFileMeta(repo: string, filename: string) {
+  if (!config.githubAccessToken) {
+    throw Error('Please provide a Github access token (GITHUB_ACCESS_TOKEN)');
+  }
+
+  // Header für GitHub-API-Requests
+  const gitHubAPIHeader = {
+    'User-Agent': 'curl/7.64.1',
+    Authorization:
+      'Basic ' + Buffer.from(config.githubAccessToken).toString('base64'),
+    'Content-Type': 'application/json;charset=UTF-8',
+    Accept: 'application/vnd.github.+json'
+  };
+
   const filesRes = await fetch(
     `https://api.github.com/repos/${repo}/contents`,
     gitHubAPIHeader
