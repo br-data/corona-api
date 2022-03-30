@@ -1,25 +1,30 @@
 import { DownloaderHospitalisierungen } from './downloaders/downloader_hospitalisierung';
-import { DownloaderImpfungen } from './downloaders/downloader_impfungen';
+import { DownloaderImpfungenAktuell } from './downloaders/downloader_impfungen_aktuell';
+import { DownloaderImpfungenSerie } from './downloaders/downloader_impfungen_series';
 import { DownloaderInfektionen } from './downloaders/downloader_infektionen';
 import { DownloaderIntensivpatienten } from './downloaders/downloader_intensivpatienten';
 
 const workers = [
+  // {
+  //   name: 'hospitalisierungen',
+  //   Downloader: DownloaderHospitalisierungen
+  // },
   {
-    name: 'hospitalisierungen',
-    Downloader: DownloaderHospitalisierungen
+    name: 'impfungen',
+    Downloader: DownloaderImpfungenAktuell
   },
   {
     name: 'impfungen',
-    Downloader: DownloaderImpfungen
+    Downloader: DownloaderImpfungenSerie
   },
-  {
-    name: 'intensivpatienten',
-    Downloader: DownloaderIntensivpatienten
-  },
-  {
-    name: 'infektionen',
-    Downloader: DownloaderInfektionen
-  }
+  // {
+  //   name: 'intensivpatienten',
+  //   Downloader: DownloaderIntensivpatienten
+  // },
+  // {
+  //   name: 'infektionen',
+  //   Downloader: DownloaderInfektionen
+  // }
 ];
 
 // @TODO Move this to a preparation script
