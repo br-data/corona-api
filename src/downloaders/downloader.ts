@@ -17,6 +17,7 @@ export class Downloader {
     sources: GenericObject;
     dateStart?: number;
     dateEnd?: number;
+    lastDate?: string;
     lastCommitDate?: string;
     hash?: string;
     newHash?: string;

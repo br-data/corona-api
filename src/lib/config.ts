@@ -7,8 +7,7 @@ export const config = {
     status: resolve(__dirname, '../../data/status'),
     log: resolve(__dirname, '../../data/log'),
     tables: resolve(__dirname, '../../data/tables'),
-    static: resolve(__dirname, '../../static'),
-    cache: resolve(__dirname, '../../data/cache')
+    static: resolve(__dirname, '../../static')
   },
   
   // generate one at: https://github.com/settings/tokens/new

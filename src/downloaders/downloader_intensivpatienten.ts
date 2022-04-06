@@ -11,14 +11,11 @@ export class DownloaderIntensivpatienten extends Downloader {
   }
 
   async checkUpdates() {
-    this.status.changed = true;
 
-    // @TODO Implement version checks to prevent unnecessary updates
-    // Check timestamp against https://www.intensivregister.de/#/aktuelle-lage/downloads
-
-    // const hash = file.sha+'_'+config.version;
-    // this.status.changed = (this.status.hash !== hash);
-    // this.status.newHash = hash;
+    // Check if the dataset already contains the la 
+    const currentDate = new Date();
+    this.status.changed =
+      this.status.lastDate !== currentDate.toISOString().split('T')[0];
 
     this.status.sources = {
       intensivpatienten: {
@@ -39,6 +36,13 @@ export class DownloaderIntensivpatienten extends Downloader {
 
     const dataBL = this.transformData(arrayBL, true);
     const dataDE = this.transformData(arrayDE, false);
+
+    const lastDateBL = this.getLastDate(dataBL);
+    const lastDateDE = this.getLastDate(dataDE);
+    
+    // Set latest date found in the dataset 
+    this.status.lastDate =
+      new Date(lastDateBL) < new Date(lastDateDE) ? lastDateBL : lastDateDE;
 
     // @TODO Implement key checking
     // if (!checkUniqueKeys(dataBL,   ['datum','bundeslandId'])) throw Error();
@@ -83,5 +87,9 @@ export class DownloaderIntensivpatienten extends Downloader {
         ),
         situationUnbekannt: parseInt(d.Betriebssituation_Keine_Angabe, 10)
       }));
+  }
+
+  getLastDate(data: GenericObject[]) {
+    return data[data.length - 1].datum;
   }
 }
