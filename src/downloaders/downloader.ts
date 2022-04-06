@@ -1,4 +1,10 @@
-import fs from 'fs';
+import {
+  readFileSync,
+  writeFileSync,
+  readdirSync,
+  rmSync,
+  existsSync
+} from 'fs';
 import { resolve } from 'path';
 import { config } from '../lib/config';
 import { GenericObject } from '../lib/types';
@@ -57,8 +63,8 @@ export class Downloader {
 
   // Lade das letzte Status-Objekt, bzw. erstelle ein neues Status-Objekt
   loadStatus() {
-    if (fs.existsSync(this.statusFilename)) {
-      this.status = JSON.parse(fs.readFileSync(this.statusFilename).toString());
+    if (existsSync(this.statusFilename)) {
+      this.status = JSON.parse(readFileSync(this.statusFilename).toString());
     } else {
       // @ts-ignore @TODO Add proper definition
       this.status = {};
@@ -71,15 +77,15 @@ export class Downloader {
     this.status.name = this.name;
     this.status.dateEnd = Date.now();
 
-    let file = JSON.stringify(this.status);
-    let timestamp = new Date().toISOString().slice(0, 23).replace(/\D/g, '-');
-    let logFilename = resolve(
+    const file = JSON.stringify(this.status);
+    const timestamp = new Date().toISOString().slice(0, 23).replace(/\D/g, '-');
+    const logFilename = resolve(
       config.folders.log,
       `${timestamp}-${this.name}.json`
     );
 
-    fs.writeFileSync(this.statusFilename, file);
-    fs.writeFileSync(logFilename, file);
+    writeFileSync(this.statusFilename, file);
+    writeFileSync(logFilename, file);
   }
 
   // Speichere die Daten-Tabelle
@@ -91,22 +97,22 @@ export class Downloader {
     const dataString =
       '[\n\t' + data.map((e) => JSON.stringify(e)).join(',\n\t') + '\n]';
     const dataStringWithDate = `{"date":${Date.now()},"data":${dataString}}`;
-    fs.writeFileSync(filename, dataStringWithDate);
+    writeFileSync(filename, dataStringWithDate);
   }
 
   addMetadata(data: GenericObject[], fields: string[]) {
-    let dataFolder = config.folders.static;
+    const dataFolder = config.folders.static;
 
     fields.forEach((field) => {
-      let cacheAltergruppen = new Map();
+      const cacheAltergruppen = new Map();
 
       switch (field) {
         case 'deutschland-einwohner':
           {
-            let deutschland = JSON.parse(
-              fs
-                .readFileSync(resolve(dataFolder, 'deutschland-einwohner.json'))
-                .toString()
+            const deutschland = JSON.parse(
+              readFileSync(
+                resolve(dataFolder, 'deutschland-einwohner.json')
+              ).toString()
             );
             data.forEach((e) => Object.assign(e, deutschland));
           }
@@ -114,10 +120,10 @@ export class Downloader {
 
         case 'deutschland-alter':
           {
-            let deutschland = JSON.parse(
-              fs
-                .readFileSync(resolve(dataFolder, 'deutschland-alter.json'))
-                .toString()
+            const deutschland = JSON.parse(
+              readFileSync(
+                resolve(dataFolder, 'deutschland-alter.json')
+              ).toString()
             );
             data.forEach((e) => {
               e.einwohnerzahl = getAltersgruppen(
@@ -131,10 +137,8 @@ export class Downloader {
 
         case 'bundeslaender':
           {
-            let bundeslaender = JSON.parse(
-              fs
-                .readFileSync(resolve(dataFolder, 'bundeslaender.json'))
-                .toString()
+            const bundeslaender = JSON.parse(
+              readFileSync(resolve(dataFolder, 'bundeslaender.json')).toString()
             );
             data.forEach((e) =>
               Object.assign(e, bundeslaender[e.bundeslandId])
@@ -144,12 +148,10 @@ export class Downloader {
 
         case 'bundeslaender-einwohner':
           {
-            let bundeslaender = JSON.parse(
-              fs
-                .readFileSync(
-                  resolve(dataFolder, 'bundeslaender-einwohner.json')
-                )
-                .toString()
+            const bundeslaender = JSON.parse(
+              readFileSync(
+                resolve(dataFolder, 'bundeslaender-einwohner.json')
+              ).toString()
             );
             data.forEach((e) =>
               Object.assign(e, bundeslaender[e.bundeslandId])
@@ -159,13 +161,13 @@ export class Downloader {
 
         case 'bundeslaender-alter':
           {
-            let bundeslaender = JSON.parse(
-              fs
-                .readFileSync(resolve(dataFolder, 'bundeslaender-alter.json'))
-                .toString()
+            const bundeslaender = JSON.parse(
+              readFileSync(
+                resolve(dataFolder, 'bundeslaender-alter.json')
+              ).toString()
             );
             data.forEach((e) => {
-              let obj = Object.assign({}, bundeslaender[e.bundeslandId]);
+              const obj = Object.assign({}, bundeslaender[e.bundeslandId]);
               obj.einwohnerzahl = getAltersgruppen(
                 e.bundeslandId + '_' + e.altersgruppe,
                 e.altersgruppe,
@@ -178,17 +180,17 @@ export class Downloader {
 
         case 'regierungsbezirke-einwohner':
           {
-            let landkreise = JSON.parse(
-              fs
-                .readFileSync(resolve(dataFolder, 'landkreise-einwohner.json'))
-                .toString()
+            const landkreise = JSON.parse(
+              readFileSync(
+                resolve(dataFolder, 'landkreise-einwohner.json')
+              ).toString()
             );
-            let landkreis2regierungsbezirk = JSON.parse(
-              fs
-                .readFileSync(resolve(dataFolder, 'regierungsbezirke.json'))
-                .toString()
+            const landkreis2regierungsbezirk = JSON.parse(
+              readFileSync(
+                resolve(dataFolder, 'regierungsbezirke.json')
+              ).toString()
             );
-            let regierungsbezirke = new Map();
+            const regierungsbezirke = new Map();
             Object.entries(landkreis2regierungsbezirk).forEach(
               ([landkreisId, regierungsbezirk]) => {
                 if (!regierungsbezirke.has(regierungsbezirk))
@@ -205,8 +207,8 @@ export class Downloader {
 
         case 'landkreise':
           {
-            let landkreise = JSON.parse(
-              fs.readFileSync(resolve(dataFolder, 'landkreise.json')).toString()
+            const landkreise = JSON.parse(
+              readFileSync(resolve(dataFolder, 'landkreise.json')).toString()
             );
             data.forEach((e) => Object.assign(e, landkreise[e.landkreisId]));
           }
@@ -214,10 +216,10 @@ export class Downloader {
 
         case 'landkreise-einwohner':
           {
-            let landkreise = JSON.parse(
-              fs
-                .readFileSync(resolve(dataFolder, 'landkreise-einwohner.json'))
-                .toString()
+            const landkreise = JSON.parse(
+              readFileSync(
+                resolve(dataFolder, 'landkreise-einwohner.json')
+              ).toString()
             );
             data.forEach((e) => Object.assign(e, landkreise[e.landkreisId]));
           }
@@ -259,17 +261,17 @@ export class Downloader {
 
   getLogs() {
     // behalte nur Logdateien, die nicht älter als 1 Woche sind
-    let minTime = Date.now() - 7 * 86400000;
+    const minTime = Date.now() - 7 * 86400000;
 
     // Lade Log-Dateien
-    let logs: GenericObject[] = [];
-    fs.readdirSync(config.folders.log).forEach((f) => {
+    const logs: GenericObject[] = [];
+    readdirSync(config.folders.log).forEach((f) => {
       if (!f.endsWith(this.name + '.json')) return;
-      let filename = resolve(config.folders.log, f);
+      const filename = resolve(config.folders.log, f);
       try {
-        let status = JSON.parse(fs.readFileSync(filename).toString());
+        const status = JSON.parse(readFileSync(filename).toString());
 
-        if (status.dateStart < minTime) return fs.rmSync(filename);
+        if (status.dateStart < minTime) return rmSync(filename);
 
         logs.push(status);
       } catch (e) {}
