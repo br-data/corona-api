@@ -18,8 +18,7 @@ export class DownloaderImpfungenAktuell extends Downloader {
     // Wenn man sie erhöht, erzwingt man einen Datenupdate.
     const hash = file.sha + '_' + config.version;
 
-    // this.status.changed = this.status.hash !== hash;
-    this.status.changed = true;
+    this.status.changed = this.status.hash !== hash;
 
     this.status.newHash = hash;
     this.status.lastCommitDate = file.lastCommitDate;

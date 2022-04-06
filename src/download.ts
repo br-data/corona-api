@@ -5,10 +5,10 @@ import { DownloaderInfektionen } from './downloaders/downloader_infektionen';
 import { DownloaderIntensivpatienten } from './downloaders/downloader_intensivpatienten';
 
 const workers = [
-  // {
-  //   name: 'hospitalisierungen',
-  //   Downloader: DownloaderHospitalisierungen
-  // },
+  {
+    name: 'hospitalisierungen',
+    Downloader: DownloaderHospitalisierungen
+  },
   {
     name: 'impfungen',
     Downloader: DownloaderImpfungenAktuell
@@ -17,14 +17,14 @@ const workers = [
     name: 'impfungen',
     Downloader: DownloaderImpfungenSerie
   },
-  // {
-  //   name: 'intensivpatienten',
-  //   Downloader: DownloaderIntensivpatienten
-  // },
-  // {
-  //   name: 'infektionen',
-  //   Downloader: DownloaderInfektionen
-  // }
+  {
+    name: 'intensivpatienten',
+    Downloader: DownloaderIntensivpatienten
+  },
+  {
+    name: 'infektionen',
+    Downloader: DownloaderInfektionen
+  }
 ];
 
 // @TODO Move this to a preparation script
