@@ -7,7 +7,7 @@ import { GenericObject } from './types';
 
 // @TODO Convert function to class syntax
 export function Database() {
-  let tableLookup = new Map();
+  const tableLookup = new Map();
 
   return {
     start,
@@ -27,23 +27,23 @@ export function Database() {
     await updateDownloader();
 
     // Lade die Daten
-    let folder = config.folders.tables;
+    const folder = config.folders.tables;
     readdirSync(folder).forEach((filename) => {
       if (!filename.endsWith('.json')) return;
 
-      let tableName = filename.replace(/\..*/, '');
-      let fullname = resolve(folder, filename);
-      let mtime = statSync(fullname).mtime;
+      const tableName = filename.replace(/\..*/, '');
+      const fullname = resolve(folder, filename);
+      const mtime = statSync(fullname).mtime;
 
       if (!tableLookup.has(tableName)) {
         tableLookup.set(tableName, { name: tableName });
       }
 
-      let table = tableLookup.get(tableName);
+      const table = tableLookup.get(tableName);
 
       if (table.mtime !== mtime) {
         try {
-          let result = JSON.parse(readFileSync(fullname).toString());
+          const result = JSON.parse(readFileSync(fullname).toString());
           table.date = result.date;
           table.data = result.data;
           table.mtime = mtime;
@@ -55,7 +55,7 @@ export function Database() {
   }
 
   function queryData(tableName: string, query: GenericObject) {
-    let table = tableLookup.get(tableName);
+    const table = tableLookup.get(tableName);
     if (!table)
       throw Error(
         `unknown table "${tableName}". known tables: ` +
@@ -69,14 +69,14 @@ export function Database() {
       let filters = query.filter;
       if (!Array.isArray(filters)) filters = [filters];
 
-      for (let filter of filters) {
-        let match = filter.match(/^([\w-]+)([\<\>]=?|[\=\!]=)([\w-]+)$/);
+      for (const filter of filters) {
+        const match = filter.match(/^([\w-]+)([\<\>]=?|[\=\!]=)([\w-]+)$/);
         if (!match)
           throw Error(
             `malformed filter ${filter}: expecting e.g. "filter=bundeslandId=12"`
           );
-        let key = match[1];
-        let compare = match[2];
+        const key = match[1];
+        const compare = match[2];
         let value = match[3];
         if (/^[0-9]+$/.test(value)) value = parseInt(value, 10);
 
@@ -114,14 +114,14 @@ export function Database() {
       if (!Array.isArray(sorters)) sorters = [sorters];
       sorters.reverse();
 
-      for (let sorter of sorters) {
-        let match = sorter.match(/^([\w-]+)(=desc)?$/i);
+      for (const sorter of sorters) {
+        const match = sorter.match(/^([\w-]+)(=desc)?$/i);
         if (!match)
           throw Error(
             `malformed sort ${sorter}: expecting e.g. "sort=bundesland" or "sort=datum=desc"`
           );
-        let key = match[1];
-        let ascending = !match[2];
+        const key = match[1];
+        const ascending = !match[2];
         if (ascending) {
           data.sort((a: string, b: string) => (a[key] < b[key] ? -1 : 1));
         } else {
@@ -131,7 +131,7 @@ export function Database() {
     }
 
     if (query.fieldList) {
-      let fields = query.fieldList.split(',');
+      const fields = query.fieldList.split(',');
       data = data.map((entry: GenericObject) =>
         Object.fromEntries(fields.map((field: string) => [field, entry[field]]))
       );
@@ -139,7 +139,7 @@ export function Database() {
 
     // limit
     if (query.limit) {
-      let limit = parseInt(query.limit, 10);
+      const limit = parseInt(query.limit, 10);
       data = data.slice(0, limit);
     }
 
@@ -171,7 +171,7 @@ export function Database() {
 
   // Gebe eine Liste aller Felder einer Tabelle zurück
   function getFields(tableName: string) {
-    let table = tableLookup.get(tableName);
+    const table = tableLookup.get(tableName);
     if (!table)
       throw Error(
         `unknown table "${tableName}". known tables: ` +
