@@ -1,17 +1,29 @@
 {
-  "SCHLESWIG_HOLSTEIN": { "bundeslandId": "1", "bundesland": "Schleswig-Holstein" },
+  "SCHLESWIG_HOLSTEIN": {
+    "bundeslandId": "1",
+    "bundesland": "Schleswig-Holstein"
+  },
   "HAMBURG": { "bundeslandId": "2", "bundesland": "Hamburg" },
   "NIEDERSACHSEN": { "bundeslandId": "3", "bundesland": "Niedersachsen" },
   "BREMEN": { "bundeslandId": "4", "bundesland": "Bremen" },
-  "NORDRHEIN_WESTFALEN": { "bundeslandId": "5", "bundesland": "Nordrhein-Westfalen" },
+  "NORDRHEIN_WESTFALEN": {
+    "bundeslandId": "5",
+    "bundesland": "Nordrhein-Westfalen"
+  },
   "HESSEN": { "bundeslandId": "6", "bundesland": "Hessen" },
   "RHEINLAND_PFALZ": { "bundeslandId": "7", "bundesland": "Rheinland-Pfalz" },
-  "BADEN_WUERTTEMBERG": { "bundeslandId": "8", "bundesland": "Baden-Württemberg" },
+  "BADEN_WUERTTEMBERG": {
+    "bundeslandId": "8",
+    "bundesland": "Baden-Württemberg"
+  },
   "BAYERN": { "bundeslandId": "9", "bundesland": "Bayern" },
   "SAARLAND": { "bundeslandId": "10", "bundesland": "Saarland" },
   "BERLIN": { "bundeslandId": "11", "bundesland": "Berlin" },
   "BRANDENBURG": { "bundeslandId": "12", "bundesland": "Brandenburg" },
-  "MECKLENBURG_VORPOMMERN": { "bundeslandId": "13", "bundesland": "Mecklenburg-Vorpommern" },
+  "MECKLENBURG_VORPOMMERN": {
+    "bundeslandId": "13",
+    "bundesland": "Mecklenburg-Vorpommern"
+  },
   "SACHSEN": { "bundeslandId": "14", "bundesland": "Sachsen" },
   "SACHSEN_ANHALT": { "bundeslandId": "15", "bundesland": "Sachsen-Anhalt" },
   "THUERINGEN": { "bundeslandId": "16", "bundesland": "Thüringen" }
