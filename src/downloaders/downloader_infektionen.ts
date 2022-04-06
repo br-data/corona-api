@@ -194,12 +194,12 @@ export class DownloaderInfektionen extends Downloader {
     this.saveTable('rb', dataRB);
     this.saveTable('bl', dataBL);
     this.saveTable('de', dataDE);
-    this.saveTable('lk-neu', dataLKNeu);
-    this.saveTable('rb-neu', dataRBNeu);
-    this.saveTable('bl-neu', dataBLNeu);
-    this.saveTable('de-neu', dataDENeu);
-    this.saveTable('bl-alt', dataBLAlt);
-    this.saveTable('de-alt', dataDEAlt);
+    this.saveTable('lk-aktuell', dataLKNeu);
+    this.saveTable('rb-aktuell', dataRBNeu);
+    this.saveTable('bl-aktuell', dataBLNeu);
+    this.saveTable('de-aktuell', dataDENeu);
+    this.saveTable('bl-alter', dataBLAlt);
+    this.saveTable('de-alter', dataDEAlt);
 
     function cleanAltersgruppe(text: string) {
       switch (text) {

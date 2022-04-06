@@ -36,7 +36,7 @@ Aktuell werden die folgenden Tabellen generiert:
 
 - Hospitalisierung: ([Datenquelle](https://github.com/robert-koch-institut/COVID-19-Hospitalisierungen_in_Deutschland))
   - ganz Deutschland: `hospitalisierung-de`
-  - ganz Deutschland, nach Altersgruppen: `hospitalisierung-de-alt`
+  - ganz Deutschland, nach Altersgruppen: `hospitalisierung-de-alter`
   - nach Bundesländern: `hospitalisierung-bl`
 - Impfungen nach: ([Datenquelle](https://github.com/robert-koch-institut/COVID-19-Impfungen_in_Deutschland))
   - ganz Deutschland: `impfungen-de-serie`
@@ -45,9 +45,9 @@ Aktuell werden die folgenden Tabellen generiert:
   - nach Bundesländern und Impfstoff: `impfungen-bl-full`
 - Infektionen nach: ([Datenquelle](https://github.com/robert-koch-institut/SARS-CoV-2_Infektionen_in_Deutschland))
   - ganz Deutschland: `infektionen-de`
-  - ganz Deutschland, nach Altersgruppen: `infektionen-de-alt`
+  - ganz Deutschland, nach Altersgruppen: `infektionen-de-alter`
   - nach Bundesländern: `infektionen-bl`
-  - nach Bundesländern und Altersgruppen: `infektionen-bl-alt`
+  - nach Bundesländern und Altersgruppen: `infektionen-bl-alter`
   - nach Landkreisen: `infektionen-lk`
 
 Jede Tabelle enthält die Daten, die vom RKI bereitgestellt werden. Darüber hinaus werden noch ggf. weitere Daten hinzugefügt, wie z.B. Landkreisname, Einwohnerzahlen, Einwohner nach Altersgruppen etc. Basis dafür sind die Daten in `data/static`.

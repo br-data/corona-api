@@ -71,7 +71,7 @@ export class DownloaderHospitalisierungen extends Downloader {
 
     this.saveTable('bl', dataBL);
     this.saveTable('de', dataDE);
-    this.saveTable('de-alt', dataDEAlt);
+    this.saveTable('de-alter', dataDEAlt);
 
     function cleanAltersgruppe(text: string) {
       switch (text) {
