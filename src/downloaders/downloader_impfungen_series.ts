@@ -2,7 +2,6 @@ import { fetch, getGithubFileMeta, csv2array, summarizer } from '../lib/helper';
 import { Downloader } from './downloader';
 import { GenericObject } from '../lib/types';
 import { config } from '../lib/config';
-import { writeFileSync } from 'fs';
 
 export class DownloaderImpfungenSerie extends Downloader {
   githubRepo = 'robert-koch-institut/COVID-19-Impfungen_in_Deutschland';
@@ -19,8 +18,7 @@ export class DownloaderImpfungenSerie extends Downloader {
     // Wenn man sie erhöht, erzwingt man einen Datenupdate.
     const hash = file.sha + '_' + config.version;
 
-    // this.status.changed = this.status.hash !== hash;
-    this.status.changed = true;
+    this.status.changed = this.status.hash !== hash;
 
     this.status.newHash = hash;
     this.status.lastCommitDate = file.lastCommitDate;
@@ -36,14 +34,14 @@ export class DownloaderImpfungenSerie extends Downloader {
     const csv = await fetch(this.status.sources.impfungen.url);
     const data = csv2array(csv.toString());
 
-    const summaryBLFull = summarizer(
-      ['datum', 'bundeslandId', 'impfstoff', 'impfserie'],
-      ['anzahl']
-    );
-    const summaryDEFull = summarizer(
-      ['datum', 'impfstoff', 'impfserie'],
-      ['anzahl']
-    );
+    // const summaryBLFull = summarizer(
+    //   ['datum', 'bundeslandId', 'impfstoff', 'impfserie'],
+    //   ['anzahl']
+    // );
+    // const summaryDEFull = summarizer(
+    //   ['datum', 'impfstoff', 'impfserie'],
+    //   ['anzahl']
+    // );
     const summaryBLSerie = summarizer(
       ['datum', 'bundeslandId', 'impfserie'],
       ['anzahl']
@@ -62,20 +60,20 @@ export class DownloaderImpfungenSerie extends Downloader {
       // Only add federal states with valid IDs
       // Yes, I'm looking at you, unknown 17th state :)
       if (entry.bundeslandId <= 16) {
-        summaryBLFull.add(entry);
-        summaryDEFull.add(entry);
+        // summaryBLFull.add(entry);
+        // summaryDEFull.add(entry);
         summaryBLSerie.add(entry);
         summaryDESerie.add(entry);
       }
     });
 
-    const dataBLFull = summaryBLFull.get({ fillGaps: true });
-    const dataDEFull = summaryDEFull.get({ fillGaps: true });
+    // const dataBLFull = summaryBLFull.get({ fillGaps: true });
+    // const dataDEFull = summaryDEFull.get({ fillGaps: true });
     const dataBLSerie = summaryBLSerie.get({ fillGaps: true });
     const dataDESerie = summaryDESerie.get({ fillGaps: true });
 
-    this.addMetadata(dataBLFull, ['bundeslaender-einwohner']);
-    this.addMetadata(dataDEFull, ['deutschland-einwohner']);
+    // this.addMetadata(dataBLFull, ['bundeslaender-einwohner']);
+    // this.addMetadata(dataDEFull, ['deutschland-einwohner']);
     this.addMetadata(dataBLSerie, ['bundeslaender-einwohner']);
     this.addMetadata(dataDESerie, ['deutschland-einwohner']);
 
@@ -85,19 +83,10 @@ export class DownloaderImpfungenSerie extends Downloader {
     const dataBLSerieTransposed = this.transposeData(dataBLSerieSums);
     const dataDESerieTransposed = this.transposeData(dataDESerieSums);
 
-    // writeFileSync(
-    //   'test-sums.json',
-    //   JSON.stringify(dataBLSerieSums, undefined, 2)
-    // );
-    // writeFileSync(
-    //   'test-series.json',
-    //   JSON.stringify(dataBLSerieTransposed, undefined, 2)
-    // );
-
-    this.saveTable('bl-full', dataBLFull);
-    this.saveTable('de-full', dataDEFull);
-    this.saveTable('bl-serie', dataBLSerieTransposed);
-    this.saveTable('de-serie', dataDESerieTransposed);
+    // this.saveTable('bl-full', dataBLFull);
+    // this.saveTable('de-full', dataDEFull);
+    this.saveTable('bl', dataBLSerieTransposed);
+    this.saveTable('de', dataDESerieTransposed);
   }
 
   transposeData(data: GenericObject[]) {
@@ -123,8 +112,7 @@ export class DownloaderImpfungenSerie extends Downloader {
 
           return currentGroup.reduce((result, entry) => {
             const currentSuffix = suffixe[entry.impfserie];
-            const rate =
-              Math.round((entry.summe / entry.einwohnerzahl) * 100 * 10) / 10;
+            const rate = Math.round((entry.summe / entry.einwohnerzahl) * 1000) / 10;
 
             result[`anzahl${currentSuffix}`] = entry.anzahl;
             result[`summe${currentSuffix}`] = entry.summe;
