@@ -6,7 +6,7 @@ import { GenericObject } from '../lib/types';
 import { config } from '../lib/config';
 
 export class DownloaderInfektionen extends Downloader {
-  githubRepo = 'robert-koch-institut/SARS-CoV-2_Infektionen_in_Deutschland';
+  githubRepo = 'robert-koch-institut/SARS-CoV-2-Infektionen_in_Deutschland';
   githubFile = 'Aktuell_Deutschland_SarsCov2_Infektionen.csv';
 
   constructor() {
