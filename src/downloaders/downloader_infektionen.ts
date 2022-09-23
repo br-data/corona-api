@@ -26,7 +26,7 @@ export class DownloaderInfektionen extends Downloader {
 
     this.status.sources = {
       infektionen: {
-        url: `https://media.githubusercontent.com/media/${this.githubRepo}/master/${this.githubFile}` // Git LFS
+        url: `https://media.githubusercontent.com/media/${this.githubRepo}/main/${this.githubFile}` // Git LFS
       }
     };
   }
