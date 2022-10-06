@@ -73,7 +73,7 @@ export function Database() {
         const match = filter.match(/^([\w-]+)([\<\>]=?|[\=\!]=)([\w-]+)$/);
         if (!match)
           throw Error(
-            `malformed filter ${filter}: expecting e.g. "filter=bundeslandId=12"`
+            `malformed filter ${filter}: expecting e.g. "filter=bundeslandId==12"`
           );
         const key = match[1];
         const compare = match[2];
