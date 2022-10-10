@@ -70,23 +70,26 @@ export function Database() {
       if (!Array.isArray(filters)) filters = [filters];
 
       for (const filter of filters) {
-        const match = filter.match(/^([\w-]+)([\<\>]=?|[\=\!]=)([\w-]+)$/);
+        let regular_expression = getRegExp(filter);
+        const match = filter.match(regular_expression);
         if (!match)
           throw Error(
             `malformed filter ${filter}: expecting e.g. "filter=bundeslandId==12"`
           );
         const key = match[1];
         const compare = match[2];
-        let value = match[3];
+        let value = match.slice(3, match.length);
         if (/^[0-9]+$/.test(value)) value = parseInt(value, 10);
 
         let filterFunction;
         switch (compare) {
           case '==':
-            filterFunction = (obj: GenericObject) => obj[key] == value;
+            //filterFunction = (obj: GenericObject) => obj[key] == value;
+            filterFunction = (obj: GenericObject) => value.includes(obj[key])
             break;
           case '!=':
-            filterFunction = (obj: GenericObject) => obj[key] != value;
+            //filterFunction = (obj: GenericObject) => obj[key] != value;
+            filterFunction = (obj: GenericObject) => !value.includes(obj[key])
             break;
           case '<=':
             filterFunction = (obj: GenericObject) => obj[key] <= value;
@@ -179,4 +182,21 @@ export function Database() {
       );
     return Object.keys(table.data[0]);
   }
+
+  // Bilde die Regular Expression fuer die passende Anzahl an durch Kommata getrennte Elemente 
+  function getRegExp(new_query: string) {
+    const count_occurences = (str) => {
+        const re = new RegExp(',[\\w-]', 'g')
+        return ((str || '').match(re) || []).length
+    }
+
+    const pattern = ',([\\w-]+)';
+    const repeated_string = pattern.repeat(count_occurences(new_query));
+
+    const regex = '([\\w-]+)([\\<\\>]=?|[\\=\\!]=)([\\w-]+)';
+    const complete_regex = regex.concat(repeated_string);
+    const final_regex = new RegExp(complete_regex);
+
+    return final_regex;
+};
 }
