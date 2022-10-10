@@ -79,7 +79,8 @@ export function Database() {
         const key = match[1];
         const compare = match[2];
         let value = match.slice(3, match.length);
-        if (/^[0-9]+$/.test(value)) value = parseInt(value, 10);
+        value = checkDataType(value);
+        //if (/^[0-9]+$/.test(value)) value = parseInt(value, 10);
 
         let filterFunction;
         switch (compare) {
@@ -198,5 +199,27 @@ export function Database() {
     const final_regex = new RegExp(complete_regex);
 
     return final_regex;
+};
+
+function checkDataType(numbers_to_check: string[]){
+
+  let true_array = Array();
+
+  numbers_to_check.forEach(function(item){
+
+      let true_or_not = /^[0-9]+$/.test(item);
+      true_array.push(true_or_not);    
+  });
+
+  let new_numbers;
+
+  if (true_array.every(v => v === true)) {
+      new_numbers = numbers_to_check.map(x => parseInt(x, 10));
+  } else {
+      new_numbers = numbers_to_check.slice();
+  }
+
+  return new_numbers;
+
 };
 }
