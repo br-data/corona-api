@@ -80,16 +80,13 @@ export function Database() {
         const compare = match[2];
         let value = match.slice(3, match.length);
         value = checkDataType(value);
-        //if (/^[0-9]+$/.test(value)) value = parseInt(value, 10);
 
         let filterFunction;
         switch (compare) {
           case '==':
-            //filterFunction = (obj: GenericObject) => obj[key] == value;
             filterFunction = (obj: GenericObject) => value.includes(obj[key])
             break;
           case '!=':
-            //filterFunction = (obj: GenericObject) => obj[key] != value;
             filterFunction = (obj: GenericObject) => !value.includes(obj[key])
             break;
           case '<=':
