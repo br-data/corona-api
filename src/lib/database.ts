@@ -201,6 +201,7 @@ export function Database() {
     return final_regex;
 };
 
+// Checke ob alle eingegebenen Werte Integer sind und wandele um wenn ja
 function checkDataType(numbers_to_check: string[]){
 
   let true_array = Array();
