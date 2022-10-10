@@ -185,7 +185,7 @@ export function Database() {
 
   // Bilde die Regular Expression fuer die passende Anzahl an durch Kommata getrennte Elemente 
   function getRegExp(new_query: string) {
-    const count_occurences = (str) => {
+    const count_occurences = (str: string) => {
         const re = new RegExp(',[\\w-]', 'g')
         return ((str || '').match(re) || []).length
     }
