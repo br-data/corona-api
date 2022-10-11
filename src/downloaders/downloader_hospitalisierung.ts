@@ -48,16 +48,16 @@ export class DownloaderHospitalisierungen extends Downloader {
         datum: e.Datum,
         bundeslandId: parseInt(e.Bundesland_Id, 10),
         altersgruppe: cleanAltersgruppe(e.Altersgruppe),
-        hospitalisierung7TOhneNachmeldungFaelle: parseInt(e['fixierte_7T_Hospitalisierung_Faelle'], 10),
-        hospitalisierung7TMitNachmeldungFaelle: parseInt(e['aktualisierte_7T_Hospitalisierung_Faelle'], 10),
-        hospitalisierung7TSchaetzungFaelle: parseInt(e['PS_adjustierte_7T_Hospitalisierung_Faelle'], 10),
-        hospitalisierung7TObereSchaetzungFaelle: parseInt(e['OG_PI_adjustierte_7T_Hospitalisierung_Faelle'], 10),
-        hospitalisierung7TUntereSchaetzungFaelle: parseInt(e['UG_PI_adjustierte_7T_Hospitalisierung_Faelle'], 10),
-        hospitalisierung7TOhneNachmeldungInzidenz: parseFloat(e['fixierte_7T_Hospitalisierung_Inzidenz']),
-        hospitalisierung7TMitNachmeldungInzidenz: parseFloat(e['aktualisierte_7T_Hospitalisierung_Inzidenz']),
-        hospitalisierung7TSchaetzungInzidenz: parseFloat(e['PS_adjustierte_7T_Hospitalisierung_Inzidenz']),
-        hospitalisierung7TObereSchaetzungFaelleInzidenz: parseFloat(e['OG_PI_adjustierte_7T_Hospitalisierung_Inzidenz']),
-        hospitalisierung7TUntereSchaetzungInzidenz: parseFloat(e['UG_PI_adjustierte_7T_Hospitalisierung_Inzidenz'])
+        hospitalisierungenOhneNachmeldung: parseInt(e['fixierte_7T_Hospitalisierung_Faelle'], 10),
+        hospitalisierungenMitNachmeldung: parseInt(e['aktualisierte_7T_Hospitalisierung_Faelle'], 10),
+        hospitalisierungenSchaetzung: parseInt(e['PS_adjustierte_7T_Hospitalisierung_Faelle'], 10),
+        hospitalisierungenObereSchaetzung: parseInt(e['OG_PI_adjustierte_7T_Hospitalisierung_Faelle'], 10),
+        hospitalisierungenUntereSchaetzung: parseInt(e['UG_PI_adjustierte_7T_Hospitalisierung_Faelle'], 10),
+        hospitalisierungsInzidenzOhneNachmeldung: parseFloat(e['fixierte_7T_Hospitalisierung_Inzidenz']),
+        hospitalisierungsInzidenzMitNachmeldung: parseFloat(e['aktualisierte_7T_Hospitalisierung_Inzidenz']),
+        hospitalisierungsInzidenzSchaetzung: parseFloat(e['PS_adjustierte_7T_Hospitalisierung_Inzidenz']),
+        hospitalisierungsInzidenzObereSchaetzung: parseFloat(e['OG_PI_adjustierte_7T_Hospitalisierung_Inzidenz']),
+        hospitalisierungsInzidenzUntereSchaetzung: parseFloat(e['UG_PI_adjustierte_7T_Hospitalisierung_Inzidenz'])
       };
       if (entry.bundeslandId > 0 && entry.altersgruppe === 'alle')
         dataBL.push(entry);
