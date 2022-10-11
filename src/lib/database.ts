@@ -70,24 +70,23 @@ export function Database() {
       if (!Array.isArray(filters)) filters = [filters];
 
       for (const filter of filters) {
-        let regular_expression = getRegExp(filter);
-        const match = filter.match(regular_expression);
+        const match = filter.match(/^([\w-]+)([\<\>]=?|[\=\!]=)([\w-]+)$/);
         if (!match)
           throw Error(
-            `malformed filter ${filter}: expecting e.g. "filter=bundeslandId==12"`
+            `malformed filter ${filter}: expecting e.g. "filter=bundeslandId=12"`
           );
         const key = match[1];
         const compare = match[2];
-        let value = match.slice(3, match.length);
-        value = checkDataType(value);
+        let value = match[3];
+        if (/^[0-9]+$/.test(value)) value = parseInt(value, 10);
 
         let filterFunction;
         switch (compare) {
           case '==':
-            filterFunction = (obj: GenericObject) => value.includes(obj[key])
+            filterFunction = (obj: GenericObject) => obj[key] == value;
             break;
           case '!=':
-            filterFunction = (obj: GenericObject) => !value.includes(obj[key])
+            filterFunction = (obj: GenericObject) => obj[key] != value;
             break;
           case '<=':
             filterFunction = (obj: GenericObject) => obj[key] <= value;
@@ -180,44 +179,4 @@ export function Database() {
       );
     return Object.keys(table.data[0]);
   }
-
-  // Bilde die Regular Expression fuer die passende Anzahl an durch Kommata getrennte Elemente 
-  function getRegExp(new_query: string) {
-    const count_occurences = (str: string) => {
-        const re = new RegExp(',[\\w-]', 'g')
-        return ((str || '').match(re) || []).length
-    }
-
-    const pattern = ',([\\w-]+)';
-    const repeated_string = pattern.repeat(count_occurences(new_query));
-
-    const regex = '([\\w-]+)([\\<\\>]=?|[\\=\\!]=)([\\w-]+)';
-    const complete_regex = regex.concat(repeated_string);
-    const final_regex = new RegExp(complete_regex);
-
-    return final_regex;
-};
-
-// Checke ob alle eingegebenen Werte Integer sind und wandele um wenn ja
-function checkDataType(numbers_to_check: string[]){
-
-  let true_array = Array();
-
-  numbers_to_check.forEach(function(item){
-
-      let true_or_not = /^[0-9]+$/.test(item);
-      true_array.push(true_or_not);    
-  });
-
-  let new_numbers;
-
-  if (true_array.every(v => v === true)) {
-      new_numbers = numbers_to_check.map(x => parseInt(x, 10));
-  } else {
-      new_numbers = numbers_to_check.slice();
-  }
-
-  return new_numbers;
-
-};
 }
