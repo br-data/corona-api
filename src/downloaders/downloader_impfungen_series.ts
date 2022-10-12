@@ -3,6 +3,7 @@ import { Downloader } from './downloader';
 import { GenericObject } from '../lib/types';
 import { config } from '../lib/config';
 
+
 export class DownloaderImpfungenSerie extends Downloader {
   githubRepo = 'robert-koch-institut/COVID-19-Impfungen_in_Deutschland';
   githubFile = 'Aktuell_Deutschland_Bundeslaender_COVID-19-Impfungen.csv';
@@ -42,11 +43,14 @@ export class DownloaderImpfungenSerie extends Downloader {
     //   ['datum', 'impfstoff', 'impfserie'],
     //   ['anzahl']
     // );
+
     const summaryBLSerie = summarizer(
       ['datum', 'bundeslandId', 'impfserie'],
       ['anzahl']
     );
-    const summaryDESerie = summarizer(['datum', 'impfserie'], ['anzahl']);
+    const summaryDESerie = summarizer(['datum', 'impfserie'],
+      ['anzahl']
+    );
 
     data.forEach((e) => {
       const entry = {
@@ -69,8 +73,21 @@ export class DownloaderImpfungenSerie extends Downloader {
 
     // const dataBLFull = summaryBLFull.get({ fillGaps: true });
     // const dataDEFull = summaryDEFull.get({ fillGaps: true });
-    const dataBLSerie = summaryBLSerie.get({ fillGaps: true });
+    let dataBLSerie = summaryBLSerie.get({ fillGaps: true });
     const dataDESerie = summaryDESerie.get({ fillGaps: true });
+
+    // Data set of the BLSeries is complemented with the state 0 for Germany.
+    // To do this, the label for Germany is first created, then appended to the
+    // dataDESeries dataset, and finally this new dataset is combined
+    // with dataBLSeries.
+    const dataDESerieWithBLId = dataDESerie;
+    const bundeslandDELabel = JSON.parse(
+      '{"bundeslandId":0}');
+
+    dataDESerieWithBLId.forEach((e) =>
+    Object.assign(e, bundeslandDELabel))
+
+    dataBLSerie = dataBLSerie.concat(dataDESerieWithBLId)
 
     // this.addMetadata(dataBLFull, ['bundeslaender-einwohner']);
     // this.addMetadata(dataDEFull, ['deutschland-einwohner']);
