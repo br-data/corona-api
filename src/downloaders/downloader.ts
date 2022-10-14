@@ -119,8 +119,8 @@ export class Downloader {
       switch (field) {
         
         case 'deutschland-einwohner':
-          /**
-          {
+          
+          {/**
             const deutschland = JSON.parse(
               readFileSync(
                 resolve(dataFolder, 'deutschland-einwohner.json')
