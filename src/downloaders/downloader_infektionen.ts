@@ -188,6 +188,21 @@ export class DownloaderInfektionen extends Downloader {
     addLatestMeldedatum(dataBLNeu);
     addLatestMeldedatum(dataDENeu);
 
+    addField(dataLK, dataLKNeu, "inzidenz");
+    addField(dataRB, dataRBNeu, "inzidenz");
+    addField(dataBL, dataBLNeu, "inzidenz");
+    addField(dataDE, dataDENeu, "inzidenz");
+
+    addField(dataLK, dataLKNeu, "summeFall");
+    addField(dataRB, dataRBNeu, "summeFall");
+    addField(dataBL, dataBLNeu, "summeFall");
+    addField(dataDE, dataDENeu, "summeFall");
+
+    addField(dataLK, dataLKNeu, "summeTodesfall");
+    addField(dataRB, dataRBNeu, "summeTodesfall");
+    addField(dataBL, dataBLNeu, "summeTodesfall");
+    addField(dataDE, dataDENeu, "summeTodesfall");
+
     console.log('      save');
 
     this.saveTable('lk', dataLK);
@@ -223,6 +238,42 @@ export class DownloaderInfektionen extends Downloader {
 
     function addLatestMeldedatum(list: GenericObject[]) {
       list.forEach((e) => (e.meldedatum = dateMax));
+    }
+
+    /* Funktion ermöglicht es weitere Felder in den *-aktuell-Tabellen hinzuzufügen.
+    Funktionen erhält drei Input-Parameter:
+    1. Als Input dient die Liste aus der die generierten Daten gezogen werden,
+    2. eine Liste, in die die Daten geschrieben werden sollen (listNew) und
+    3. ein fieldname, um welche Daten die neue Liste ergänzt werden sollen.
+
+     Für jeden Eintrag in der zweiten Liste werden eindeutige Merkmale gespeichert,
+     anhand derer man korrespondierende Einträge der ersten Liste identifizieren kann.
+     Zentral ist stets das Meldedatum der Einträge. Bei Listen mit Landkreisen,
+     Regierungsbezirken oder Bundesländern sind aber auch diese Merkmale relevant.
+
+     Wurde ein entsprechender Eintrag gefunden, so wird dieser in der *-aktuell-Liste abgespeichert.
+    */
+    function addField(list: GenericObject[], listNew: GenericObject[], fieldname: string) {
+      listNew.forEach(
+        function(element) {
+          const meldedatum = element.meldedatum;
+          const landkreisId = element.landkreisId;
+          const regierungsbezirk = element.regierungsbezirk;
+          const bundeslandId = element.bundeslandId;
+
+          let correspondingObjectInNewList;
+
+          if (landkreisId != undefined) {
+            correspondingObjectInNewList = list.find(obj => obj.landkreisId === landkreisId && obj.meldedatum === meldedatum);
+          } else if (regierungsbezirk != undefined) {
+            correspondingObjectInNewList = list.find(obj => obj.regierungsbezirk === regierungsbezirk && obj.meldedatum === meldedatum);
+          } else if (bundeslandId != undefined) {
+            correspondingObjectInNewList = list.find(obj => obj.bundeslandId === bundeslandId && obj.meldedatum === meldedatum);
+          } else {
+            correspondingObjectInNewList = list.find(obj => obj.meldedatum === meldedatum);
+          }
+          element[fieldname] = correspondingObjectInNewList?.[fieldname];
+        });
     }
 
     function calcInzidenzenUndSummen(
