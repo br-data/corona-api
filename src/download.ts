@@ -28,7 +28,7 @@ const workers = [
 ];
 
 // @TODO Move this to a preparation script
-// if (require.main === module) update();
+// if (require.main === module) update().
 
 export async function update() {
   console.log('downloaders started');
