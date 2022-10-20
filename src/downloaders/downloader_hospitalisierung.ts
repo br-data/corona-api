@@ -1,6 +1,6 @@
 import { Downloader } from './downloader';
+require('isomorphic-fetch');
 import {
-  fetch,
   getGithubFileMeta,
   csv2array,
   checkUniqueKeys
@@ -34,6 +34,7 @@ export class DownloaderHospitalisierungen extends Downloader {
       }
     };
   }
+
 
   async doUpdate() {
     const csv = await fetch(this.status.sources.hospitalisierung.url);
@@ -73,7 +74,7 @@ export class DownloaderHospitalisierungen extends Downloader {
 
     this.saveTable('bl', dataBL);
     this.saveTable('de', dataDE);
-    
+
     function cleanAltersgruppe(text: string) {
       switch (text) {
         case '00+':

@@ -1,8 +1,9 @@
-import https from 'https';
+require('isomorphic-fetch');
 import { GenericObject, GithubFile, GithubCommit } from './types';
 import { config } from './config';
 
 // @TODO Replace with node-fetch or a similar lib
+/*
 export async function fetch(url: string, headers = {}): Promise<string> {
   return new Promise((resolve, reject) => {
     https
@@ -31,6 +32,7 @@ export async function fetch(url: string, headers = {}): Promise<string> {
       });
   });
 }
+*/
 
 // @TODO Use Github client library instead
 export async function getGithubFileMeta(repo: string, filename: string) {
@@ -39,18 +41,18 @@ export async function getGithubFileMeta(repo: string, filename: string) {
   }
 
   // Header für GitHub-API-Requests
-  const gitHubAPIHeader = {
+  const gitHubAPIHeader = {headers:{
     'User-Agent': 'curl/7.64.1',
     Authorization:
       'Basic ' + Buffer.from(config.githubAccessToken).toString('base64'),
     'Content-Type': 'application/json;charset=UTF-8',
     Accept: 'application/vnd.github.+json'
-  };
+  }};
 
   const filesRes = await fetch(
     `https://api.github.com/repos/${repo}/contents`,
     gitHubAPIHeader
-  );
+  ).toString();
   const files = JSON.parse(filesRes) as GithubFile[];
   const file = files.find((file) => file.name === filename);
 
@@ -63,7 +65,7 @@ export async function getGithubFileMeta(repo: string, filename: string) {
   const commitsRes = await fetch(
     `https://api.github.com/repos/${repo}/commits?path=${filename}&per_page=1`,
     gitHubAPIHeader
-  );
+  ).toString();
   const commits = JSON.parse(commitsRes) as GithubCommit[];
   file.lastCommit = commits[0];
 
@@ -73,6 +75,13 @@ export async function getGithubFileMeta(repo: string, filename: string) {
 
   return file;
 }
+
+//fetch-test https://api.github.com/repos/robert-koch-institut/COVID-19-Impfungen_in_Deutschland/commits?path=Aktuell_Deutschland_Impfquoten_COVID-19.csv&per_page=1
+async function test() {
+  const test = await getGithubFileMeta('robert-koch-institut/COVID-19-Impfungen_in_Deutschland', 'Aktuell_Deutschland_Impfquoten_COVID-19.csv');
+  console.log(test);
+}
+test();
 
 // Converts a CSV into an array of objects
 export function csv2array(

@@ -1,4 +1,5 @@
-import { fetch, getGithubFileMeta, csv2array, summarizer } from '../lib/helper';
+import { getGithubFileMeta, csv2array, summarizer } from '../lib/helper';
+require('isomorphic-fetch');
 import { Downloader } from './downloader';
 import { GenericObject } from '../lib/types';
 import { config } from '../lib/config';

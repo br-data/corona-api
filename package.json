@@ -17,6 +17,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.2",
+    "isomorphic-fetch": "^3.0.0",
+    "node-fetch": "^3.2.10",
     "ts-node": "^10.7.0"
   },
   "devDependencies": {

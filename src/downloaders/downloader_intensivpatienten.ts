@@ -1,7 +1,8 @@
 import fs from 'fs';
 import { resolve } from 'path';
 import { Downloader } from './downloader';
-import { fetch, csv2array } from '../lib/helper';
+import { csv2array } from '../lib/helper';
+require('isomorphic-fetch');
 import { config } from '../lib/config';
 import { GenericObject } from '../lib/types';
 
@@ -12,7 +13,7 @@ export class DownloaderIntensivpatienten extends Downloader {
 
   async checkUpdates() {
 
-    // Check if the dataset already contains the la 
+    // Check if the dataset already contains the la
     const currentDate = new Date();
     this.status.changed =
       this.status.lastDate !== currentDate.toISOString().split('T')[0];
@@ -39,8 +40,8 @@ export class DownloaderIntensivpatienten extends Downloader {
 
     const lastDateBL = this.getLastDate(dataBL);
     const lastDateDE = this.getLastDate(dataDE);
-    
-    // Set latest date found in the dataset 
+
+    // Set latest date found in the dataset
     this.status.lastDate =
       new Date(lastDateBL) < new Date(lastDateDE) ? lastDateBL : lastDateDE;
 
