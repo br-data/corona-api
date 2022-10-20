@@ -1,38 +1,7 @@
-import _fetch from 'isomorphic-fetch';
+import fetch from 'node-fetch';
+
 import { GenericObject, GithubFile, GithubCommit } from './types';
 import { config } from './config';
-
-// @TODO Replace with node-fetch or a similar lib
-/*
-export async function fetch(url: string, headers = {}): Promise<string> {
-  return new Promise((resolve, reject) => {
-    https
-      .get(url, { headers }, (response) => {
-        const result: any[] = [];
-        response.on('data', (data) => result.push(data));
-        response.on('end', () => {
-          const buffer = Buffer.concat(result);
-          if (response.statusCode === 200) {
-            resolve(buffer.toString());
-          } else {
-            console.log('url:', url);
-            console.log('response:', response);
-            console.log(`Buffer: "${buffer.toString()}"`);
-            reject(buffer.toString());
-          }
-        });
-        response.on('error', (e) => {
-          console.log(e);
-          reject(e);
-        });
-      })
-      .on('error', (e) => {
-        console.log(e);
-        reject(e);
-      });
-  });
-}
-*/
 
 // @TODO Use Github client library instead
 export async function getGithubFileMeta(repo: string, filename: string) {
@@ -51,7 +20,7 @@ export async function getGithubFileMeta(repo: string, filename: string) {
     }
   };
 
-  const filesRes = await _fetch(
+  const filesRes = await fetch(
     `https://api.github.com/repos/${repo}/contents`,
     gitHubAPIHeader
   );
@@ -65,7 +34,7 @@ export async function getGithubFileMeta(repo: string, filename: string) {
     );
   }
 
-  const commitsRes = await _fetch(
+  const commitsRes = await fetch(
     `https://api.github.com/repos/${repo}/commits?path=${filename}&per_page=1`,
     gitHubAPIHeader
   );

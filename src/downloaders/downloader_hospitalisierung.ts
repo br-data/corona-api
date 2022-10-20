@@ -1,5 +1,6 @@
+import fetch from 'node-fetch';
+
 import { Downloader } from './downloader';
-require('isomorphic-fetch');
 import {
   getGithubFileMeta,
   csv2array,
@@ -38,7 +39,7 @@ export class DownloaderHospitalisierungen extends Downloader {
 
   async doUpdate() {
     const csv = await fetch(this.status.sources.hospitalisierung.url);
-    const data = csv2array(csv.toString());
+    const data = csv2array(await csv.text());
 
     const dataBL: GenericObject[] = [];
     const dataDE: GenericObject[] = [];

@@ -1,8 +1,9 @@
 import fs from 'fs';
+import fetch from 'node-fetch';
+
 import { resolve } from 'path';
 import { Downloader } from './downloader';
 import { csv2array } from '../lib/helper';
-require('isomorphic-fetch');
 import { config } from '../lib/config';
 import { GenericObject } from '../lib/types';
 
@@ -30,10 +31,10 @@ export class DownloaderIntensivpatienten extends Downloader {
 
   async doUpdate() {
     const csvBL = await fetch(this.status.sources.intensivpatienten.urlBL);
-    const arrayBL = csv2array(csvBL.toString());
+    const arrayBL = csv2array(await csvBL.text());
 
     const csvDE = await fetch(this.status.sources.intensivpatienten.urlDE);
-    const arrayDE = csv2array(csvDE.toString());
+    const arrayDE = csv2array(await csvDE.text());
 
     const dataBL = this.transformData(arrayBL, true);
     const dataDE = this.transformData(arrayDE, false);
