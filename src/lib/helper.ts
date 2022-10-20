@@ -25,7 +25,7 @@ export async function getGithubFileMeta(repo: string, filename: string) {
     gitHubAPIHeader
   );
 
-  const files = JSON.parse(await filesRes.text()) as GithubFile[];
+  const files = await filesRes.json() as GithubFile[];
   const file = files.find((file) => file.name === filename);
 
   if (!file) {
@@ -38,7 +38,7 @@ export async function getGithubFileMeta(repo: string, filename: string) {
     `https://api.github.com/repos/${repo}/commits?path=${filename}&per_page=1`,
     gitHubAPIHeader
   );
-  const commits = JSON.parse(await commitsRes.text()) as GithubCommit[];
+  const commits = await commitsRes.json() as GithubCommit[];
   file.lastCommit = commits[0];
 
   if (file.lastCommit) {
