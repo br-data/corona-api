@@ -1,9 +1,7 @@
 import fetch from 'node-fetch';
-
 import { GenericObject, GithubFile, GithubCommit } from './types';
 import { config } from './config';
 
-// @TODO Use Github client library instead
 export async function getGithubFileMeta(repo: string, filename: string) {
   if (!config.githubAccessToken) {
     throw Error('Please provide a Github access token (GITHUB_ACCESS_TOKEN)');
