@@ -1,7 +1,9 @@
 import fs from 'fs';
+import fetch from 'node-fetch';
+
 import { resolve } from 'path';
 import { Downloader } from './downloader';
-import { fetch, csv2array } from '../lib/helper';
+import { csv2array } from '../lib/helper';
 import { config } from '../lib/config';
 import { GenericObject } from '../lib/types';
 
@@ -12,7 +14,7 @@ export class DownloaderIntensivpatienten extends Downloader {
 
   async checkUpdates() {
 
-    // Check if the dataset already contains the la 
+    // Check if the dataset already contains the la
     const currentDate = new Date();
     this.status.changed =
       this.status.lastDate !== currentDate.toISOString().split('T')[0];
@@ -29,18 +31,18 @@ export class DownloaderIntensivpatienten extends Downloader {
 
   async doUpdate() {
     const csvBL = await fetch(this.status.sources.intensivpatienten.urlBL);
-    const arrayBL = csv2array(csvBL.toString());
+    const arrayBL = csv2array(await csvBL.text());
 
     const csvDE = await fetch(this.status.sources.intensivpatienten.urlDE);
-    const arrayDE = csv2array(csvDE.toString());
+    const arrayDE = csv2array(await csvDE.text());
 
     const dataBL = this.transformData(arrayBL, true);
     const dataDE = this.transformData(arrayDE, false);
 
     const lastDateBL = this.getLastDate(dataBL);
     const lastDateDE = this.getLastDate(dataDE);
-    
-    // Set latest date found in the dataset 
+
+    // Set latest date found in the dataset
     this.status.lastDate =
       new Date(lastDateBL) < new Date(lastDateDE) ? lastDateBL : lastDateDE;
 

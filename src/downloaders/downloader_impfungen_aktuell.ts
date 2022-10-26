@@ -1,4 +1,6 @@
-import { fetch, getGithubFileMeta, csv2array } from '../lib/helper';
+import fetch from 'node-fetch';
+
+import { getGithubFileMeta, csv2array } from '../lib/helper';
 import { Downloader } from './downloader';
 import { GenericObject } from '../lib/types';
 import { config } from '../lib/config';
@@ -32,7 +34,7 @@ export class DownloaderImpfungenAktuell extends Downloader {
 
   async doUpdate() {
     const csv = await fetch(this.status.sources.impfungen.url);
-    const data = csv2array(csv.toString());
+    const data = csv2array(await csv.text());
 
     const dataCurrent = this.transformData(data);
 

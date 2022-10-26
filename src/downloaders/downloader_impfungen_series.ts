@@ -1,4 +1,6 @@
-import { fetch, getGithubFileMeta, csv2array, summarizer } from '../lib/helper';
+import fetch from 'node-fetch';
+
+import { getGithubFileMeta, csv2array, summarizer } from '../lib/helper';
 import { Downloader } from './downloader';
 import { GenericObject } from '../lib/types';
 import { config } from '../lib/config';
@@ -33,7 +35,7 @@ export class DownloaderImpfungenSerie extends Downloader {
 
   async doUpdate() {
     const csv = await fetch(this.status.sources.impfungen.url);
-    const data = csv2array(csv.toString());
+    const data = csv2array(await csv.text());
 
     // const summaryBLFull = summarizer(
     //   ['datum', 'bundeslandId', 'impfstoff', 'impfserie'],
