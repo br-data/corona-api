@@ -1,2802 +1,2802 @@
 {
-  "1001": {
-    "landkreis": "Flensburg",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 91113,
-    "lat": 54.785119,
-    "long": 9.4323687
-  },
-  "1002": {
-    "landkreis": "Kiel",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 246243,
-    "lat": 54.329759,
-    "long": 10.130283
-  },
-  "1003": {
-    "landkreis": "Lübeck",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 216277,
-    "lat": 53.875705,
-    "long": 10.723051
-  },
-  "1004": {
-    "landkreis": "Neumünster",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 79496,
-    "lat": 54.088042,
-    "long": 9.9835962
-  },
-  "1051": {
-    "landkreis": "Dithmarschen",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 133969,
-    "lat": 54.133993,
-    "long": 9.1096773
-  },
-  "1053": {
-    "landkreis": "Herzogtum Lauenburg",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 200819,
-    "lat": 53.596434,
-    "long": 10.608184
-  },
-  "1054": {
-    "landkreis": "Nordfriesland",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 167560,
-    "lat": 54.611088,
-    "long": 9.0649543
-  },
-  "1055": {
-    "landkreis": "Ostholstein",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 202014,
-    "lat": 54.211782,
-    "long": 10.86662
-  },
-  "1056": {
-    "landkreis": "Pinneberg",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 318326,
-    "lat": 53.723182,
-    "long": 9.7371433
-  },
-  "1057": {
-    "landkreis": "Plön",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 129687,
-    "lat": 54.245729,
-    "long": 10.363199
-  },
-  "1058": {
-    "landkreis": "Rendsburg-Eckernförde",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 276053,
-    "lat": 54.29215,
-    "long": 9.7793856
-  },
-  "1059": {
-    "landkreis": "Schleswig-Flensburg",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 203799,
-    "lat": 54.616026,
-    "long": 9.5509886
-  },
-  "1060": {
-    "landkreis": "Segeberg",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 280400,
-    "lat": 53.926779,
-    "long": 10.142052
-  },
-  "1061": {
-    "landkreis": "Steinburg",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 130843,
-    "lat": 53.930387,
-    "long": 9.5111518
-  },
-  "1062": {
-    "landkreis": "Stormarn",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 245406,
-    "lat": 53.728387,
-    "long": 10.336683
-  },
-  "2000": {
-    "landkreis": "Hamburg",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 1853935,
-    "lat": 53.553616,
-    "long": 10.027361
-  },
-  "3101": {
-    "landkreis": "Braunschweig",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 248823,
-    "lat": 52.280839,
-    "long": 10.526347
-  },
-  "3102": {
-    "landkreis": "Salzgitter",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 103694,
-    "lat": 52.129678,
-    "long": 10.370679
-  },
-  "3103": {
-    "landkreis": "Wolfsburg",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 123949,
-    "lat": 52.411138,
-    "long": 10.785036
-  },
-  "3151": {
-    "landkreis": "Gifhorn",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 177919,
-    "lat": 52.586249,
-    "long": 10.607222
-  },
-  "3153": {
-    "landkreis": "Goslar",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 134050,
-    "lat": 51.876084,
-    "long": 10.401684
-  },
-  "3154": {
-    "landkreis": "Helmstedt",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 91379,
-    "lat": 52.260419,
-    "long": 10.894027
-  },
-  "3155": {
-    "landkreis": "Northeim",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 131765,
-    "lat": 51.74463,
-    "long": 9.8518887
-  },
-  "3157": {
-    "landkreis": "Peine",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 136960,
-    "lat": 52.308055,
-    "long": 10.256622
-  },
-  "3158": {
-    "landkreis": "Wolfenbüttel",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 119224,
-    "lat": 52.137751,
-    "long": 10.648905
-  },
-  "3159": {
-    "landkreis": "Göttingen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 323661,
-    "lat": 51.500939,
-    "long": 9.9321137
-  },
-  "3241": {
-    "landkreis": "Region Hannover",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 1157541,
-    "lat": 52.424603,
-    "long": 9.720613
-  },
-  "3251": {
-    "landkreis": "Diepholz",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 218839,
-    "lat": 52.730353,
-    "long": 8.7019864
-  },
-  "3252": {
-    "landkreis": "Hameln-Pyrmont",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 148963,
-    "lat": 52.094196,
-    "long": 9.3932046
-  },
-  "3254": {
-    "landkreis": "Hildesheim",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 274773,
-    "lat": 52.091993,
-    "long": 9.9453013
-  },
-  "3255": {
-    "landkreis": "Holzminden",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 69862,
-    "lat": 51.881129,
-    "long": 9.5553908
-  },
-  "3256": {
-    "landkreis": "Nienburg (Weser)",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 121773,
-    "lat": 52.611395,
-    "long": 9.113799
-  },
-  "3257": {
-    "landkreis": "Schaumburg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 158108,
-    "lat": 52.292013,
-    "long": 9.2066986
-  },
-  "3351": {
-    "landkreis": "Celle",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 179915,
-    "lat": 52.719791,
-    "long": 10.10555
-  },
-  "3352": {
-    "landkreis": "Cuxhaven",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 199603,
-    "lat": 53.618225,
-    "long": 8.8035629
-  },
-  "3353": {
-    "landkreis": "Harburg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 257548,
-    "lat": 53.325053,
-    "long": 9.9641457
-  },
-  "3354": {
-    "landkreis": "Lüchow-Dannenberg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 48472,
-    "lat": 53.017929,
-    "long": 11.129626
-  },
-  "3355": {
-    "landkreis": "Lüneburg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 185129,
-    "lat": 53.240413,
-    "long": 10.577257
-  },
-  "3356": {
-    "landkreis": "Osterholz",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 115054,
-    "lat": 53.255484,
-    "long": 8.8106144
-  },
-  "3357": {
-    "landkreis": "Rotenburg (Wümme)",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 165001,
-    "lat": 53.25506,
-    "long": 9.3050983
-  },
-  "3358": {
-    "landkreis": "Heidekreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 142912,
-    "lat": 52.934247,
-    "long": 9.7706982
-  },
-  "3359": {
-    "landkreis": "Stade",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 206496,
-    "lat": 53.59498,
-    "long": 9.4166249
-  },
-  "3360": {
-    "landkreis": "Uelzen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 92894,
-    "lat": 52.993539,
-    "long": 10.549805
-  },
-  "3361": {
-    "landkreis": "Verden",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 138507,
-    "lat": 52.976043,
-    "long": 9.173881
-  },
-  "3401": {
-    "landkreis": "Delmenhorst",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 77522,
-    "lat": 53.046392,
-    "long": 8.6438715
-  },
-  "3402": {
-    "landkreis": "Emden",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 49523,
-    "lat": 53.350019,
-    "long": 7.241668
-  },
-  "3403": {
-    "landkreis": "Oldenburg (Oldb)",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 170389,
-    "lat": 53.144113,
-    "long": 8.2360934
-  },
-  "3404": {
-    "landkreis": "Osnabrück",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 165034,
-    "lat": 52.279483,
-    "long": 8.046646
-  },
-  "3405": {
-    "landkreis": "Wilhelmshaven",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 75027,
-    "lat": 53.566003,
-    "long": 8.0892718
-  },
-  "3451": {
-    "landkreis": "Ammerland",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 126475,
-    "lat": 53.212532,
-    "long": 8.0321495
-  },
-  "3452": {
-    "landkreis": "Aurich",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 190425,
-    "lat": 53.481904,
-    "long": 7.3903033
-  },
-  "3453": {
-    "landkreis": "Cloppenburg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 173980,
-    "lat": 52.905073,
-    "long": 7.9209102
-  },
-  "3454": {
-    "landkreis": "Emsland",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 331397,
-    "lat": 52.730863,
-    "long": 7.4190007
-  },
-  "3455": {
-    "landkreis": "Friesland",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 98971,
-    "lat": 53.39451,
-    "long": 8.0467827
-  },
-  "3456": {
-    "landkreis": "Grafschaft Bentheim",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 138722,
-    "lat": 52.47913,
-    "long": 7.0249016
-  },
-  "3457": {
-    "landkreis": "Leer",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 172421,
-    "lat": 53.217026,
-    "long": 7.5350353
-  },
-  "3458": {
-    "landkreis": "Oldenburg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 132091,
-    "lat": 52.992398,
-    "long": 8.408599
-  },
-  "3459": {
-    "landkreis": "Osnabrück",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 361550,
-    "lat": 52.505597,
-    "long": 7.8413453
-  },
-  "3460": {
-    "landkreis": "Vechta",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 144805,
-    "lat": 52.663086,
-    "long": 8.2271335
-  },
-  "3461": {
-    "landkreis": "Wesermarsch",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 88430,
-    "lat": 53.357849,
-    "long": 8.3931147
-  },
-  "3462": {
-    "landkreis": "Wittmund",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 57455,
-    "lat": 53.594498,
-    "long": 7.7199505
-  },
-  "4011": {
-    "landkreis": "Bremen",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 563290,
-    "lat": 53.11115,
-    "long": 8.7890014
-  },
-  "4012": {
-    "landkreis": "Bremerhaven",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 113173,
-    "lat": 53.535877,
-    "long": 8.5847177
-  },
-  "5111": {
-    "landkreis": "Düsseldorf",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 619477,
-    "lat": 51.232947,
-    "long": 6.8174691
-  },
-  "5112": {
-    "landkreis": "Duisburg",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 495152,
-    "lat": 51.439338,
-    "long": 6.7426703
-  },
-  "5113": {
-    "landkreis": "Essen",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 579432,
-    "lat": 51.429552,
-    "long": 7.0247831
-  },
-  "5114": {
-    "landkreis": "Krefeld",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 227050,
-    "lat": 51.344702,
-    "long": 6.5885164
-  },
-  "5116": {
-    "landkreis": "Mönchengladbach",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 261001,
-    "lat": 51.170067,
-    "long": 6.4214464
-  },
-  "5117": {
-    "landkreis": "Mülheim an der Ruhr",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 170739,
-    "lat": 51.410975,
-    "long": 6.8861611
-  },
-  "5119": {
-    "landkreis": "Oberhausen",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 208752,
-    "lat": 51.509803,
-    "long": 6.8562311
-  },
-  "5120": {
-    "landkreis": "Remscheid",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 111770,
-    "lat": 51.179955,
-    "long": 7.2230811
-  },
-  "5122": {
-    "landkreis": "Solingen",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 158957,
-    "lat": 51.158614,
-    "long": 7.0692269
-  },
-  "5124": {
-    "landkreis": "Wuppertal",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 354572,
-    "lat": 51.247065,
-    "long": 7.1677703
-  },
-  "5154": {
-    "landkreis": "Kleve",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 314676,
-    "lat": 51.654129,
-    "long": 6.2676332
-  },
-  "5158": {
-    "landkreis": "Mettmann",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 484411,
-    "lat": 51.293695,
-    "long": 7.0111103
-  },
-  "5162": {
-    "landkreis": "Rhein-Kreis Neuss",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 452496,
-    "lat": 51.141915,
-    "long": 6.6543443
-  },
-  "5166": {
-    "landkreis": "Viersen",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 298761,
-    "lat": 51.286061,
-    "long": 6.3305124
-  },
-  "5170": {
-    "landkreis": "Wesel",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 460433,
-    "lat": 51.627207,
-    "long": 6.626953
-  },
-  "5314": {
-    "landkreis": "Bonn",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 331885,
-    "lat": 50.699837,
-    "long": 7.1159508
-  },
-  "5315": {
-    "landkreis": "Köln",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 1073096,
-    "lat": 50.941508,
-    "long": 6.9777146
-  },
-  "5316": {
-    "landkreis": "Leverkusen",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 163851,
-    "lat": 51.048871,
-    "long": 7.0177991
-  },
-  "5334": {
-    "landkreis": "Städteregion Aachen",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 556673,
-    "lat": 50.756428,
-    "long": 6.1032996
-  },
-  "5358": {
-    "landkreis": "Düren",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 266771,
-    "lat": 50.817006,
-    "long": 6.4476606
-  },
-  "5362": {
-    "landkreis": "Rhein-Erft-Kreis",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 471891,
-    "lat": 50.901271,
-    "long": 6.7226709
-  },
-  "5366": {
-    "landkreis": "Euskirchen",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 194701,
-    "lat": 50.529011,
-    "long": 6.6453886
-  },
-  "5370": {
-    "landkreis": "Heinsberg",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 258306,
-    "lat": 51.052035,
-    "long": 6.1709684
-  },
-  "5374": {
-    "landkreis": "Oberbergischer Kreis",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 271621,
-    "lat": 51.010967,
-    "long": 7.5172785
-  },
-  "5378": {
-    "landkreis": "Rheinisch-Bergischer Kreis",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 283429,
-    "lat": 51.019601,
-    "long": 7.1958983
-  },
-  "5382": {
-    "landkreis": "Rhein-Sieg-Kreis",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 600732,
-    "lat": 50.755877,
-    "long": 7.2402531
-  },
-  "5512": {
-    "landkreis": "Bottrop",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 117311,
-    "lat": 51.594362,
-    "long": 6.9159912
-  },
-  "5513": {
-    "landkreis": "Gelsenkirchen",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 260126,
-    "lat": 51.549491,
-    "long": 7.0817139
-  },
-  "5515": {
-    "landkreis": "Münster",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 317713,
-    "lat": 51.952438,
-    "long": 7.6264618
-  },
-  "5554": {
-    "landkreis": "Borken",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 373582,
-    "lat": 51.962198,
-    "long": 6.9097557
-  },
-  "5558": {
-    "landkreis": "Coesfeld",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 221352,
-    "lat": 51.864443,
-    "long": 7.3713157
-  },
-  "5562": {
-    "landkreis": "Recklinghausen",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 612801,
-    "lat": 51.669264,
-    "long": 7.165792
-  },
-  "5566": {
-    "landkreis": "Steinfurt",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 450176,
-    "lat": 52.2116,
-    "long": 7.581675
-  },
-  "5570": {
-    "landkreis": "Warendorf",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 278176,
-    "lat": 51.86986,
-    "long": 7.9598364
-  },
-  "5711": {
-    "landkreis": "Bielefeld",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 334002,
-    "lat": 52.011184,
-    "long": 8.543212
-  },
-  "5754": {
-    "landkreis": "Gütersloh",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 366104,
-    "lat": 51.931784,
-    "long": 8.3548388
-  },
-  "5758": {
-    "landkreis": "Herford",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 250635,
-    "lat": 52.168789,
-    "long": 8.6427584
-  },
-  "5762": {
-    "landkreis": "Höxter",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 139994,
-    "lat": 51.685478,
-    "long": 9.1884029
-  },
-  "5766": {
-    "landkreis": "Lippe",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 346151,
-    "lat": 51.981325,
-    "long": 8.9548684
-  },
-  "5770": {
-    "landkreis": "Minden-Lübbecke",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 311214,
-    "lat": 52.352474,
-    "long": 8.740944
-  },
-  "5774": {
-    "landkreis": "Paderborn",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 309380,
-    "lat": 51.662547,
-    "long": 8.7303579
-  },
-  "5911": {
-    "landkreis": "Bochum",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 363441,
-    "lat": 51.465371,
-    "long": 7.2285467
-  },
-  "5913": {
-    "landkreis": "Dortmund",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 586852,
-    "lat": 51.512061,
-    "long": 7.4796919
-  },
-  "5914": {
-    "landkreis": "Hagen",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 188713,
-    "lat": 51.347057,
-    "long": 7.4970114
-  },
-  "5915": {
-    "landkreis": "Hamm",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 179238,
-    "lat": 51.66249,
-    "long": 7.8263982
-  },
-  "5916": {
-    "landkreis": "Herne",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 156621,
-    "lat": 51.533785,
-    "long": 7.2159088
-  },
-  "5954": {
-    "landkreis": "Ennepe-Ruhr-Kreis",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 322143,
-    "lat": 51.34186,
-    "long": 7.3263007
-  },
-  "5958": {
-    "landkreis": "Hochsauerlandkreis",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 258615,
-    "lat": 51.305556,
-    "long": 8.3972543
-  },
-  "5962": {
-    "landkreis": "Märkischer Kreis",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 406793,
-    "lat": 51.260696,
-    "long": 7.7139345
-  },
-  "5966": {
-    "landkreis": "Olpe",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 133120,
-    "lat": 51.087234,
-    "long": 7.9812283
-  },
-  "5970": {
-    "landkreis": "Siegen-Wittgenstein",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 274342,
-    "lat": 50.937992,
-    "long": 8.2058809
-  },
-  "5974": {
-    "landkreis": "Soest",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 302298,
-    "lat": 51.5647,
-    "long": 8.2236358
-  },
-  "5978": {
-    "landkreis": "Unna",
-    "landkreisTyp": "Kreis",
-    "einwohnerzahl": 393063,
-    "lat": 51.575208,
-    "long": 7.6417082
-  },
-  "6411": {
-    "landkreis": "Darmstadt",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 159631,
-    "lat": 49.882743,
-    "long": 8.6752367
-  },
-  "6412": {
-    "landkreis": "Frankfurt am Main",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 759224,
-    "lat": 50.116773,
-    "long": 8.6598981
-  },
-  "6413": {
-    "landkreis": "Offenbach am Main",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 131295,
-    "lat": 50.089561,
-    "long": 8.7984841
-  },
-  "6414": {
-    "landkreis": "Wiesbaden",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 278950,
-    "lat": 50.076486,
-    "long": 8.2738994
-  },
-  "6431": {
-    "landkreis": "Bergstraße",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 271166,
-    "lat": 49.669855,
-    "long": 8.6318551
-  },
-  "6432": {
-    "landkreis": "Darmstadt-Dieburg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 296900,
-    "lat": 49.855994,
-    "long": 8.8061081
-  },
-  "6433": {
-    "landkreis": "Groß-Gerau",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 276307,
-    "lat": 49.902901,
-    "long": 8.4812779
-  },
-  "6434": {
-    "landkreis": "Hochtaunuskreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 237041,
-    "lat": 50.27895,
-    "long": 8.5206755
-  },
-  "6435": {
-    "landkreis": "Main-Kinzig-Kreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 423465,
-    "lat": 50.243344,
-    "long": 9.2931037
-  },
-  "6436": {
-    "landkreis": "Main-Taunus-Kreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 239276,
-    "lat": 50.097876,
-    "long": 8.4478967
-  },
-  "6437": {
-    "landkreis": "Odenwaldkreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 96953,
-    "lat": 49.675058,
-    "long": 8.988983
-  },
-  "6438": {
-    "landkreis": "Offenbach",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 357466,
-    "lat": 50.022103,
-    "long": 8.8260025
-  },
-  "6439": {
-    "landkreis": "Rheingau-Taunus-Kreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 187229,
-    "lat": 50.139484,
-    "long": 8.0949772
-  },
-  "6440": {
-    "landkreis": "Wetteraukreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 311661,
-    "lat": 50.352779,
-    "long": 8.9212263
-  },
-  "6531": {
-    "landkreis": "Gießen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 272874,
-    "lat": 50.566243,
-    "long": 8.8206054
-  },
-  "6532": {
-    "landkreis": "Lahn-Dill-Kreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 253364,
-    "lat": 50.648039,
-    "long": 8.3791535
-  },
-  "6533": {
-    "landkreis": "Limburg-Weilburg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 172759,
-    "lat": 50.427262,
-    "long": 8.2174087
-  },
-  "6534": {
-    "landkreis": "Marburg-Biedenkopf",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 246097,
-    "lat": 50.83295,
-    "long": 8.7522191
-  },
-  "6535": {
-    "landkreis": "Vogelsbergkreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 105671,
-    "lat": 50.638109,
-    "long": 9.2796685
-  },
-  "6611": {
-    "landkreis": "Kassel",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 200406,
-    "lat": 51.313095,
-    "long": 9.4655528
-  },
-  "6631": {
-    "landkreis": "Fulda",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 223572,
-    "lat": 50.564394,
-    "long": 9.7600374
-  },
-  "6632": {
-    "landkreis": "Hersfeld-Rotenburg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 120163,
-    "lat": 50.909447,
-    "long": 9.755943
-  },
-  "6633": {
-    "landkreis": "Kassel",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 237268,
-    "lat": 51.482179,
-    "long": 9.4568303
-  },
-  "6634": {
-    "landkreis": "Schwalm-Eder-Kreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 180052,
-    "lat": 51.023792,
-    "long": 9.3816677
-  },
-  "6635": {
-    "landkreis": "Waldeck-Frankenberg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 156513,
-    "lat": 51.188851,
-    "long": 8.9051729
-  },
-  "6636": {
-    "landkreis": "Werra-Meißner-Kreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 99714,
-    "lat": 51.192965,
-    "long": 9.9315409
-  },
-  "7111": {
-    "landkreis": "Koblenz",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 113638,
-    "lat": 50.34527,
-    "long": 7.5872981
-  },
-  "7131": {
-    "landkreis": "Ahrweiler",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 128146,
-    "lat": 50.461821,
-    "long": 7.0515366
-  },
-  "7132": {
-    "landkreis": "Altenkirchen (Westerwald)",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 129261,
-    "lat": 50.751529,
-    "long": 7.7516687
-  },
-  "7133": {
-    "landkreis": "Bad Kreuznach",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 159402,
-    "lat": 49.825742,
-    "long": 7.6943427
-  },
-  "7134": {
-    "landkreis": "Birkenfeld",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 80849,
-    "lat": 49.717299,
-    "long": 7.2890031
-  },
-  "7135": {
-    "landkreis": "Cochem-Zell",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 61735,
-    "lat": 50.131267,
-    "long": 7.1864285
-  },
-  "7137": {
-    "landkreis": "Mayen-Koblenz",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 215446,
-    "lat": 50.32879,
-    "long": 7.3401513
-  },
-  "7138": {
-    "landkreis": "Neuwied",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 184390,
-    "lat": 50.555697,
-    "long": 7.4755532
-  },
-  "7140": {
-    "landkreis": "Rhein-Hunsrück-Kreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 103767,
-    "lat": 50.045793,
-    "long": 7.5144261
-  },
-  "7141": {
-    "landkreis": "Rhein-Lahn-Kreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 122724,
-    "lat": 50.263929,
-    "long": 7.8582581
-  },
-  "7143": {
-    "landkreis": "Westerwaldkreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 203831,
-    "lat": 50.551418,
-    "long": 7.8785675
-  },
-  "7211": {
-    "landkreis": "Trier",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 110570,
-    "lat": 49.763893,
-    "long": 6.6508604
-  },
-  "7231": {
-    "landkreis": "Bernkastel-Wittlich",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 113194,
-    "lat": 49.925053,
-    "long": 6.9707499
-  },
-  "7232": {
-    "landkreis": "Eifelkreis Bitburg-Prüm",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 100959,
-    "lat": 50.062123,
-    "long": 6.4072307
-  },
-  "7233": {
-    "landkreis": "Vulkaneifel",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 60882,
-    "lat": 50.232909,
-    "long": 6.7528997
-  },
-  "7235": {
-    "landkreis": "Trier-Saarburg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 151167,
-    "lat": 49.685867,
-    "long": 6.83965
-  },
-  "7311": {
-    "landkreis": "Frankenthal (Pfalz)",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 48773,
-    "lat": 49.533715,
-    "long": 8.3608617
-  },
-  "7312": {
-    "landkreis": "Kaiserslautern",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 99292,
-    "lat": 49.434653,
-    "long": 7.768566
-  },
-  "7313": {
-    "landkreis": "Landau in der Pfalz",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 46919,
-    "lat": 49.197801,
-    "long": 8.1146145
-  },
-  "7314": {
-    "landkreis": "Ludwigshafen am Rhein",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 172145,
-    "lat": 49.482783,
-    "long": 8.4034095
-  },
-  "7315": {
-    "landkreis": "Mainz",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 217556,
-    "lat": 49.971827,
-    "long": 8.2525017
-  },
-  "7316": {
-    "landkreis": "Neustadt an der Weinstraße",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 53491,
-    "lat": 49.343502,
-    "long": 8.151743
-  },
-  "7317": {
-    "landkreis": "Pirmasens",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 40054,
-    "lat": 49.19548,
-    "long": 7.5914822
-  },
-  "7318": {
-    "landkreis": "Speyer",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 50565,
-    "lat": 49.33493,
-    "long": 8.4349693
-  },
-  "7319": {
-    "landkreis": "Worms",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 83850,
-    "lat": 49.649206,
-    "long": 8.3292565
-  },
-  "7320": {
-    "landkreis": "Zweibrücken",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 34091,
-    "lat": 49.25695,
-    "long": 7.3706429
-  },
-  "7331": {
-    "landkreis": "Alzey-Worms",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 131330,
-    "lat": 49.756662,
-    "long": 8.163596
-  },
-  "7332": {
-    "landkreis": "Bad Dürkheim",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 133206,
-    "lat": 49.453295,
-    "long": 8.1148562
-  },
-  "7333": {
-    "landkreis": "Donnersbergkreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 75569,
-    "lat": 49.629734,
-    "long": 7.9227696
-  },
-  "7334": {
-    "landkreis": "Germersheim",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 129313,
-    "lat": 49.118287,
-    "long": 8.2496793
-  },
-  "7335": {
-    "landkreis": "Kaiserslautern",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 106853,
-    "lat": 49.419772,
-    "long": 7.5305697
-  },
-  "7336": {
-    "landkreis": "Kusel",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 69949,
-    "lat": 49.551705,
-    "long": 7.4827308
-  },
-  "7337": {
-    "landkreis": "Südliche Weinstraße",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 111279,
-    "lat": 49.118284,
-    "long": 8.0029424
-  },
-  "7338": {
-    "landkreis": "Rhein-Pfalz-Kreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 155050,
-    "lat": 49.418276,
-    "long": 8.3627468
-  },
-  "7339": {
-    "landkreis": "Mainz-Bingen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 212420,
-    "lat": 49.917976,
-    "long": 8.0895077
-  },
-  "7340": {
-    "landkreis": "Südwestpfalz",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 94819,
-    "lat": 49.209205,
-    "long": 7.6577925
-  },
-  "8111": {
-    "landkreis": "Stuttgart",
-    "landkreisTyp": "Stadtkreis",
-    "einwohnerzahl": 626275,
-    "lat": 48.776237,
-    "long": 9.1728399
-  },
-  "8115": {
-    "landkreis": "Böblingen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 393195,
-    "lat": 48.67877,
-    "long": 8.9426598
-  },
-  "8116": {
-    "landkreis": "Esslingen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 533388,
-    "lat": 48.648305,
-    "long": 9.3692627
-  },
-  "8117": {
-    "landkreis": "Göppingen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 259046,
-    "lat": 48.664115,
-    "long": 9.7216924
-  },
-  "8118": {
-    "landkreis": "Ludwigsburg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 544679,
-    "lat": 48.940047,
-    "long": 9.1232145
-  },
-  "8119": {
-    "landkreis": "Rems-Murr-Kreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 427316,
-    "lat": 48.897605,
-    "long": 9.5033594
-  },
-  "8121": {
-    "landkreis": "Heilbronn",
-    "landkreisTyp": "Stadtkreis",
-    "einwohnerzahl": 125613,
-    "lat": 49.152943,
-    "long": 9.1862714
-  },
-  "8125": {
-    "landkreis": "Heilbronn",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 347798,
-    "lat": 49.251142,
-    "long": 9.3064101
-  },
-  "8126": {
-    "landkreis": "Hohenlohekreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 113318,
-    "lat": 49.267073,
-    "long": 9.6237602
-  },
-  "8127": {
-    "landkreis": "Schwäbisch Hall",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 199398,
-    "lat": 49.142524,
-    "long": 9.9177417
-  },
-  "8128": {
-    "landkreis": "Main-Tauber-Kreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 132956,
-    "lat": 49.558019,
-    "long": 9.7317661
-  },
-  "8135": {
-    "landkreis": "Heidenheim",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 132958,
-    "lat": 48.666696,
-    "long": 10.18807
-  },
-  "8136": {
-    "landkreis": "Ostalbkreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 315009,
-    "lat": 48.879565,
-    "long": 10.099291
-  },
-  "8211": {
-    "landkreis": "Baden-Baden",
-    "landkreisTyp": "Stadtkreis",
-    "einwohnerzahl": 55527,
-    "lat": 48.748736,
-    "long": 8.2360311
-  },
-  "8212": {
-    "landkreis": "Karlsruhe",
-    "landkreisTyp": "Stadtkreis",
-    "einwohnerzahl": 306502,
-    "lat": 49.015061,
-    "long": 8.4138363
-  },
-  "8215": {
-    "landkreis": "Karlsruhe",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 448487,
-    "lat": 48.909521,
-    "long": 8.4076825
-  },
-  "8216": {
-    "landkreis": "Rastatt",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 232296,
-    "lat": 48.882138,
-    "long": 8.2248732
-  },
-  "8221": {
-    "landkreis": "Heidelberg",
-    "landkreisTyp": "Stadtkreis",
-    "einwohnerzahl": 159245,
-    "lat": 49.412503,
-    "long": 8.6951968
-  },
-  "8222": {
-    "landkreis": "Mannheim",
-    "landkreisTyp": "Stadtkreis",
-    "einwohnerzahl": 311831,
-    "lat": 49.501151,
-    "long": 8.5037233
-  },
-  "8225": {
-    "landkreis": "Neckar-Odenwald-Kreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 143929,
-    "lat": 49.46632,
-    "long": 9.2861412
-  },
-  "8226": {
-    "landkreis": "Rhein-Neckar-Kreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 549030,
-    "lat": 49.30138,
-    "long": 8.8351919
-  },
-  "8231": {
-    "landkreis": "Pforzheim",
-    "landkreisTyp": "Stadtkreis",
-    "einwohnerzahl": 125529,
-    "lat": 48.879669,
-    "long": 8.7136825
-  },
-  "8235": {
-    "landkreis": "Calw",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 160686,
-    "lat": 48.678608,
-    "long": 8.6359698
-  },
-  "8236": {
-    "landkreis": "Enzkreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 200237,
-    "lat": 48.970536,
-    "long": 8.8293892
-  },
-  "8237": {
-    "landkreis": "Freudenstadt",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 119183,
-    "lat": 48.47664,
-    "long": 8.4627154
-  },
-  "8311": {
-    "landkreis": "Freiburg im Breisgau",
-    "landkreisTyp": "Stadtkreis",
-    "einwohnerzahl": 231848,
-    "lat": 47.995554,
-    "long": 7.8181515
-  },
-  "8315": {
-    "landkreis": "Breisgau-Hochschwarzwald",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 265792,
-    "lat": 47.927627,
-    "long": 8.0907884
-  },
-  "8316": {
-    "landkreis": "Emmendingen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 167945,
-    "lat": 48.151376,
-    "long": 7.9001308
-  },
-  "8317": {
-    "landkreis": "Ortenaukreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 434535,
-    "lat": 48.423722,
-    "long": 8.0146389
-  },
-  "8325": {
-    "landkreis": "Rottweil",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 140446,
-    "lat": 48.259118,
-    "long": 8.5273592
-  },
-  "8326": {
-    "landkreis": "Schwarzwald-Baar-Kreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 213385,
-    "lat": 48.023167,
-    "long": 8.4060389
-  },
-  "8327": {
-    "landkreis": "Tuttlingen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 142414,
-    "lat": 48.015076,
-    "long": 8.7866082
-  },
-  "8335": {
-    "landkreis": "Konstanz",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 288097,
-    "lat": 47.803101,
-    "long": 8.9125795
-  },
-  "8336": {
-    "landkreis": "Lörrach",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 229445,
-    "lat": 47.708577,
-    "long": 7.7690697
-  },
-  "8337": {
-    "landkreis": "Waldshut",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 171249,
-    "lat": 47.700909,
-    "long": 8.2182879
-  },
-  "8415": {
-    "landkreis": "Reutlingen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 288158,
-    "lat": 48.407201,
-    "long": 9.3681294
-  },
-  "8416": {
-    "landkreis": "Tübingen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 229806,
-    "lat": 48.482492,
-    "long": 8.9878408
-  },
-  "8417": {
-    "landkreis": "Zollernalbkreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 190545,
-    "lat": 48.268438,
-    "long": 8.9325354
-  },
-  "8421": {
-    "landkreis": "Ulm",
-    "landkreisTyp": "Stadtkreis",
-    "einwohnerzahl": 126949,
-    "lat": 48.393934,
-    "long": 9.9530146
-  },
-  "8425": {
-    "landkreis": "Alb-Donau-Kreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 199732,
-    "lat": 48.294959,
-    "long": 9.6984361
-  },
-  "8426": {
-    "landkreis": "Biberach",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 203244,
-    "lat": 48.110471,
-    "long": 9.7758573
-  },
-  "8435": {
-    "landkreis": "Bodenseekreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 218885,
-    "lat": 47.736322,
-    "long": 9.4051731
-  },
-  "8436": {
-    "landkreis": "Ravensburg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 287011,
-    "lat": 47.827299,
-    "long": 9.780134
-  },
-  "8437": {
-    "landkreis": "Sigmaringen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 131725,
-    "lat": 48.042245,
-    "long": 9.2369418
-  },
-  "9161": {
-    "landkreis": "Ingolstadt",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 138016,
-    "lat": 48.751672,
-    "long": 11.402123
-  },
-  "9162": {
-    "landkreis": "München",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 1487708,
-    "lat": 48.14924,
-    "long": 11.550583
-  },
-  "9163": {
-    "landkreis": "Rosenheim",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 63508,
-    "lat": 47.843242,
-    "long": 12.113999
-  },
-  "9171": {
-    "landkreis": "Altötting",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 112116,
-    "lat": 48.214904,
-    "long": 12.710466
-  },
-  "9172": {
-    "landkreis": "Berchtesgadener Land",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 106389,
-    "lat": 47.689,
-    "long": 12.887468
-  },
-  "9173": {
-    "landkreis": "Bad Tölz-Wolfratshausen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 127919,
-    "lat": 47.724822,
-    "long": 11.488162
-  },
-  "9174": {
-    "landkreis": "Dachau",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 155449,
-    "lat": 48.330886,
-    "long": 11.361832
-  },
-  "9175": {
-    "landkreis": "Ebersberg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 144562,
-    "lat": 48.072971,
-    "long": 11.916733
-  },
-  "9176": {
-    "landkreis": "Eichstätt",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 133634,
-    "lat": 48.894676,
-    "long": 11.377377
-  },
-  "9177": {
-    "landkreis": "Erding",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 139622,
-    "lat": 48.298097,
-    "long": 12.003207
-  },
-  "9178": {
-    "landkreis": "Freising",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 181144,
-    "lat": 48.445509,
-    "long": 11.744176
-  },
-  "9179": {
-    "landkreis": "Fürstenfeldbruck",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 218579,
-    "lat": 48.184625,
-    "long": 11.20652
-  },
-  "9180": {
-    "landkreis": "Garmisch-Partenkirchen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 88232,
-    "lat": 47.556054,
-    "long": 11.128266
-  },
-  "9181": {
-    "landkreis": "Landsberg am Lech",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 121466,
-    "lat": 48.024573,
-    "long": 10.954265
-  },
-  "9182": {
-    "landkreis": "Miesbach",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 99978,
-    "lat": 47.74006,
-    "long": 11.815808
-  },
-  "9183": {
-    "landkreis": "Mühldorf a. Inn",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 117606,
-    "lat": 48.241361,
-    "long": 12.386674
-  },
-  "9184": {
-    "landkreis": "München",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 349837,
-    "lat": 48.00965,
-    "long": 11.655151
-  },
-  "9185": {
-    "landkreis": "Neuburg-Schrobenhausen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 98503,
-    "lat": 48.660193,
-    "long": 11.202207
-  },
-  "9186": {
-    "landkreis": "Pfaffenhofen a.d. Ilm",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 129772,
-    "lat": 48.593412,
-    "long": 11.526963
-  },
-  "9187": {
-    "landkreis": "Rosenheim",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 263367,
-    "lat": 47.946992,
-    "long": 12.201827
-  },
-  "9188": {
-    "landkreis": "Starnberg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 136747,
-    "lat": 48.002201,
-    "long": 11.287519
-  },
-  "9189": {
-    "landkreis": "Traunstein",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 178447,
-    "lat": 47.89873,
-    "long": 12.582843
-  },
-  "9190": {
-    "landkreis": "Weilheim-Schongau",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 136642,
-    "lat": 47.787291,
-    "long": 11.053654
-  },
-  "9261": {
-    "landkreis": "Landshut",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 73150,
-    "lat": 48.543948,
-    "long": 12.160501
-  },
-  "9262": {
-    "landkreis": "Passau",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 53093,
-    "lat": 48.586691,
-    "long": 13.415058
-  },
-  "9263": {
-    "landkreis": "Straubing",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 47854,
-    "lat": 48.884215,
-    "long": 12.574082
-  },
-  "9271": {
-    "landkreis": "Deggendorf",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 120521,
-    "lat": 48.784508,
-    "long": 13.005449
-  },
-  "9272": {
-    "landkreis": "Freyung-Grafenau",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 78632,
-    "lat": 48.829498,
-    "long": 13.515194
-  },
-  "9273": {
-    "landkreis": "Kelheim",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 123899,
-    "lat": 48.823577,
-    "long": 11.859606
-  },
-  "9274": {
-    "landkreis": "Landshut",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 162331,
-    "lat": 48.660179,
-    "long": 12.07862
-  },
-  "9275": {
-    "landkreis": "Passau",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 194090,
-    "lat": 48.483276,
-    "long": 13.260599
-  },
-  "9276": {
-    "landkreis": "Regen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 77176,
-    "lat": 49.02731,
-    "long": 13.102578
-  },
-  "9277": {
-    "landkreis": "Rottal-Inn",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 122252,
-    "lat": 48.431852,
-    "long": 12.871481
-  },
-  "9278": {
-    "landkreis": "Straubing-Bogen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 102398,
-    "lat": 49.006714,
-    "long": 12.696094
-  },
-  "9279": {
-    "landkreis": "Dingolfing-Landau",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 98045,
-    "lat": 48.645574,
-    "long": 12.614768
-  },
-  "9361": {
-    "landkreis": "Amberg",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 41994,
-    "lat": 49.453399,
-    "long": 11.849567
-  },
-  "9362": {
-    "landkreis": "Regensburg",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 153542,
-    "lat": 49.013426,
-    "long": 12.115815
-  },
-  "9363": {
-    "landkreis": "Weiden i.d. OPf.",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 42472,
-    "lat": 49.668596,
-    "long": 12.160877
-  },
-  "9371": {
-    "landkreis": "Amberg-Sulzbach",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 103277,
-    "lat": 49.552624,
-    "long": 11.731463
-  },
-  "9372": {
-    "landkreis": "Cham",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 128444,
-    "lat": 49.24159,
-    "long": 12.699762
-  },
-  "9373": {
-    "landkreis": "Neumarkt i.d. OPf.",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 136062,
-    "lat": 49.215729,
-    "long": 11.568611
-  },
-  "9374": {
-    "landkreis": "Neustadt a.d. Waldnaab",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 94838,
-    "lat": 49.728007,
-    "long": 11.892742
-  },
-  "9375": {
-    "landkreis": "Regensburg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 195225,
-    "lat": 49.094466,
-    "long": 11.917086
-  },
-  "9376": {
-    "landkreis": "Schwandorf",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 149239,
-    "lat": 49.36972,
-    "long": 12.254654
-  },
-  "9377": {
-    "landkreis": "Tirschenreuth",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 71648,
-    "lat": 49.900466,
-    "long": 12.204166
-  },
-  "9461": {
-    "landkreis": "Bamberg",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 77749,
-    "lat": 49.884114,
-    "long": 10.904317
-  },
-  "9462": {
-    "landkreis": "Bayreuth",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 73909,
-    "lat": 49.936515,
-    "long": 11.58837
-  },
-  "9463": {
-    "landkreis": "Coburg",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 40955,
-    "lat": 50.259816,
-    "long": 10.964065
-  },
-  "9464": {
-    "landkreis": "Hof",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 45125,
-    "lat": 50.315974,
-    "long": 11.897202
-  },
-  "9471": {
-    "landkreis": "Bamberg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 147697,
-    "lat": 49.943897,
-    "long": 11.112155
-  },
-  "9472": {
-    "landkreis": "Bayreuth",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 103648,
-    "lat": 49.803643,
-    "long": 11.487996
-  },
-  "9473": {
-    "landkreis": "Coburg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 86544,
-    "lat": 50.333655,
-    "long": 10.880832
-  },
-  "9474": {
-    "landkreis": "Forchheim",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 116753,
-    "lat": 49.721287,
-    "long": 11.181625
-  },
-  "9475": {
-    "landkreis": "Hof",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 93907,
-    "lat": 50.21569,
-    "long": 11.789149
-  },
-  "9476": {
-    "landkreis": "Kronach",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 66091,
-    "lat": 50.326531,
-    "long": 11.37212
-  },
-  "9477": {
-    "landkreis": "Kulmbach",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 71328,
-    "lat": 50.101067,
-    "long": 11.484014
-  },
-  "9478": {
-    "landkreis": "Lichtenfels",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 66741,
-    "lat": 50.10915,
-    "long": 11.120815
-  },
-  "9479": {
-    "landkreis": "Wunsiedel i. Fichtelgebirge",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 71482,
-    "lat": 50.09149,
-    "long": 12.041012
-  },
-  "9561": {
-    "landkreis": "Ansbach",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 41662,
-    "lat": 49.289653,
-    "long": 10.573355
-  },
-  "9562": {
-    "landkreis": "Erlangen",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 113292,
-    "lat": 49.581177,
-    "long": 10.985761
-  },
-  "9563": {
-    "landkreis": "Fürth",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 129122,
-    "lat": 49.488147,
-    "long": 10.973388
-  },
-  "9564": {
-    "landkreis": "Nürnberg",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 510632,
-    "lat": 49.435679,
-    "long": 11.086215
-  },
-  "9565": {
-    "landkreis": "Schwabach",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 41146,
-    "lat": 49.33246,
-    "long": 11.031057
-  },
-  "9571": {
-    "landkreis": "Ansbach",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 186279,
-    "lat": 49.160088,
-    "long": 10.430621
-  },
-  "9572": {
-    "landkreis": "Erlangen-Höchstadt",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 139323,
-    "lat": 49.677346,
-    "long": 10.848502
-  },
-  "9573": {
-    "landkreis": "Fürth",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 119432,
-    "lat": 49.443756,
-    "long": 10.857838
-  },
-  "9574": {
-    "landkreis": "Nürnberger Land",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 171424,
-    "lat": 49.490782,
-    "long": 11.373909
-  },
-  "9575": {
-    "landkreis": "Neustadt a.d. Aisch-Bad Windsheim",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 101788,
-    "lat": 49.566294,
-    "long": 10.472122
-  },
-  "9576": {
-    "landkreis": "Roth",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 127520,
-    "lat": 49.198729,
-    "long": 11.130104
-  },
-  "9577": {
-    "landkreis": "Weißenburg-Gunzenhausen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 95523,
-    "lat": 49.029091,
-    "long": 10.903037
-  },
-  "9661": {
-    "landkreis": "Aschaffenburg",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 71381,
-    "lat": 49.965224,
-    "long": 9.1598653
-  },
-  "9662": {
-    "landkreis": "Schweinfurt",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 53585,
-    "lat": 50.042317,
-    "long": 10.223202
-  },
-  "9663": {
-    "landkreis": "Würzburg",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 126933,
-    "lat": 49.780016,
-    "long": 9.9449642
-  },
-  "9671": {
-    "landkreis": "Aschaffenburg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 174965,
-    "lat": 50.0068,
-    "long": 9.2512234
-  },
-  "9672": {
-    "landkreis": "Bad Kissingen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 103454,
-    "lat": 50.221197,
-    "long": 9.9643468
-  },
-  "9673": {
-    "landkreis": "Rhön-Grabfeld",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 79376,
-    "lat": 50.369698,
-    "long": 10.257982
-  },
-  "9674": {
-    "landkreis": "Haßberge",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 84284,
-    "lat": 50.058476,
-    "long": 10.610977
-  },
-  "9675": {
-    "landkreis": "Kitzingen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 91980,
-    "lat": 49.748753,
-    "long": 10.260365
-  },
-  "9676": {
-    "landkreis": "Miltenberg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 128782,
-    "lat": 49.756799,
-    "long": 9.2445054
-  },
-  "9677": {
-    "landkreis": "Main-Spessart",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 126105,
-    "lat": 49.991344,
-    "long": 9.6680921
-  },
-  "9678": {
-    "landkreis": "Schweinfurt",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 116134,
-    "lat": 49.935132,
-    "long": 10.346527
-  },
-  "9679": {
-    "landkreis": "Würzburg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 163534,
-    "lat": 49.618894,
-    "long": 10.001447
-  },
-  "9761": {
-    "landkreis": "Augsburg",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 296478,
-    "lat": 48.341627,
-    "long": 10.892835
-  },
-  "9762": {
-    "landkreis": "Kaufbeuren",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 45118,
-    "lat": 47.884084,
-    "long": 10.617797
-  },
-  "9763": {
-    "landkreis": "Kempten (Allgäu)",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 69053,
-    "lat": 47.739602,
-    "long": 10.30596
-  },
-  "9764": {
-    "landkreis": "Memmingen",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 44721,
-    "lat": 47.987559,
-    "long": 10.162409
-  },
-  "9771": {
-    "landkreis": "Aichach-Friedberg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 135538,
-    "lat": 48.426496,
-    "long": 11.058273
-  },
-  "9772": {
-    "landkreis": "Augsburg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 257790,
-    "lat": 48.396895,
-    "long": 10.685283
-  },
-  "9773": {
-    "landkreis": "Dillingen a.d. Donau",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 97985,
-    "lat": 48.599273,
-    "long": 10.535961
-  },
-  "9774": {
-    "landkreis": "Günzburg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 128436,
-    "lat": 48.35839,
-    "long": 10.385559
-  },
-  "9775": {
-    "landkreis": "Neu-Ulm",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 177330,
-    "lat": 48.302863,
-    "long": 10.142761
-  },
-  "9776": {
-    "landkreis": "Lindau (Bodensee)",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 82330,
-    "lat": 47.607267,
-    "long": 9.885544
-  },
-  "9777": {
-    "landkreis": "Ostallgäu",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 143236,
-    "lat": 47.69976,
-    "long": 10.63783
-  },
-  "9778": {
-    "landkreis": "Unterallgäu",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 147776,
-    "lat": 48.043666,
-    "long": 10.394069
-  },
-  "9779": {
-    "landkreis": "Donau-Ries",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 134986,
-    "lat": 48.805268,
-    "long": 10.72336
-  },
-  "9780": {
-    "landkreis": "Oberallgäu",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 157202,
-    "lat": 47.514561,
-    "long": 10.255646
-  },
-  "10041": {
-    "landkreis": "Regionalverband Saarbrücken",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 327284,
-    "lat": 49.254221,
-    "long": 6.9624581
-  },
-  "10042": {
-    "landkreis": "Merzig-Wadern",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 103426,
-    "lat": 49.497743,
-    "long": 6.6812872
-  },
-  "10043": {
-    "landkreis": "Neunkirchen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 130847,
-    "lat": 49.382253,
-    "long": 7.1228489
-  },
-  "10044": {
-    "landkreis": "Saarlouis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 193661,
-    "lat": 49.357861,
-    "long": 6.7777539
-  },
-  "10045": {
-    "landkreis": "Saarpfalz-Kreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 140960,
-    "lat": 49.250003,
-    "long": 7.2453135
-  },
-  "10046": {
-    "landkreis": "St. Wendel",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 86170,
-    "lat": 49.527195,
-    "long": 7.105983
-  },
-  "11000": {
-    "landkreis": "Berlin",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 3664088,
-    "lat": 52.502759,
-    "long": 13.399375
-  },
-  "12051": {
-    "landkreis": "Brandenburg an der Havel",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 72461,
-    "lat": 52.393582,
-    "long": 12.513434
-  },
-  "12052": {
-    "landkreis": "Cottbus",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 98359,
-    "lat": 51.773461,
-    "long": 14.379693
-  },
-  "12053": {
-    "landkreis": "Frankfurt (Oder)",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 56679,
-    "lat": 52.326169,
-    "long": 14.488103
-  },
-  "12054": {
-    "landkreis": "Potsdam",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 183154,
-    "lat": 52.396134,
-    "long": 13.05742
-  },
-  "12060": {
-    "landkreis": "Barnim",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 188835,
-    "lat": 52.82132,
-    "long": 13.711743
-  },
-  "12061": {
-    "landkreis": "Dahme-Spreewald",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 175834,
-    "lat": 52.044154,
-    "long": 13.829476
-  },
-  "12062": {
-    "landkreis": "Elbe-Elster",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 100317,
-    "lat": 51.613588,
-    "long": 13.476273
-  },
-  "12063": {
-    "landkreis": "Havelland",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 165906,
-    "lat": 52.616959,
-    "long": 12.632832
-  },
-  "12064": {
-    "landkreis": "Märkisch-Oderland",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 197965,
-    "lat": 52.606125,
-    "long": 14.148876
-  },
-  "12065": {
-    "landkreis": "Oberhavel",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 215795,
-    "lat": 52.903092,
-    "long": 13.210681
-  },
-  "12066": {
-    "landkreis": "Oberspreewald-Lausitz",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 107558,
-    "lat": 51.618423,
-    "long": 13.959035
-  },
-  "12067": {
-    "landkreis": "Oder-Spree",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 179245,
-    "lat": 52.246749,
-    "long": 14.218978
-  },
-  "12068": {
-    "landkreis": "Ostprignitz-Ruppin",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 98829,
-    "lat": 52.986298,
-    "long": 12.642753
-  },
-  "12069": {
-    "landkreis": "Potsdam-Mittelmark",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 219521,
-    "lat": 52.251067,
-    "long": 12.708471
-  },
-  "12070": {
-    "landkreis": "Prignitz",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 75574,
-    "lat": 53.104582,
-    "long": 11.968515
-  },
-  "12071": {
-    "landkreis": "Spree-Neiße",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 111955,
-    "lat": 51.622702,
-    "long": 14.370469
-  },
-  "12072": {
-    "landkreis": "Teltow-Fläming",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 172545,
-    "lat": 52.072272,
-    "long": 13.287821
-  },
-  "12073": {
-    "landkreis": "Uckermark",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 117336,
-    "lat": 53.204681,
-    "long": 13.861258
-  },
-  "13003": {
-    "landkreis": "Rostock",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 208400,
-    "lat": 54.15084,
-    "long": 12.150236
-  },
-  "13004": {
-    "landkreis": "Schwerin",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 95740,
-    "lat": 53.621983,
-    "long": 11.419816
-  },
-  "13071": {
-    "landkreis": "Mecklenburgische Seenplatte",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 257525,
-    "lat": 53.544128,
-    "long": 13.002276
-  },
-  "13072": {
-    "landkreis": "Rostock",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 217796,
-    "lat": 53.911856,
-    "long": 12.22239
-  },
-  "13073": {
-    "landkreis": "Vorpommern-Rügen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 225900,
-    "lat": 54.247992,
-    "long": 12.898721
-  },
-  "13074": {
-    "landkreis": "Nordwestmecklenburg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 158449,
-    "lat": 53.820465,
-    "long": 11.250093
-  },
-  "13075": {
-    "landkreis": "Vorpommern-Greifswald",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 235451,
-    "lat": 53.769177,
-    "long": 13.75855
-  },
-  "13076": {
-    "landkreis": "Ludwigslust-Parchim",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 211899,
-    "lat": 53.450094,
-    "long": 11.534177
-  },
-  "14511": {
-    "landkreis": "Chemnitz",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 243105,
-    "lat": 50.83261,
-    "long": 12.939141
-  },
-  "14521": {
-    "landkreis": "Erzgebirgskreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 328695,
-    "lat": 50.609375,
-    "long": 12.945301
-  },
-  "14522": {
-    "landkreis": "Mittelsachsen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 299329,
-    "lat": 50.956407,
-    "long": 13.137541
-  },
-  "14523": {
-    "landkreis": "Vogtlandkreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 221376,
-    "lat": 50.404913,
-    "long": 12.338026
-  },
-  "14524": {
-    "landkreis": "Zwickau",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 309621,
-    "lat": 50.72636,
-    "long": 12.498494
-  },
-  "14612": {
-    "landkreis": "Dresden",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 555351,
-    "lat": 51.100169,
-    "long": 13.799476
-  },
-  "14625": {
-    "landkreis": "Bautzen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 296290,
-    "lat": 51.172049,
-    "long": 14.3838
-  },
-  "14626": {
-    "landkreis": "Görlitz",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 248273,
-    "lat": 51.13691,
-    "long": 14.961263
-  },
-  "14627": {
-    "landkreis": "Meißen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 239344,
-    "lat": 51.136632,
-    "long": 13.434262
-  },
-  "14628": {
-    "landkreis": "Sächsische Schweiz-Osterzgebirge",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 244009,
-    "lat": 50.917266,
-    "long": 13.871576
-  },
-  "14713": {
-    "landkreis": "Leipzig",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 601866,
-    "lat": 51.333118,
-    "long": 12.376875
-  },
-  "14729": {
-    "landkreis": "Leipzig",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 258214,
-    "lat": 51.203509,
-    "long": 12.439818
-  },
-  "14730": {
-    "landkreis": "Nordsachsen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 197529,
-    "lat": 51.472542,
-    "long": 12.779554
-  },
-  "15001": {
-    "landkreis": "Dessau-Roßlau",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 78731,
-    "lat": 51.813909,
-    "long": 12.241279
-  },
-  "15002": {
-    "landkreis": "Halle (Saale)",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 238061,
-    "lat": 51.4803,
-    "long": 11.974528
-  },
-  "15003": {
-    "landkreis": "Magdeburg",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 236188,
-    "lat": 52.115977,
-    "long": 11.648383
-  },
-  "15081": {
-    "landkreis": "Altmarkkreis Salzwedel",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 81986,
-    "lat": 52.676729,
-    "long": 11.229724
-  },
-  "15082": {
-    "landkreis": "Anhalt-Bitterfeld",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 155900,
-    "lat": 51.647049,
-    "long": 12.299255
-  },
-  "15083": {
-    "landkreis": "Börde",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 170106,
-    "lat": 52.059045,
-    "long": 11.284423
-  },
-  "15084": {
-    "landkreis": "Burgenlandkreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 176333,
-    "lat": 51.134376,
-    "long": 11.83389
-  },
-  "15085": {
-    "landkreis": "Harz",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 209117,
-    "lat": 51.822351,
-    "long": 10.95932
-  },
-  "15086": {
-    "landkreis": "Jerichower Land",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 89118,
-    "lat": 52.287454,
-    "long": 12.029403
-  },
-  "15087": {
-    "landkreis": "Mansfeld-Südharz",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 132317,
-    "lat": 51.535322,
-    "long": 11.354395
-  },
-  "15088": {
-    "landkreis": "Saalekreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 182814,
-    "lat": 51.363372,
-    "long": 11.798382
-  },
-  "15089": {
-    "landkreis": "Salzlandkreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 185495,
-    "lat": 51.851445,
-    "long": 11.641005
-  },
-  "15090": {
-    "landkreis": "Stendal",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 109746,
-    "lat": 52.693177,
-    "long": 11.845665
-  },
-  "15091": {
-    "landkreis": "Wittenberg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 123341,
-    "lat": 51.791391,
-    "long": 12.791179
-  },
-  "16051": {
-    "landkreis": "Erfurt",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 213227,
-    "lat": 50.982466,
-    "long": 11.020683
-  },
-  "16052": {
-    "landkreis": "Gera",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 91368,
-    "lat": 50.90074,
-    "long": 12.093004
-  },
-  "16053": {
-    "landkreis": "Jena",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 110502,
-    "lat": 50.92588,
-    "long": 11.591162
-  },
-  "16054": {
-    "landkreis": "Suhl",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 36054,
-    "lat": 50.608361,
-    "long": 10.693465
-  },
-  "16055": {
-    "landkreis": "Weimar",
-    "landkreisTyp": "Stadt",
-    "einwohnerzahl": 65138,
-    "lat": 50.977554,
-    "long": 11.31781
-  },
-  "16061": {
-    "landkreis": "Eichsfeld",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 99324,
-    "lat": 51.38163,
-    "long": 10.257459
-  },
-  "16062": {
-    "landkreis": "Nordhausen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 81687,
-    "lat": 51.501566,
-    "long": 10.73279
-  },
-  "16063": {
-    "landkreis": "Wartburgkreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 158900,
-    "lat": 50.892774,
-    "long": 10.217819
-  },
-  "16064": {
-    "landkreis": "Unstrut-Hainich-Kreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 101269,
-    "lat": 51.182695,
-    "long": 10.555401
-  },
-  "16065": {
-    "landkreis": "Kyffhäuserkreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 72964,
-    "lat": 51.323188,
-    "long": 10.989641
-  },
-  "16066": {
-    "landkreis": "Schmalkalden-Meiningen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 123404,
-    "lat": 50.628856,
-    "long": 10.407442
-  },
-  "16067": {
-    "landkreis": "Gotha",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 133825,
-    "lat": 50.907203,
-    "long": 10.696255
-  },
-  "16068": {
-    "landkreis": "Sömmerda",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 68717,
-    "lat": 51.156333,
-    "long": 11.156919
-  },
-  "16069": {
-    "landkreis": "Hildburghausen",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 62089,
-    "lat": 50.431086,
-    "long": 10.737739
-  },
-  "16070": {
-    "landkreis": "Ilm-Kreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 105367,
-    "lat": 50.736692,
-    "long": 10.968152
-  },
-  "16071": {
-    "landkreis": "Weimarer Land",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 82103,
-    "lat": 51.032264,
-    "long": 11.507425
-  },
-  "16072": {
-    "landkreis": "Sonneberg",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 56504,
-    "lat": 50.413317,
-    "long": 11.133108
-  },
-  "16073": {
-    "landkreis": "Saalfeld-Rudolstadt",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 100969,
-    "lat": 50.638271,
-    "long": 11.311129
-  },
-  "16074": {
-    "landkreis": "Saale-Holzland-Kreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 82513,
-    "lat": 50.905491,
-    "long": 11.735917
-  },
-  "16075": {
-    "landkreis": "Saale-Orla-Kreis",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 79030,
-    "lat": 50.582527,
-    "long": 11.713913
-  },
-  "16076": {
-    "landkreis": "Greiz",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 96102,
-    "lat": 50.753331,
-    "long": 12.084158
-  },
-  "16077": {
-    "landkreis": "Altenburger Land",
-    "landkreisTyp": "Landkreis",
-    "einwohnerzahl": 87807,
-    "lat": 50.961288,
-    "long": 12.410718
-  }
+ "1001": {
+  "einwohnerzahl": 91113,
+  "landkreis": "Flensburg",
+  "landkreisTyp": "Stadt",
+  "lat": 54.785119,
+  "long": 9.4323687
+ },
+ "1002": {
+  "einwohnerzahl": 246243,
+  "landkreis": "Kiel",
+  "landkreisTyp": "Stadt",
+  "lat": 54.329759,
+  "long": 10.130283
+ },
+ "1003": {
+  "einwohnerzahl": 216277,
+  "landkreis": "Lübeck",
+  "landkreisTyp": "Stadt",
+  "lat": 53.875705,
+  "long": 10.723051
+ },
+ "1004": {
+  "einwohnerzahl": 79496,
+  "landkreis": "Neumünster",
+  "landkreisTyp": "Stadt",
+  "lat": 54.088042,
+  "long": 9.9835962
+ },
+ "10041": {
+  "einwohnerzahl": 327284,
+  "landkreis": "Regionalverband Saarbrücken",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.254221,
+  "long": 6.9624581
+ },
+ "10042": {
+  "einwohnerzahl": 103426,
+  "landkreis": "Merzig-Wadern",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.497743,
+  "long": 6.6812872
+ },
+ "10043": {
+  "einwohnerzahl": 130847,
+  "landkreis": "Neunkirchen",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.382253,
+  "long": 7.1228489
+ },
+ "10044": {
+  "einwohnerzahl": 193661,
+  "landkreis": "Saarlouis",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.357861,
+  "long": 6.7777539
+ },
+ "10045": {
+  "einwohnerzahl": 140960,
+  "landkreis": "Saarpfalz-Kreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.250003,
+  "long": 7.2453135
+ },
+ "10046": {
+  "einwohnerzahl": 86170,
+  "landkreis": "St. Wendel",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.527195,
+  "long": 7.105983
+ },
+ "1051": {
+  "einwohnerzahl": 133969,
+  "landkreis": "Dithmarschen",
+  "landkreisTyp": "Kreis",
+  "lat": 54.133993,
+  "long": 9.1096773
+ },
+ "1053": {
+  "einwohnerzahl": 200819,
+  "landkreis": "Herzogtum Lauenburg",
+  "landkreisTyp": "Kreis",
+  "lat": 53.596434,
+  "long": 10.608184
+ },
+ "1054": {
+  "einwohnerzahl": 167560,
+  "landkreis": "Nordfriesland",
+  "landkreisTyp": "Kreis",
+  "lat": 54.611088,
+  "long": 9.0649543
+ },
+ "1055": {
+  "einwohnerzahl": 202014,
+  "landkreis": "Ostholstein",
+  "landkreisTyp": "Kreis",
+  "lat": 54.211782,
+  "long": 10.86662
+ },
+ "1056": {
+  "einwohnerzahl": 318326,
+  "landkreis": "Pinneberg",
+  "landkreisTyp": "Kreis",
+  "lat": 53.723182,
+  "long": 9.7371433
+ },
+ "1057": {
+  "einwohnerzahl": 129687,
+  "landkreis": "Plön",
+  "landkreisTyp": "Kreis",
+  "lat": 54.245729,
+  "long": 10.363199
+ },
+ "1058": {
+  "einwohnerzahl": 276053,
+  "landkreis": "Rendsburg-Eckernförde",
+  "landkreisTyp": "Kreis",
+  "lat": 54.29215,
+  "long": 9.7793856
+ },
+ "1059": {
+  "einwohnerzahl": 203799,
+  "landkreis": "Schleswig-Flensburg",
+  "landkreisTyp": "Kreis",
+  "lat": 54.616026,
+  "long": 9.5509886
+ },
+ "1060": {
+  "einwohnerzahl": 280400,
+  "landkreis": "Segeberg",
+  "landkreisTyp": "Kreis",
+  "lat": 53.926779,
+  "long": 10.142052
+ },
+ "1061": {
+  "einwohnerzahl": 130843,
+  "landkreis": "Steinburg",
+  "landkreisTyp": "Kreis",
+  "lat": 53.930387,
+  "long": 9.5111518
+ },
+ "1062": {
+  "einwohnerzahl": 245406,
+  "landkreis": "Stormarn",
+  "landkreisTyp": "Kreis",
+  "lat": 53.728387,
+  "long": 10.336683
+ },
+ "11000": {
+  "einwohnerzahl": 3677472,
+  "landkreis": "Berlin",
+  "landkreisTyp": "Stadt",
+  "lat": 52.502759,
+  "long": 13.399375
+ },
+ "12051": {
+  "einwohnerzahl": 72461,
+  "landkreis": "Brandenburg an der Havel",
+  "landkreisTyp": "Stadt",
+  "lat": 52.393582,
+  "long": 12.513434
+ },
+ "12052": {
+  "einwohnerzahl": 98359,
+  "landkreis": "Cottbus",
+  "landkreisTyp": "Stadt",
+  "lat": 51.773461,
+  "long": 14.379693
+ },
+ "12053": {
+  "einwohnerzahl": 56679,
+  "landkreis": "Frankfurt (Oder)",
+  "landkreisTyp": "Stadt",
+  "lat": 52.326169,
+  "long": 14.488103
+ },
+ "12054": {
+  "einwohnerzahl": 183154,
+  "landkreis": "Potsdam",
+  "landkreisTyp": "Stadt",
+  "lat": 52.396134,
+  "long": 13.05742
+ },
+ "12060": {
+  "einwohnerzahl": 188835,
+  "landkreis": "Barnim",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.82132,
+  "long": 13.711743
+ },
+ "12061": {
+  "einwohnerzahl": 175834,
+  "landkreis": "Dahme-Spreewald",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.044154,
+  "long": 13.829476
+ },
+ "12062": {
+  "einwohnerzahl": 100317,
+  "landkreis": "Elbe-Elster",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.613588,
+  "long": 13.476273
+ },
+ "12063": {
+  "einwohnerzahl": 165906,
+  "landkreis": "Havelland",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.616959,
+  "long": 12.632832
+ },
+ "12064": {
+  "einwohnerzahl": 197965,
+  "landkreis": "Märkisch-Oderland",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.606125,
+  "long": 14.148876
+ },
+ "12065": {
+  "einwohnerzahl": 215795,
+  "landkreis": "Oberhavel",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.903092,
+  "long": 13.210681
+ },
+ "12066": {
+  "einwohnerzahl": 107558,
+  "landkreis": "Oberspreewald-Lausitz",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.618423,
+  "long": 13.959035
+ },
+ "12067": {
+  "einwohnerzahl": 179245,
+  "landkreis": "Oder-Spree",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.246749,
+  "long": 14.218978
+ },
+ "12068": {
+  "einwohnerzahl": 98829,
+  "landkreis": "Ostprignitz-Ruppin",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.986298,
+  "long": 12.642753
+ },
+ "12069": {
+  "einwohnerzahl": 219521,
+  "landkreis": "Potsdam-Mittelmark",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.251067,
+  "long": 12.708471
+ },
+ "12070": {
+  "einwohnerzahl": 75574,
+  "landkreis": "Prignitz",
+  "landkreisTyp": "Landkreis",
+  "lat": 53.104582,
+  "long": 11.968515
+ },
+ "12071": {
+  "einwohnerzahl": 111955,
+  "landkreis": "Spree-Neiße",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.622702,
+  "long": 14.370469
+ },
+ "12072": {
+  "einwohnerzahl": 172545,
+  "landkreis": "Teltow-Fläming",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.072272,
+  "long": 13.287821
+ },
+ "12073": {
+  "einwohnerzahl": 117336,
+  "landkreis": "Uckermark",
+  "landkreisTyp": "Landkreis",
+  "lat": 53.204681,
+  "long": 13.861258
+ },
+ "13003": {
+  "einwohnerzahl": 208400,
+  "landkreis": "Rostock",
+  "landkreisTyp": "Stadt",
+  "lat": 54.15084,
+  "long": 12.150236
+ },
+ "13004": {
+  "einwohnerzahl": 95740,
+  "landkreis": "Schwerin",
+  "landkreisTyp": "Stadt",
+  "lat": 53.621983,
+  "long": 11.419816
+ },
+ "13071": {
+  "einwohnerzahl": 257525,
+  "landkreis": "Mecklenburgische Seenplatte",
+  "landkreisTyp": "Landkreis",
+  "lat": 53.544128,
+  "long": 13.002276
+ },
+ "13072": {
+  "einwohnerzahl": 217796,
+  "landkreis": "Rostock",
+  "landkreisTyp": "Landkreis",
+  "lat": 53.911856,
+  "long": 12.22239
+ },
+ "13073": {
+  "einwohnerzahl": 225900,
+  "landkreis": "Vorpommern-Rügen",
+  "landkreisTyp": "Landkreis",
+  "lat": 54.247992,
+  "long": 12.898721
+ },
+ "13074": {
+  "einwohnerzahl": 158449,
+  "landkreis": "Nordwestmecklenburg",
+  "landkreisTyp": "Landkreis",
+  "lat": 53.820465,
+  "long": 11.250093
+ },
+ "13075": {
+  "einwohnerzahl": 235451,
+  "landkreis": "Vorpommern-Greifswald",
+  "landkreisTyp": "Landkreis",
+  "lat": 53.769177,
+  "long": 13.75855
+ },
+ "13076": {
+  "einwohnerzahl": 211899,
+  "landkreis": "Ludwigslust-Parchim",
+  "landkreisTyp": "Landkreis",
+  "lat": 53.450094,
+  "long": 11.534177
+ },
+ "14511": {
+  "einwohnerzahl": 243105,
+  "landkreis": "Chemnitz",
+  "landkreisTyp": "Stadt",
+  "lat": 50.83261,
+  "long": 12.939141
+ },
+ "14521": {
+  "einwohnerzahl": 328695,
+  "landkreis": "Erzgebirgskreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.609375,
+  "long": 12.945301
+ },
+ "14522": {
+  "einwohnerzahl": 299329,
+  "landkreis": "Mittelsachsen",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.956407,
+  "long": 13.137541
+ },
+ "14523": {
+  "einwohnerzahl": 221376,
+  "landkreis": "Vogtlandkreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.404913,
+  "long": 12.338026
+ },
+ "14524": {
+  "einwohnerzahl": 309621,
+  "landkreis": "Zwickau",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.72636,
+  "long": 12.498494
+ },
+ "14612": {
+  "einwohnerzahl": 555351,
+  "landkreis": "Dresden",
+  "landkreisTyp": "Stadt",
+  "lat": 51.100169,
+  "long": 13.799476
+ },
+ "14625": {
+  "einwohnerzahl": 296290,
+  "landkreis": "Bautzen",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.172049,
+  "long": 14.3838
+ },
+ "14626": {
+  "einwohnerzahl": 248273,
+  "landkreis": "Görlitz",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.13691,
+  "long": 14.961263
+ },
+ "14627": {
+  "einwohnerzahl": 239344,
+  "landkreis": "Meißen",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.136632,
+  "long": 13.434262
+ },
+ "14628": {
+  "einwohnerzahl": 244009,
+  "landkreis": "Sächsische Schweiz-Osterzgebirge",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.917266,
+  "long": 13.871576
+ },
+ "14713": {
+  "einwohnerzahl": 601866,
+  "landkreis": "Leipzig",
+  "landkreisTyp": "Stadt",
+  "lat": 51.333118,
+  "long": 12.376875
+ },
+ "14729": {
+  "einwohnerzahl": 258214,
+  "landkreis": "Leipzig",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.203509,
+  "long": 12.439818
+ },
+ "14730": {
+  "einwohnerzahl": 197529,
+  "landkreis": "Nordsachsen",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.472542,
+  "long": 12.779554
+ },
+ "15001": {
+  "einwohnerzahl": 78731,
+  "landkreis": "Dessau-Roßlau",
+  "landkreisTyp": "Stadt",
+  "lat": 51.813909,
+  "long": 12.241279
+ },
+ "15002": {
+  "einwohnerzahl": 238061,
+  "landkreis": "Halle (Saale)",
+  "landkreisTyp": "Stadt",
+  "lat": 51.4803,
+  "long": 11.974528
+ },
+ "15003": {
+  "einwohnerzahl": 236188,
+  "landkreis": "Magdeburg",
+  "landkreisTyp": "Stadt",
+  "lat": 52.115977,
+  "long": 11.648383
+ },
+ "15081": {
+  "einwohnerzahl": 81986,
+  "landkreis": "Altmarkkreis Salzwedel",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.676729,
+  "long": 11.229724
+ },
+ "15082": {
+  "einwohnerzahl": 155900,
+  "landkreis": "Anhalt-Bitterfeld",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.647049,
+  "long": 12.299255
+ },
+ "15083": {
+  "einwohnerzahl": 170106,
+  "landkreis": "Börde",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.059045,
+  "long": 11.284423
+ },
+ "15084": {
+  "einwohnerzahl": 176333,
+  "landkreis": "Burgenlandkreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.134376,
+  "long": 11.83389
+ },
+ "15085": {
+  "einwohnerzahl": 209117,
+  "landkreis": "Harz",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.822351,
+  "long": 10.95932
+ },
+ "15086": {
+  "einwohnerzahl": 89118,
+  "landkreis": "Jerichower Land",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.287454,
+  "long": 12.029403
+ },
+ "15087": {
+  "einwohnerzahl": 132317,
+  "landkreis": "Mansfeld-Südharz",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.535322,
+  "long": 11.354395
+ },
+ "15088": {
+  "einwohnerzahl": 182814,
+  "landkreis": "Saalekreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.363372,
+  "long": 11.798382
+ },
+ "15089": {
+  "einwohnerzahl": 185495,
+  "landkreis": "Salzlandkreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.851445,
+  "long": 11.641005
+ },
+ "15090": {
+  "einwohnerzahl": 109746,
+  "landkreis": "Stendal",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.693177,
+  "long": 11.845665
+ },
+ "15091": {
+  "einwohnerzahl": 123341,
+  "landkreis": "Wittenberg",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.791391,
+  "long": 12.791179
+ },
+ "16051": {
+  "einwohnerzahl": 213227,
+  "landkreis": "Erfurt",
+  "landkreisTyp": "Stadt",
+  "lat": 50.982466,
+  "long": 11.020683
+ },
+ "16052": {
+  "einwohnerzahl": 91368,
+  "landkreis": "Gera",
+  "landkreisTyp": "Stadt",
+  "lat": 50.90074,
+  "long": 12.093004
+ },
+ "16053": {
+  "einwohnerzahl": 110502,
+  "landkreis": "Jena",
+  "landkreisTyp": "Stadt",
+  "lat": 50.92588,
+  "long": 11.591162
+ },
+ "16054": {
+  "einwohnerzahl": 36054,
+  "landkreis": "Suhl",
+  "landkreisTyp": "Stadt",
+  "lat": 50.608361,
+  "long": 10.693465
+ },
+ "16055": {
+  "einwohnerzahl": 65138,
+  "landkreis": "Weimar",
+  "landkreisTyp": "Stadt",
+  "lat": 50.977554,
+  "long": 11.31781
+ },
+ "16061": {
+  "einwohnerzahl": 99324,
+  "landkreis": "Eichsfeld",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.38163,
+  "long": 10.257459
+ },
+ "16062": {
+  "einwohnerzahl": 81687,
+  "landkreis": "Nordhausen",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.501566,
+  "long": 10.73279
+ },
+ "16063": {
+  "einwohnerzahl": 158900,
+  "landkreis": "Wartburgkreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.892774,
+  "long": 10.217819
+ },
+ "16064": {
+  "einwohnerzahl": 101269,
+  "landkreis": "Unstrut-Hainich-Kreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.182695,
+  "long": 10.555401
+ },
+ "16065": {
+  "einwohnerzahl": 72964,
+  "landkreis": "Kyffhäuserkreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.323188,
+  "long": 10.989641
+ },
+ "16066": {
+  "einwohnerzahl": 123404,
+  "landkreis": "Schmalkalden-Meiningen",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.628856,
+  "long": 10.407442
+ },
+ "16067": {
+  "einwohnerzahl": 133825,
+  "landkreis": "Gotha",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.907203,
+  "long": 10.696255
+ },
+ "16068": {
+  "einwohnerzahl": 68717,
+  "landkreis": "Sömmerda",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.156333,
+  "long": 11.156919
+ },
+ "16069": {
+  "einwohnerzahl": 62089,
+  "landkreis": "Hildburghausen",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.431086,
+  "long": 10.737739
+ },
+ "16070": {
+  "einwohnerzahl": 105367,
+  "landkreis": "Ilm-Kreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.736692,
+  "long": 10.968152
+ },
+ "16071": {
+  "einwohnerzahl": 82103,
+  "landkreis": "Weimarer Land",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.032264,
+  "long": 11.507425
+ },
+ "16072": {
+  "einwohnerzahl": 56504,
+  "landkreis": "Sonneberg",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.413317,
+  "long": 11.133108
+ },
+ "16073": {
+  "einwohnerzahl": 100969,
+  "landkreis": "Saalfeld-Rudolstadt",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.638271,
+  "long": 11.311129
+ },
+ "16074": {
+  "einwohnerzahl": 82513,
+  "landkreis": "Saale-Holzland-Kreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.905491,
+  "long": 11.735917
+ },
+ "16075": {
+  "einwohnerzahl": 79030,
+  "landkreis": "Saale-Orla-Kreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.582527,
+  "long": 11.713913
+ },
+ "16076": {
+  "einwohnerzahl": 96102,
+  "landkreis": "Greiz",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.753331,
+  "long": 12.084158
+ },
+ "16077": {
+  "einwohnerzahl": 87807,
+  "landkreis": "Altenburger Land",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.961288,
+  "long": 12.410718
+ },
+ "2000": {
+  "einwohnerzahl": 1853935,
+  "landkreis": "Hamburg",
+  "landkreisTyp": "Stadt",
+  "lat": 53.553616,
+  "long": 10.027361
+ },
+ "3101": {
+  "einwohnerzahl": 248823,
+  "landkreis": "Braunschweig",
+  "landkreisTyp": "Stadt",
+  "lat": 52.280839,
+  "long": 10.526347
+ },
+ "3102": {
+  "einwohnerzahl": 103694,
+  "landkreis": "Salzgitter",
+  "landkreisTyp": "Stadt",
+  "lat": 52.129678,
+  "long": 10.370679
+ },
+ "3103": {
+  "einwohnerzahl": 123949,
+  "landkreis": "Wolfsburg",
+  "landkreisTyp": "Stadt",
+  "lat": 52.411138,
+  "long": 10.785036
+ },
+ "3151": {
+  "einwohnerzahl": 177919,
+  "landkreis": "Gifhorn",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.586249,
+  "long": 10.607222
+ },
+ "3153": {
+  "einwohnerzahl": 134050,
+  "landkreis": "Goslar",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.876084,
+  "long": 10.401684
+ },
+ "3154": {
+  "einwohnerzahl": 91379,
+  "landkreis": "Helmstedt",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.260419,
+  "long": 10.894027
+ },
+ "3155": {
+  "einwohnerzahl": 131765,
+  "landkreis": "Northeim",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.74463,
+  "long": 9.8518887
+ },
+ "3157": {
+  "einwohnerzahl": 136960,
+  "landkreis": "Peine",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.308055,
+  "long": 10.256622
+ },
+ "3158": {
+  "einwohnerzahl": 119224,
+  "landkreis": "Wolfenbüttel",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.137751,
+  "long": 10.648905
+ },
+ "3159": {
+  "einwohnerzahl": 323661,
+  "landkreis": "Göttingen",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.500939,
+  "long": 9.9321137
+ },
+ "3241": {
+  "einwohnerzahl": 1157541,
+  "landkreis": "Region Hannover",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.424603,
+  "long": 9.720613
+ },
+ "3251": {
+  "einwohnerzahl": 218839,
+  "landkreis": "Diepholz",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.730353,
+  "long": 8.7019864
+ },
+ "3252": {
+  "einwohnerzahl": 148963,
+  "landkreis": "Hameln-Pyrmont",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.094196,
+  "long": 9.3932046
+ },
+ "3254": {
+  "einwohnerzahl": 274773,
+  "landkreis": "Hildesheim",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.091993,
+  "long": 9.9453013
+ },
+ "3255": {
+  "einwohnerzahl": 69862,
+  "landkreis": "Holzminden",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.881129,
+  "long": 9.5553908
+ },
+ "3256": {
+  "einwohnerzahl": 121773,
+  "landkreis": "Nienburg (Weser)",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.611395,
+  "long": 9.113799
+ },
+ "3257": {
+  "einwohnerzahl": 158108,
+  "landkreis": "Schaumburg",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.292013,
+  "long": 9.2066986
+ },
+ "3351": {
+  "einwohnerzahl": 179915,
+  "landkreis": "Celle",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.719791,
+  "long": 10.10555
+ },
+ "3352": {
+  "einwohnerzahl": 199603,
+  "landkreis": "Cuxhaven",
+  "landkreisTyp": "Landkreis",
+  "lat": 53.618225,
+  "long": 8.8035629
+ },
+ "3353": {
+  "einwohnerzahl": 257548,
+  "landkreis": "Harburg",
+  "landkreisTyp": "Landkreis",
+  "lat": 53.325053,
+  "long": 9.9641457
+ },
+ "3354": {
+  "einwohnerzahl": 48472,
+  "landkreis": "Lüchow-Dannenberg",
+  "landkreisTyp": "Landkreis",
+  "lat": 53.017929,
+  "long": 11.129626
+ },
+ "3355": {
+  "einwohnerzahl": 185129,
+  "landkreis": "Lüneburg",
+  "landkreisTyp": "Landkreis",
+  "lat": 53.240413,
+  "long": 10.577257
+ },
+ "3356": {
+  "einwohnerzahl": 115054,
+  "landkreis": "Osterholz",
+  "landkreisTyp": "Landkreis",
+  "lat": 53.255484,
+  "long": 8.8106144
+ },
+ "3357": {
+  "einwohnerzahl": 165001,
+  "landkreis": "Rotenburg (Wümme)",
+  "landkreisTyp": "Landkreis",
+  "lat": 53.25506,
+  "long": 9.3050983
+ },
+ "3358": {
+  "einwohnerzahl": 142912,
+  "landkreis": "Heidekreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.934247,
+  "long": 9.7706982
+ },
+ "3359": {
+  "einwohnerzahl": 206496,
+  "landkreis": "Stade",
+  "landkreisTyp": "Landkreis",
+  "lat": 53.59498,
+  "long": 9.4166249
+ },
+ "3360": {
+  "einwohnerzahl": 92894,
+  "landkreis": "Uelzen",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.993539,
+  "long": 10.549805
+ },
+ "3361": {
+  "einwohnerzahl": 138507,
+  "landkreis": "Verden",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.976043,
+  "long": 9.173881
+ },
+ "3401": {
+  "einwohnerzahl": 77522,
+  "landkreis": "Delmenhorst",
+  "landkreisTyp": "Stadt",
+  "lat": 53.046392,
+  "long": 8.6438715
+ },
+ "3402": {
+  "einwohnerzahl": 49523,
+  "landkreis": "Emden",
+  "landkreisTyp": "Stadt",
+  "lat": 53.350019,
+  "long": 7.241668
+ },
+ "3403": {
+  "einwohnerzahl": 170389,
+  "landkreis": "Oldenburg (Oldb)",
+  "landkreisTyp": "Stadt",
+  "lat": 53.144113,
+  "long": 8.2360934
+ },
+ "3404": {
+  "einwohnerzahl": 165034,
+  "landkreis": "Osnabrück",
+  "landkreisTyp": "Stadt",
+  "lat": 52.279483,
+  "long": 8.046646
+ },
+ "3405": {
+  "einwohnerzahl": 75027,
+  "landkreis": "Wilhelmshaven",
+  "landkreisTyp": "Stadt",
+  "lat": 53.566003,
+  "long": 8.0892718
+ },
+ "3451": {
+  "einwohnerzahl": 126475,
+  "landkreis": "Ammerland",
+  "landkreisTyp": "Landkreis",
+  "lat": 53.212532,
+  "long": 8.0321495
+ },
+ "3452": {
+  "einwohnerzahl": 190425,
+  "landkreis": "Aurich",
+  "landkreisTyp": "Landkreis",
+  "lat": 53.481904,
+  "long": 7.3903033
+ },
+ "3453": {
+  "einwohnerzahl": 173980,
+  "landkreis": "Cloppenburg",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.905073,
+  "long": 7.9209102
+ },
+ "3454": {
+  "einwohnerzahl": 331397,
+  "landkreis": "Emsland",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.730863,
+  "long": 7.4190007
+ },
+ "3455": {
+  "einwohnerzahl": 98971,
+  "landkreis": "Friesland",
+  "landkreisTyp": "Landkreis",
+  "lat": 53.39451,
+  "long": 8.0467827
+ },
+ "3456": {
+  "einwohnerzahl": 138722,
+  "landkreis": "Grafschaft Bentheim",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.47913,
+  "long": 7.0249016
+ },
+ "3457": {
+  "einwohnerzahl": 172421,
+  "landkreis": "Leer",
+  "landkreisTyp": "Landkreis",
+  "lat": 53.217026,
+  "long": 7.5350353
+ },
+ "3458": {
+  "einwohnerzahl": 132091,
+  "landkreis": "Oldenburg",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.992398,
+  "long": 8.408599
+ },
+ "3459": {
+  "einwohnerzahl": 361550,
+  "landkreis": "Osnabrück",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.505597,
+  "long": 7.8413453
+ },
+ "3460": {
+  "einwohnerzahl": 144805,
+  "landkreis": "Vechta",
+  "landkreisTyp": "Landkreis",
+  "lat": 52.663086,
+  "long": 8.2271335
+ },
+ "3461": {
+  "einwohnerzahl": 88430,
+  "landkreis": "Wesermarsch",
+  "landkreisTyp": "Landkreis",
+  "lat": 53.357849,
+  "long": 8.3931147
+ },
+ "3462": {
+  "einwohnerzahl": 57455,
+  "landkreis": "Wittmund",
+  "landkreisTyp": "Landkreis",
+  "lat": 53.594498,
+  "long": 7.7199505
+ },
+ "4011": {
+  "einwohnerzahl": 563290,
+  "landkreis": "Bremen",
+  "landkreisTyp": "Stadt",
+  "lat": 53.11115,
+  "long": 8.7890014
+ },
+ "4012": {
+  "einwohnerzahl": 113173,
+  "landkreis": "Bremerhaven",
+  "landkreisTyp": "Stadt",
+  "lat": 53.535877,
+  "long": 8.5847177
+ },
+ "5111": {
+  "einwohnerzahl": 619477,
+  "landkreis": "Düsseldorf",
+  "landkreisTyp": "Stadt",
+  "lat": 51.232947,
+  "long": 6.8174691
+ },
+ "5112": {
+  "einwohnerzahl": 495152,
+  "landkreis": "Duisburg",
+  "landkreisTyp": "Stadt",
+  "lat": 51.439338,
+  "long": 6.7426703
+ },
+ "5113": {
+  "einwohnerzahl": 579432,
+  "landkreis": "Essen",
+  "landkreisTyp": "Stadt",
+  "lat": 51.429552,
+  "long": 7.0247831
+ },
+ "5114": {
+  "einwohnerzahl": 227050,
+  "landkreis": "Krefeld",
+  "landkreisTyp": "Stadt",
+  "lat": 51.344702,
+  "long": 6.5885164
+ },
+ "5116": {
+  "einwohnerzahl": 261001,
+  "landkreis": "Mönchengladbach",
+  "landkreisTyp": "Stadt",
+  "lat": 51.170067,
+  "long": 6.4214464
+ },
+ "5117": {
+  "einwohnerzahl": 170739,
+  "landkreis": "Mülheim an der Ruhr",
+  "landkreisTyp": "Stadt",
+  "lat": 51.410975,
+  "long": 6.8861611
+ },
+ "5119": {
+  "einwohnerzahl": 208752,
+  "landkreis": "Oberhausen",
+  "landkreisTyp": "Stadt",
+  "lat": 51.509803,
+  "long": 6.8562311
+ },
+ "5120": {
+  "einwohnerzahl": 111770,
+  "landkreis": "Remscheid",
+  "landkreisTyp": "Stadt",
+  "lat": 51.179955,
+  "long": 7.2230811
+ },
+ "5122": {
+  "einwohnerzahl": 158957,
+  "landkreis": "Solingen",
+  "landkreisTyp": "Stadt",
+  "lat": 51.158614,
+  "long": 7.0692269
+ },
+ "5124": {
+  "einwohnerzahl": 354572,
+  "landkreis": "Wuppertal",
+  "landkreisTyp": "Stadt",
+  "lat": 51.247065,
+  "long": 7.1677703
+ },
+ "5154": {
+  "einwohnerzahl": 314676,
+  "landkreis": "Kleve",
+  "landkreisTyp": "Kreis",
+  "lat": 51.654129,
+  "long": 6.2676332
+ },
+ "5158": {
+  "einwohnerzahl": 484411,
+  "landkreis": "Mettmann",
+  "landkreisTyp": "Kreis",
+  "lat": 51.293695,
+  "long": 7.0111103
+ },
+ "5162": {
+  "einwohnerzahl": 452496,
+  "landkreis": "Rhein-Kreis Neuss",
+  "landkreisTyp": "Kreis",
+  "lat": 51.141915,
+  "long": 6.6543443
+ },
+ "5166": {
+  "einwohnerzahl": 298761,
+  "landkreis": "Viersen",
+  "landkreisTyp": "Kreis",
+  "lat": 51.286061,
+  "long": 6.3305124
+ },
+ "5170": {
+  "einwohnerzahl": 460433,
+  "landkreis": "Wesel",
+  "landkreisTyp": "Kreis",
+  "lat": 51.627207,
+  "long": 6.626953
+ },
+ "5314": {
+  "einwohnerzahl": 331885,
+  "landkreis": "Bonn",
+  "landkreisTyp": "Stadt",
+  "lat": 50.699837,
+  "long": 7.1159508
+ },
+ "5315": {
+  "einwohnerzahl": 1073096,
+  "landkreis": "Köln",
+  "landkreisTyp": "Stadt",
+  "lat": 50.941508,
+  "long": 6.9777146
+ },
+ "5316": {
+  "einwohnerzahl": 163851,
+  "landkreis": "Leverkusen",
+  "landkreisTyp": "Stadt",
+  "lat": 51.048871,
+  "long": 7.0177991
+ },
+ "5334": {
+  "einwohnerzahl": 556673,
+  "landkreis": "Städteregion Aachen",
+  "landkreisTyp": "Kreis",
+  "lat": 50.756428,
+  "long": 6.1032996
+ },
+ "5358": {
+  "einwohnerzahl": 266771,
+  "landkreis": "Düren",
+  "landkreisTyp": "Kreis",
+  "lat": 50.817006,
+  "long": 6.4476606
+ },
+ "5362": {
+  "einwohnerzahl": 471891,
+  "landkreis": "Rhein-Erft-Kreis",
+  "landkreisTyp": "Kreis",
+  "lat": 50.901271,
+  "long": 6.7226709
+ },
+ "5366": {
+  "einwohnerzahl": 194701,
+  "landkreis": "Euskirchen",
+  "landkreisTyp": "Kreis",
+  "lat": 50.529011,
+  "long": 6.6453886
+ },
+ "5370": {
+  "einwohnerzahl": 258306,
+  "landkreis": "Heinsberg",
+  "landkreisTyp": "Kreis",
+  "lat": 51.052035,
+  "long": 6.1709684
+ },
+ "5374": {
+  "einwohnerzahl": 271621,
+  "landkreis": "Oberbergischer Kreis",
+  "landkreisTyp": "Kreis",
+  "lat": 51.010967,
+  "long": 7.5172785
+ },
+ "5378": {
+  "einwohnerzahl": 283429,
+  "landkreis": "Rheinisch-Bergischer Kreis",
+  "landkreisTyp": "Kreis",
+  "lat": 51.019601,
+  "long": 7.1958983
+ },
+ "5382": {
+  "einwohnerzahl": 600732,
+  "landkreis": "Rhein-Sieg-Kreis",
+  "landkreisTyp": "Kreis",
+  "lat": 50.755877,
+  "long": 7.2402531
+ },
+ "5512": {
+  "einwohnerzahl": 117311,
+  "landkreis": "Bottrop",
+  "landkreisTyp": "Stadt",
+  "lat": 51.594362,
+  "long": 6.9159912
+ },
+ "5513": {
+  "einwohnerzahl": 260126,
+  "landkreis": "Gelsenkirchen",
+  "landkreisTyp": "Stadt",
+  "lat": 51.549491,
+  "long": 7.0817139
+ },
+ "5515": {
+  "einwohnerzahl": 317713,
+  "landkreis": "Münster",
+  "landkreisTyp": "Stadt",
+  "lat": 51.952438,
+  "long": 7.6264618
+ },
+ "5554": {
+  "einwohnerzahl": 373582,
+  "landkreis": "Borken",
+  "landkreisTyp": "Kreis",
+  "lat": 51.962198,
+  "long": 6.9097557
+ },
+ "5558": {
+  "einwohnerzahl": 221352,
+  "landkreis": "Coesfeld",
+  "landkreisTyp": "Kreis",
+  "lat": 51.864443,
+  "long": 7.3713157
+ },
+ "5562": {
+  "einwohnerzahl": 612801,
+  "landkreis": "Recklinghausen",
+  "landkreisTyp": "Kreis",
+  "lat": 51.669264,
+  "long": 7.165792
+ },
+ "5566": {
+  "einwohnerzahl": 450176,
+  "landkreis": "Steinfurt",
+  "landkreisTyp": "Kreis",
+  "lat": 52.2116,
+  "long": 7.581675
+ },
+ "5570": {
+  "einwohnerzahl": 278176,
+  "landkreis": "Warendorf",
+  "landkreisTyp": "Kreis",
+  "lat": 51.86986,
+  "long": 7.9598364
+ },
+ "5711": {
+  "einwohnerzahl": 334002,
+  "landkreis": "Bielefeld",
+  "landkreisTyp": "Stadt",
+  "lat": 52.011184,
+  "long": 8.543212
+ },
+ "5754": {
+  "einwohnerzahl": 366104,
+  "landkreis": "Gütersloh",
+  "landkreisTyp": "Kreis",
+  "lat": 51.931784,
+  "long": 8.3548388
+ },
+ "5758": {
+  "einwohnerzahl": 250635,
+  "landkreis": "Herford",
+  "landkreisTyp": "Kreis",
+  "lat": 52.168789,
+  "long": 8.6427584
+ },
+ "5762": {
+  "einwohnerzahl": 139994,
+  "landkreis": "Höxter",
+  "landkreisTyp": "Kreis",
+  "lat": 51.685478,
+  "long": 9.1884029
+ },
+ "5766": {
+  "einwohnerzahl": 346151,
+  "landkreis": "Lippe",
+  "landkreisTyp": "Kreis",
+  "lat": 51.981325,
+  "long": 8.9548684
+ },
+ "5770": {
+  "einwohnerzahl": 311214,
+  "landkreis": "Minden-Lübbecke",
+  "landkreisTyp": "Kreis",
+  "lat": 52.352474,
+  "long": 8.740944
+ },
+ "5774": {
+  "einwohnerzahl": 309380,
+  "landkreis": "Paderborn",
+  "landkreisTyp": "Kreis",
+  "lat": 51.662547,
+  "long": 8.7303579
+ },
+ "5911": {
+  "einwohnerzahl": 363441,
+  "landkreis": "Bochum",
+  "landkreisTyp": "Stadt",
+  "lat": 51.465371,
+  "long": 7.2285467
+ },
+ "5913": {
+  "einwohnerzahl": 586852,
+  "landkreis": "Dortmund",
+  "landkreisTyp": "Stadt",
+  "lat": 51.512061,
+  "long": 7.4796919
+ },
+ "5914": {
+  "einwohnerzahl": 188713,
+  "landkreis": "Hagen",
+  "landkreisTyp": "Stadt",
+  "lat": 51.347057,
+  "long": 7.4970114
+ },
+ "5915": {
+  "einwohnerzahl": 179238,
+  "landkreis": "Hamm",
+  "landkreisTyp": "Stadt",
+  "lat": 51.66249,
+  "long": 7.8263982
+ },
+ "5916": {
+  "einwohnerzahl": 156621,
+  "landkreis": "Herne",
+  "landkreisTyp": "Stadt",
+  "lat": 51.533785,
+  "long": 7.2159088
+ },
+ "5954": {
+  "einwohnerzahl": 322143,
+  "landkreis": "Ennepe-Ruhr-Kreis",
+  "landkreisTyp": "Kreis",
+  "lat": 51.34186,
+  "long": 7.3263007
+ },
+ "5958": {
+  "einwohnerzahl": 258615,
+  "landkreis": "Hochsauerlandkreis",
+  "landkreisTyp": "Kreis",
+  "lat": 51.305556,
+  "long": 8.3972543
+ },
+ "5962": {
+  "einwohnerzahl": 406793,
+  "landkreis": "Märkischer Kreis",
+  "landkreisTyp": "Kreis",
+  "lat": 51.260696,
+  "long": 7.7139345
+ },
+ "5966": {
+  "einwohnerzahl": 133120,
+  "landkreis": "Olpe",
+  "landkreisTyp": "Kreis",
+  "lat": 51.087234,
+  "long": 7.9812283
+ },
+ "5970": {
+  "einwohnerzahl": 274342,
+  "landkreis": "Siegen-Wittgenstein",
+  "landkreisTyp": "Kreis",
+  "lat": 50.937992,
+  "long": 8.2058809
+ },
+ "5974": {
+  "einwohnerzahl": 302298,
+  "landkreis": "Soest",
+  "landkreisTyp": "Kreis",
+  "lat": 51.5647,
+  "long": 8.2236358
+ },
+ "5978": {
+  "einwohnerzahl": 393063,
+  "landkreis": "Unna",
+  "landkreisTyp": "Kreis",
+  "lat": 51.575208,
+  "long": 7.6417082
+ },
+ "6411": {
+  "einwohnerzahl": 159631,
+  "landkreis": "Darmstadt",
+  "landkreisTyp": "Stadt",
+  "lat": 49.882743,
+  "long": 8.6752367
+ },
+ "6412": {
+  "einwohnerzahl": 759224,
+  "landkreis": "Frankfurt am Main",
+  "landkreisTyp": "Stadt",
+  "lat": 50.116773,
+  "long": 8.6598981
+ },
+ "6413": {
+  "einwohnerzahl": 131295,
+  "landkreis": "Offenbach am Main",
+  "landkreisTyp": "Stadt",
+  "lat": 50.089561,
+  "long": 8.7984841
+ },
+ "6414": {
+  "einwohnerzahl": 278950,
+  "landkreis": "Wiesbaden",
+  "landkreisTyp": "Stadt",
+  "lat": 50.076486,
+  "long": 8.2738994
+ },
+ "6431": {
+  "einwohnerzahl": 271166,
+  "landkreis": "Bergstraße",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.669855,
+  "long": 8.6318551
+ },
+ "6432": {
+  "einwohnerzahl": 296900,
+  "landkreis": "Darmstadt-Dieburg",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.855994,
+  "long": 8.8061081
+ },
+ "6433": {
+  "einwohnerzahl": 276307,
+  "landkreis": "Groß-Gerau",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.902901,
+  "long": 8.4812779
+ },
+ "6434": {
+  "einwohnerzahl": 237041,
+  "landkreis": "Hochtaunuskreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.27895,
+  "long": 8.5206755
+ },
+ "6435": {
+  "einwohnerzahl": 423465,
+  "landkreis": "Main-Kinzig-Kreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.243344,
+  "long": 9.2931037
+ },
+ "6436": {
+  "einwohnerzahl": 239276,
+  "landkreis": "Main-Taunus-Kreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.097876,
+  "long": 8.4478967
+ },
+ "6437": {
+  "einwohnerzahl": 96953,
+  "landkreis": "Odenwaldkreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.675058,
+  "long": 8.988983
+ },
+ "6438": {
+  "einwohnerzahl": 357466,
+  "landkreis": "Offenbach",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.022103,
+  "long": 8.8260025
+ },
+ "6439": {
+  "einwohnerzahl": 187229,
+  "landkreis": "Rheingau-Taunus-Kreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.139484,
+  "long": 8.0949772
+ },
+ "6440": {
+  "einwohnerzahl": 311661,
+  "landkreis": "Wetteraukreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.352779,
+  "long": 8.9212263
+ },
+ "6531": {
+  "einwohnerzahl": 272874,
+  "landkreis": "Gießen",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.566243,
+  "long": 8.8206054
+ },
+ "6532": {
+  "einwohnerzahl": 253364,
+  "landkreis": "Lahn-Dill-Kreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.648039,
+  "long": 8.3791535
+ },
+ "6533": {
+  "einwohnerzahl": 172759,
+  "landkreis": "Limburg-Weilburg",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.427262,
+  "long": 8.2174087
+ },
+ "6534": {
+  "einwohnerzahl": 246097,
+  "landkreis": "Marburg-Biedenkopf",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.83295,
+  "long": 8.7522191
+ },
+ "6535": {
+  "einwohnerzahl": 105671,
+  "landkreis": "Vogelsbergkreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.638109,
+  "long": 9.2796685
+ },
+ "6611": {
+  "einwohnerzahl": 200406,
+  "landkreis": "Kassel",
+  "landkreisTyp": "Stadt",
+  "lat": 51.313095,
+  "long": 9.4655528
+ },
+ "6631": {
+  "einwohnerzahl": 223572,
+  "landkreis": "Fulda",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.564394,
+  "long": 9.7600374
+ },
+ "6632": {
+  "einwohnerzahl": 120163,
+  "landkreis": "Hersfeld-Rotenburg",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.909447,
+  "long": 9.755943
+ },
+ "6633": {
+  "einwohnerzahl": 237268,
+  "landkreis": "Kassel",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.482179,
+  "long": 9.4568303
+ },
+ "6634": {
+  "einwohnerzahl": 180052,
+  "landkreis": "Schwalm-Eder-Kreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.023792,
+  "long": 9.3816677
+ },
+ "6635": {
+  "einwohnerzahl": 156513,
+  "landkreis": "Waldeck-Frankenberg",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.188851,
+  "long": 8.9051729
+ },
+ "6636": {
+  "einwohnerzahl": 99714,
+  "landkreis": "Werra-Meißner-Kreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 51.192965,
+  "long": 9.9315409
+ },
+ "7111": {
+  "einwohnerzahl": 113638,
+  "landkreis": "Koblenz",
+  "landkreisTyp": "Stadt",
+  "lat": 50.34527,
+  "long": 7.5872981
+ },
+ "7131": {
+  "einwohnerzahl": 128146,
+  "landkreis": "Ahrweiler",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.461821,
+  "long": 7.0515366
+ },
+ "7132": {
+  "einwohnerzahl": 129261,
+  "landkreis": "Altenkirchen (Westerwald)",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.751529,
+  "long": 7.7516687
+ },
+ "7133": {
+  "einwohnerzahl": 159402,
+  "landkreis": "Bad Kreuznach",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.825742,
+  "long": 7.6943427
+ },
+ "7134": {
+  "einwohnerzahl": 80849,
+  "landkreis": "Birkenfeld",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.717299,
+  "long": 7.2890031
+ },
+ "7135": {
+  "einwohnerzahl": 61735,
+  "landkreis": "Cochem-Zell",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.131267,
+  "long": 7.1864285
+ },
+ "7137": {
+  "einwohnerzahl": 215446,
+  "landkreis": "Mayen-Koblenz",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.32879,
+  "long": 7.3401513
+ },
+ "7138": {
+  "einwohnerzahl": 184390,
+  "landkreis": "Neuwied",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.555697,
+  "long": 7.4755532
+ },
+ "7140": {
+  "einwohnerzahl": 103767,
+  "landkreis": "Rhein-Hunsrück-Kreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.045793,
+  "long": 7.5144261
+ },
+ "7141": {
+  "einwohnerzahl": 122724,
+  "landkreis": "Rhein-Lahn-Kreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.263929,
+  "long": 7.8582581
+ },
+ "7143": {
+  "einwohnerzahl": 203831,
+  "landkreis": "Westerwaldkreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.551418,
+  "long": 7.8785675
+ },
+ "7211": {
+  "einwohnerzahl": 110570,
+  "landkreis": "Trier",
+  "landkreisTyp": "Stadt",
+  "lat": 49.763893,
+  "long": 6.6508604
+ },
+ "7231": {
+  "einwohnerzahl": 113194,
+  "landkreis": "Bernkastel-Wittlich",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.925053,
+  "long": 6.9707499
+ },
+ "7232": {
+  "einwohnerzahl": 100959,
+  "landkreis": "Eifelkreis Bitburg-Prüm",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.062123,
+  "long": 6.4072307
+ },
+ "7233": {
+  "einwohnerzahl": 60882,
+  "landkreis": "Vulkaneifel",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.232909,
+  "long": 6.7528997
+ },
+ "7235": {
+  "einwohnerzahl": 151167,
+  "landkreis": "Trier-Saarburg",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.685867,
+  "long": 6.83965
+ },
+ "7311": {
+  "einwohnerzahl": 48773,
+  "landkreis": "Frankenthal (Pfalz)",
+  "landkreisTyp": "Stadt",
+  "lat": 49.533715,
+  "long": 8.3608617
+ },
+ "7312": {
+  "einwohnerzahl": 99292,
+  "landkreis": "Kaiserslautern",
+  "landkreisTyp": "Stadt",
+  "lat": 49.434653,
+  "long": 7.768566
+ },
+ "7313": {
+  "einwohnerzahl": 46919,
+  "landkreis": "Landau in der Pfalz",
+  "landkreisTyp": "Stadt",
+  "lat": 49.197801,
+  "long": 8.1146145
+ },
+ "7314": {
+  "einwohnerzahl": 172145,
+  "landkreis": "Ludwigshafen am Rhein",
+  "landkreisTyp": "Stadt",
+  "lat": 49.482783,
+  "long": 8.4034095
+ },
+ "7315": {
+  "einwohnerzahl": 217556,
+  "landkreis": "Mainz",
+  "landkreisTyp": "Stadt",
+  "lat": 49.971827,
+  "long": 8.2525017
+ },
+ "7316": {
+  "einwohnerzahl": 53491,
+  "landkreis": "Neustadt an der Weinstraße",
+  "landkreisTyp": "Stadt",
+  "lat": 49.343502,
+  "long": 8.151743
+ },
+ "7317": {
+  "einwohnerzahl": 40054,
+  "landkreis": "Pirmasens",
+  "landkreisTyp": "Stadt",
+  "lat": 49.19548,
+  "long": 7.5914822
+ },
+ "7318": {
+  "einwohnerzahl": 50565,
+  "landkreis": "Speyer",
+  "landkreisTyp": "Stadt",
+  "lat": 49.33493,
+  "long": 8.4349693
+ },
+ "7319": {
+  "einwohnerzahl": 83850,
+  "landkreis": "Worms",
+  "landkreisTyp": "Stadt",
+  "lat": 49.649206,
+  "long": 8.3292565
+ },
+ "7320": {
+  "einwohnerzahl": 34091,
+  "landkreis": "Zweibrücken",
+  "landkreisTyp": "Stadt",
+  "lat": 49.25695,
+  "long": 7.3706429
+ },
+ "7331": {
+  "einwohnerzahl": 131330,
+  "landkreis": "Alzey-Worms",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.756662,
+  "long": 8.163596
+ },
+ "7332": {
+  "einwohnerzahl": 133206,
+  "landkreis": "Bad Dürkheim",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.453295,
+  "long": 8.1148562
+ },
+ "7333": {
+  "einwohnerzahl": 75569,
+  "landkreis": "Donnersbergkreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.629734,
+  "long": 7.9227696
+ },
+ "7334": {
+  "einwohnerzahl": 129313,
+  "landkreis": "Germersheim",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.118287,
+  "long": 8.2496793
+ },
+ "7335": {
+  "einwohnerzahl": 106853,
+  "landkreis": "Kaiserslautern",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.419772,
+  "long": 7.5305697
+ },
+ "7336": {
+  "einwohnerzahl": 69949,
+  "landkreis": "Kusel",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.551705,
+  "long": 7.4827308
+ },
+ "7337": {
+  "einwohnerzahl": 111279,
+  "landkreis": "Südliche Weinstraße",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.118284,
+  "long": 8.0029424
+ },
+ "7338": {
+  "einwohnerzahl": 155050,
+  "landkreis": "Rhein-Pfalz-Kreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.418276,
+  "long": 8.3627468
+ },
+ "7339": {
+  "einwohnerzahl": 212420,
+  "landkreis": "Mainz-Bingen",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.917976,
+  "long": 8.0895077
+ },
+ "7340": {
+  "einwohnerzahl": 94819,
+  "landkreis": "Südwestpfalz",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.209205,
+  "long": 7.6577925
+ },
+ "8111": {
+  "einwohnerzahl": 626275,
+  "landkreis": "Stuttgart",
+  "landkreisTyp": "Stadtkreis",
+  "lat": 48.776237,
+  "long": 9.1728399
+ },
+ "8115": {
+  "einwohnerzahl": 393195,
+  "landkreis": "Böblingen",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.67877,
+  "long": 8.9426598
+ },
+ "8116": {
+  "einwohnerzahl": 533388,
+  "landkreis": "Esslingen",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.648305,
+  "long": 9.3692627
+ },
+ "8117": {
+  "einwohnerzahl": 259046,
+  "landkreis": "Göppingen",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.664115,
+  "long": 9.7216924
+ },
+ "8118": {
+  "einwohnerzahl": 544679,
+  "landkreis": "Ludwigsburg",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.940047,
+  "long": 9.1232145
+ },
+ "8119": {
+  "einwohnerzahl": 427316,
+  "landkreis": "Rems-Murr-Kreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.897605,
+  "long": 9.5033594
+ },
+ "8121": {
+  "einwohnerzahl": 125613,
+  "landkreis": "Heilbronn",
+  "landkreisTyp": "Stadtkreis",
+  "lat": 49.152943,
+  "long": 9.1862714
+ },
+ "8125": {
+  "einwohnerzahl": 347798,
+  "landkreis": "Heilbronn",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.251142,
+  "long": 9.3064101
+ },
+ "8126": {
+  "einwohnerzahl": 113318,
+  "landkreis": "Hohenlohekreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.267073,
+  "long": 9.6237602
+ },
+ "8127": {
+  "einwohnerzahl": 199398,
+  "landkreis": "Schwäbisch Hall",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.142524,
+  "long": 9.9177417
+ },
+ "8128": {
+  "einwohnerzahl": 132956,
+  "landkreis": "Main-Tauber-Kreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.558019,
+  "long": 9.7317661
+ },
+ "8135": {
+  "einwohnerzahl": 132958,
+  "landkreis": "Heidenheim",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.666696,
+  "long": 10.18807
+ },
+ "8136": {
+  "einwohnerzahl": 315009,
+  "landkreis": "Ostalbkreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.879565,
+  "long": 10.099291
+ },
+ "8211": {
+  "einwohnerzahl": 55527,
+  "landkreis": "Baden-Baden",
+  "landkreisTyp": "Stadtkreis",
+  "lat": 48.748736,
+  "long": 8.2360311
+ },
+ "8212": {
+  "einwohnerzahl": 306502,
+  "landkreis": "Karlsruhe",
+  "landkreisTyp": "Stadtkreis",
+  "lat": 49.015061,
+  "long": 8.4138363
+ },
+ "8215": {
+  "einwohnerzahl": 448487,
+  "landkreis": "Karlsruhe",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.909521,
+  "long": 8.4076825
+ },
+ "8216": {
+  "einwohnerzahl": 232296,
+  "landkreis": "Rastatt",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.882138,
+  "long": 8.2248732
+ },
+ "8221": {
+  "einwohnerzahl": 159245,
+  "landkreis": "Heidelberg",
+  "landkreisTyp": "Stadtkreis",
+  "lat": 49.412503,
+  "long": 8.6951968
+ },
+ "8222": {
+  "einwohnerzahl": 311831,
+  "landkreis": "Mannheim",
+  "landkreisTyp": "Stadtkreis",
+  "lat": 49.501151,
+  "long": 8.5037233
+ },
+ "8225": {
+  "einwohnerzahl": 143929,
+  "landkreis": "Neckar-Odenwald-Kreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.46632,
+  "long": 9.2861412
+ },
+ "8226": {
+  "einwohnerzahl": 549030,
+  "landkreis": "Rhein-Neckar-Kreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.30138,
+  "long": 8.8351919
+ },
+ "8231": {
+  "einwohnerzahl": 125529,
+  "landkreis": "Pforzheim",
+  "landkreisTyp": "Stadtkreis",
+  "lat": 48.879669,
+  "long": 8.7136825
+ },
+ "8235": {
+  "einwohnerzahl": 160686,
+  "landkreis": "Calw",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.678608,
+  "long": 8.6359698
+ },
+ "8236": {
+  "einwohnerzahl": 200237,
+  "landkreis": "Enzkreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.970536,
+  "long": 8.8293892
+ },
+ "8237": {
+  "einwohnerzahl": 119183,
+  "landkreis": "Freudenstadt",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.47664,
+  "long": 8.4627154
+ },
+ "8311": {
+  "einwohnerzahl": 231848,
+  "landkreis": "Freiburg im Breisgau",
+  "landkreisTyp": "Stadtkreis",
+  "lat": 47.995554,
+  "long": 7.8181515
+ },
+ "8315": {
+  "einwohnerzahl": 265792,
+  "landkreis": "Breisgau-Hochschwarzwald",
+  "landkreisTyp": "Landkreis",
+  "lat": 47.927627,
+  "long": 8.0907884
+ },
+ "8316": {
+  "einwohnerzahl": 167945,
+  "landkreis": "Emmendingen",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.151376,
+  "long": 7.9001308
+ },
+ "8317": {
+  "einwohnerzahl": 434535,
+  "landkreis": "Ortenaukreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.423722,
+  "long": 8.0146389
+ },
+ "8325": {
+  "einwohnerzahl": 140446,
+  "landkreis": "Rottweil",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.259118,
+  "long": 8.5273592
+ },
+ "8326": {
+  "einwohnerzahl": 213385,
+  "landkreis": "Schwarzwald-Baar-Kreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.023167,
+  "long": 8.4060389
+ },
+ "8327": {
+  "einwohnerzahl": 142414,
+  "landkreis": "Tuttlingen",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.015076,
+  "long": 8.7866082
+ },
+ "8335": {
+  "einwohnerzahl": 288097,
+  "landkreis": "Konstanz",
+  "landkreisTyp": "Landkreis",
+  "lat": 47.803101,
+  "long": 8.9125795
+ },
+ "8336": {
+  "einwohnerzahl": 229445,
+  "landkreis": "Lörrach",
+  "landkreisTyp": "Landkreis",
+  "lat": 47.708577,
+  "long": 7.7690697
+ },
+ "8337": {
+  "einwohnerzahl": 171249,
+  "landkreis": "Waldshut",
+  "landkreisTyp": "Landkreis",
+  "lat": 47.700909,
+  "long": 8.2182879
+ },
+ "8415": {
+  "einwohnerzahl": 288158,
+  "landkreis": "Reutlingen",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.407201,
+  "long": 9.3681294
+ },
+ "8416": {
+  "einwohnerzahl": 229806,
+  "landkreis": "Tübingen",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.482492,
+  "long": 8.9878408
+ },
+ "8417": {
+  "einwohnerzahl": 190545,
+  "landkreis": "Zollernalbkreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.268438,
+  "long": 8.9325354
+ },
+ "8421": {
+  "einwohnerzahl": 126949,
+  "landkreis": "Ulm",
+  "landkreisTyp": "Stadtkreis",
+  "lat": 48.393934,
+  "long": 9.9530146
+ },
+ "8425": {
+  "einwohnerzahl": 199732,
+  "landkreis": "Alb-Donau-Kreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.294959,
+  "long": 9.6984361
+ },
+ "8426": {
+  "einwohnerzahl": 203244,
+  "landkreis": "Biberach",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.110471,
+  "long": 9.7758573
+ },
+ "8435": {
+  "einwohnerzahl": 218885,
+  "landkreis": "Bodenseekreis",
+  "landkreisTyp": "Landkreis",
+  "lat": 47.736322,
+  "long": 9.4051731
+ },
+ "8436": {
+  "einwohnerzahl": 287011,
+  "landkreis": "Ravensburg",
+  "landkreisTyp": "Landkreis",
+  "lat": 47.827299,
+  "long": 9.780134
+ },
+ "8437": {
+  "einwohnerzahl": 131725,
+  "landkreis": "Sigmaringen",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.042245,
+  "long": 9.2369418
+ },
+ "9161": {
+  "einwohnerzahl": 138016,
+  "landkreis": "Ingolstadt",
+  "landkreisTyp": "Stadt",
+  "lat": 48.751672,
+  "long": 11.402123
+ },
+ "9162": {
+  "einwohnerzahl": 1487708,
+  "landkreis": "München",
+  "landkreisTyp": "Stadt",
+  "lat": 48.14924,
+  "long": 11.550583
+ },
+ "9163": {
+  "einwohnerzahl": 63508,
+  "landkreis": "Rosenheim",
+  "landkreisTyp": "Stadt",
+  "lat": 47.843242,
+  "long": 12.113999
+ },
+ "9171": {
+  "einwohnerzahl": 112116,
+  "landkreis": "Altötting",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.214904,
+  "long": 12.710466
+ },
+ "9172": {
+  "einwohnerzahl": 106389,
+  "landkreis": "Berchtesgadener Land",
+  "landkreisTyp": "Landkreis",
+  "lat": 47.689,
+  "long": 12.887468
+ },
+ "9173": {
+  "einwohnerzahl": 127919,
+  "landkreis": "Bad Tölz-Wolfratshausen",
+  "landkreisTyp": "Landkreis",
+  "lat": 47.724822,
+  "long": 11.488162
+ },
+ "9174": {
+  "einwohnerzahl": 155449,
+  "landkreis": "Dachau",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.330886,
+  "long": 11.361832
+ },
+ "9175": {
+  "einwohnerzahl": 144562,
+  "landkreis": "Ebersberg",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.072971,
+  "long": 11.916733
+ },
+ "9176": {
+  "einwohnerzahl": 133634,
+  "landkreis": "Eichstätt",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.894676,
+  "long": 11.377377
+ },
+ "9177": {
+  "einwohnerzahl": 139622,
+  "landkreis": "Erding",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.298097,
+  "long": 12.003207
+ },
+ "9178": {
+  "einwohnerzahl": 181144,
+  "landkreis": "Freising",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.445509,
+  "long": 11.744176
+ },
+ "9179": {
+  "einwohnerzahl": 218579,
+  "landkreis": "Fürstenfeldbruck",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.184625,
+  "long": 11.20652
+ },
+ "9180": {
+  "einwohnerzahl": 88232,
+  "landkreis": "Garmisch-Partenkirchen",
+  "landkreisTyp": "Landkreis",
+  "lat": 47.556054,
+  "long": 11.128266
+ },
+ "9181": {
+  "einwohnerzahl": 121466,
+  "landkreis": "Landsberg am Lech",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.024573,
+  "long": 10.954265
+ },
+ "9182": {
+  "einwohnerzahl": 99978,
+  "landkreis": "Miesbach",
+  "landkreisTyp": "Landkreis",
+  "lat": 47.74006,
+  "long": 11.815808
+ },
+ "9183": {
+  "einwohnerzahl": 117606,
+  "landkreis": "Mühldorf a. Inn",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.241361,
+  "long": 12.386674
+ },
+ "9184": {
+  "einwohnerzahl": 349837,
+  "landkreis": "München",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.00965,
+  "long": 11.655151
+ },
+ "9185": {
+  "einwohnerzahl": 98503,
+  "landkreis": "Neuburg-Schrobenhausen",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.660193,
+  "long": 11.202207
+ },
+ "9186": {
+  "einwohnerzahl": 129772,
+  "landkreis": "Pfaffenhofen a.d. Ilm",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.593412,
+  "long": 11.526963
+ },
+ "9187": {
+  "einwohnerzahl": 263367,
+  "landkreis": "Rosenheim",
+  "landkreisTyp": "Landkreis",
+  "lat": 47.946992,
+  "long": 12.201827
+ },
+ "9188": {
+  "einwohnerzahl": 136747,
+  "landkreis": "Starnberg",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.002201,
+  "long": 11.287519
+ },
+ "9189": {
+  "einwohnerzahl": 178447,
+  "landkreis": "Traunstein",
+  "landkreisTyp": "Landkreis",
+  "lat": 47.89873,
+  "long": 12.582843
+ },
+ "9190": {
+  "einwohnerzahl": 136642,
+  "landkreis": "Weilheim-Schongau",
+  "landkreisTyp": "Landkreis",
+  "lat": 47.787291,
+  "long": 11.053654
+ },
+ "9261": {
+  "einwohnerzahl": 73150,
+  "landkreis": "Landshut",
+  "landkreisTyp": "Stadt",
+  "lat": 48.543948,
+  "long": 12.160501
+ },
+ "9262": {
+  "einwohnerzahl": 53093,
+  "landkreis": "Passau",
+  "landkreisTyp": "Stadt",
+  "lat": 48.586691,
+  "long": 13.415058
+ },
+ "9263": {
+  "einwohnerzahl": 47854,
+  "landkreis": "Straubing",
+  "landkreisTyp": "Stadt",
+  "lat": 48.884215,
+  "long": 12.574082
+ },
+ "9271": {
+  "einwohnerzahl": 120521,
+  "landkreis": "Deggendorf",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.784508,
+  "long": 13.005449
+ },
+ "9272": {
+  "einwohnerzahl": 78632,
+  "landkreis": "Freyung-Grafenau",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.829498,
+  "long": 13.515194
+ },
+ "9273": {
+  "einwohnerzahl": 123899,
+  "landkreis": "Kelheim",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.823577,
+  "long": 11.859606
+ },
+ "9274": {
+  "einwohnerzahl": 162331,
+  "landkreis": "Landshut",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.660179,
+  "long": 12.07862
+ },
+ "9275": {
+  "einwohnerzahl": 194090,
+  "landkreis": "Passau",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.483276,
+  "long": 13.260599
+ },
+ "9276": {
+  "einwohnerzahl": 77176,
+  "landkreis": "Regen",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.02731,
+  "long": 13.102578
+ },
+ "9277": {
+  "einwohnerzahl": 122252,
+  "landkreis": "Rottal-Inn",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.431852,
+  "long": 12.871481
+ },
+ "9278": {
+  "einwohnerzahl": 102398,
+  "landkreis": "Straubing-Bogen",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.006714,
+  "long": 12.696094
+ },
+ "9279": {
+  "einwohnerzahl": 98045,
+  "landkreis": "Dingolfing-Landau",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.645574,
+  "long": 12.614768
+ },
+ "9361": {
+  "einwohnerzahl": 41994,
+  "landkreis": "Amberg",
+  "landkreisTyp": "Stadt",
+  "lat": 49.453399,
+  "long": 11.849567
+ },
+ "9362": {
+  "einwohnerzahl": 153542,
+  "landkreis": "Regensburg",
+  "landkreisTyp": "Stadt",
+  "lat": 49.013426,
+  "long": 12.115815
+ },
+ "9363": {
+  "einwohnerzahl": 42472,
+  "landkreis": "Weiden i.d. OPf.",
+  "landkreisTyp": "Stadt",
+  "lat": 49.668596,
+  "long": 12.160877
+ },
+ "9371": {
+  "einwohnerzahl": 103277,
+  "landkreis": "Amberg-Sulzbach",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.552624,
+  "long": 11.731463
+ },
+ "9372": {
+  "einwohnerzahl": 128444,
+  "landkreis": "Cham",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.24159,
+  "long": 12.699762
+ },
+ "9373": {
+  "einwohnerzahl": 136062,
+  "landkreis": "Neumarkt i.d. OPf.",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.215729,
+  "long": 11.568611
+ },
+ "9374": {
+  "einwohnerzahl": 94838,
+  "landkreis": "Neustadt a.d. Waldnaab",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.728007,
+  "long": 11.892742
+ },
+ "9375": {
+  "einwohnerzahl": 195225,
+  "landkreis": "Regensburg",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.094466,
+  "long": 11.917086
+ },
+ "9376": {
+  "einwohnerzahl": 149239,
+  "landkreis": "Schwandorf",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.36972,
+  "long": 12.254654
+ },
+ "9377": {
+  "einwohnerzahl": 71648,
+  "landkreis": "Tirschenreuth",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.900466,
+  "long": 12.204166
+ },
+ "9461": {
+  "einwohnerzahl": 77749,
+  "landkreis": "Bamberg",
+  "landkreisTyp": "Stadt",
+  "lat": 49.884114,
+  "long": 10.904317
+ },
+ "9462": {
+  "einwohnerzahl": 73909,
+  "landkreis": "Bayreuth",
+  "landkreisTyp": "Stadt",
+  "lat": 49.936515,
+  "long": 11.58837
+ },
+ "9463": {
+  "einwohnerzahl": 40955,
+  "landkreis": "Coburg",
+  "landkreisTyp": "Stadt",
+  "lat": 50.259816,
+  "long": 10.964065
+ },
+ "9464": {
+  "einwohnerzahl": 45125,
+  "landkreis": "Hof",
+  "landkreisTyp": "Stadt",
+  "lat": 50.315974,
+  "long": 11.897202
+ },
+ "9471": {
+  "einwohnerzahl": 147697,
+  "landkreis": "Bamberg",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.943897,
+  "long": 11.112155
+ },
+ "9472": {
+  "einwohnerzahl": 103648,
+  "landkreis": "Bayreuth",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.803643,
+  "long": 11.487996
+ },
+ "9473": {
+  "einwohnerzahl": 86544,
+  "landkreis": "Coburg",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.333655,
+  "long": 10.880832
+ },
+ "9474": {
+  "einwohnerzahl": 116753,
+  "landkreis": "Forchheim",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.721287,
+  "long": 11.181625
+ },
+ "9475": {
+  "einwohnerzahl": 93907,
+  "landkreis": "Hof",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.21569,
+  "long": 11.789149
+ },
+ "9476": {
+  "einwohnerzahl": 66091,
+  "landkreis": "Kronach",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.326531,
+  "long": 11.37212
+ },
+ "9477": {
+  "einwohnerzahl": 71328,
+  "landkreis": "Kulmbach",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.101067,
+  "long": 11.484014
+ },
+ "9478": {
+  "einwohnerzahl": 66741,
+  "landkreis": "Lichtenfels",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.10915,
+  "long": 11.120815
+ },
+ "9479": {
+  "einwohnerzahl": 71482,
+  "landkreis": "Wunsiedel i. Fichtelgebirge",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.09149,
+  "long": 12.041012
+ },
+ "9561": {
+  "einwohnerzahl": 41662,
+  "landkreis": "Ansbach",
+  "landkreisTyp": "Stadt",
+  "lat": 49.289653,
+  "long": 10.573355
+ },
+ "9562": {
+  "einwohnerzahl": 113292,
+  "landkreis": "Erlangen",
+  "landkreisTyp": "Stadt",
+  "lat": 49.581177,
+  "long": 10.985761
+ },
+ "9563": {
+  "einwohnerzahl": 129122,
+  "landkreis": "Fürth",
+  "landkreisTyp": "Stadt",
+  "lat": 49.488147,
+  "long": 10.973388
+ },
+ "9564": {
+  "einwohnerzahl": 510632,
+  "landkreis": "Nürnberg",
+  "landkreisTyp": "Stadt",
+  "lat": 49.435679,
+  "long": 11.086215
+ },
+ "9565": {
+  "einwohnerzahl": 41146,
+  "landkreis": "Schwabach",
+  "landkreisTyp": "Stadt",
+  "lat": 49.33246,
+  "long": 11.031057
+ },
+ "9571": {
+  "einwohnerzahl": 186279,
+  "landkreis": "Ansbach",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.160088,
+  "long": 10.430621
+ },
+ "9572": {
+  "einwohnerzahl": 139323,
+  "landkreis": "Erlangen-Höchstadt",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.677346,
+  "long": 10.848502
+ },
+ "9573": {
+  "einwohnerzahl": 119432,
+  "landkreis": "Fürth",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.443756,
+  "long": 10.857838
+ },
+ "9574": {
+  "einwohnerzahl": 171424,
+  "landkreis": "Nürnberger Land",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.490782,
+  "long": 11.373909
+ },
+ "9575": {
+  "einwohnerzahl": 101788,
+  "landkreis": "Neustadt a.d. Aisch-Bad Windsheim",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.566294,
+  "long": 10.472122
+ },
+ "9576": {
+  "einwohnerzahl": 127520,
+  "landkreis": "Roth",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.198729,
+  "long": 11.130104
+ },
+ "9577": {
+  "einwohnerzahl": 95523,
+  "landkreis": "Weißenburg-Gunzenhausen",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.029091,
+  "long": 10.903037
+ },
+ "9661": {
+  "einwohnerzahl": 71381,
+  "landkreis": "Aschaffenburg",
+  "landkreisTyp": "Stadt",
+  "lat": 49.965224,
+  "long": 9.1598653
+ },
+ "9662": {
+  "einwohnerzahl": 53585,
+  "landkreis": "Schweinfurt",
+  "landkreisTyp": "Stadt",
+  "lat": 50.042317,
+  "long": 10.223202
+ },
+ "9663": {
+  "einwohnerzahl": 126933,
+  "landkreis": "Würzburg",
+  "landkreisTyp": "Stadt",
+  "lat": 49.780016,
+  "long": 9.9449642
+ },
+ "9671": {
+  "einwohnerzahl": 174965,
+  "landkreis": "Aschaffenburg",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.0068,
+  "long": 9.2512234
+ },
+ "9672": {
+  "einwohnerzahl": 103454,
+  "landkreis": "Bad Kissingen",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.221197,
+  "long": 9.9643468
+ },
+ "9673": {
+  "einwohnerzahl": 79376,
+  "landkreis": "Rhön-Grabfeld",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.369698,
+  "long": 10.257982
+ },
+ "9674": {
+  "einwohnerzahl": 84284,
+  "landkreis": "Haßberge",
+  "landkreisTyp": "Landkreis",
+  "lat": 50.058476,
+  "long": 10.610977
+ },
+ "9675": {
+  "einwohnerzahl": 91980,
+  "landkreis": "Kitzingen",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.748753,
+  "long": 10.260365
+ },
+ "9676": {
+  "einwohnerzahl": 128782,
+  "landkreis": "Miltenberg",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.756799,
+  "long": 9.2445054
+ },
+ "9677": {
+  "einwohnerzahl": 126105,
+  "landkreis": "Main-Spessart",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.991344,
+  "long": 9.6680921
+ },
+ "9678": {
+  "einwohnerzahl": 116134,
+  "landkreis": "Schweinfurt",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.935132,
+  "long": 10.346527
+ },
+ "9679": {
+  "einwohnerzahl": 163534,
+  "landkreis": "Würzburg",
+  "landkreisTyp": "Landkreis",
+  "lat": 49.618894,
+  "long": 10.001447
+ },
+ "9761": {
+  "einwohnerzahl": 296478,
+  "landkreis": "Augsburg",
+  "landkreisTyp": "Stadt",
+  "lat": 48.341627,
+  "long": 10.892835
+ },
+ "9762": {
+  "einwohnerzahl": 45118,
+  "landkreis": "Kaufbeuren",
+  "landkreisTyp": "Stadt",
+  "lat": 47.884084,
+  "long": 10.617797
+ },
+ "9763": {
+  "einwohnerzahl": 69053,
+  "landkreis": "Kempten (Allgäu)",
+  "landkreisTyp": "Stadt",
+  "lat": 47.739602,
+  "long": 10.30596
+ },
+ "9764": {
+  "einwohnerzahl": 44721,
+  "landkreis": "Memmingen",
+  "landkreisTyp": "Stadt",
+  "lat": 47.987559,
+  "long": 10.162409
+ },
+ "9771": {
+  "einwohnerzahl": 135538,
+  "landkreis": "Aichach-Friedberg",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.426496,
+  "long": 11.058273
+ },
+ "9772": {
+  "einwohnerzahl": 257790,
+  "landkreis": "Augsburg",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.396895,
+  "long": 10.685283
+ },
+ "9773": {
+  "einwohnerzahl": 97985,
+  "landkreis": "Dillingen a.d. Donau",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.599273,
+  "long": 10.535961
+ },
+ "9774": {
+  "einwohnerzahl": 128436,
+  "landkreis": "Günzburg",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.35839,
+  "long": 10.385559
+ },
+ "9775": {
+  "einwohnerzahl": 177330,
+  "landkreis": "Neu-Ulm",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.302863,
+  "long": 10.142761
+ },
+ "9776": {
+  "einwohnerzahl": 82330,
+  "landkreis": "Lindau (Bodensee)",
+  "landkreisTyp": "Landkreis",
+  "lat": 47.607267,
+  "long": 9.885544
+ },
+ "9777": {
+  "einwohnerzahl": 143236,
+  "landkreis": "Ostallgäu",
+  "landkreisTyp": "Landkreis",
+  "lat": 47.69976,
+  "long": 10.63783
+ },
+ "9778": {
+  "einwohnerzahl": 147776,
+  "landkreis": "Unterallgäu",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.043666,
+  "long": 10.394069
+ },
+ "9779": {
+  "einwohnerzahl": 134986,
+  "landkreis": "Donau-Ries",
+  "landkreisTyp": "Landkreis",
+  "lat": 48.805268,
+  "long": 10.72336
+ },
+ "9780": {
+  "einwohnerzahl": 157202,
+  "landkreis": "Oberallgäu",
+  "landkreisTyp": "Landkreis",
+  "lat": 47.514561,
+  "long": 10.255646
+ }
 }
