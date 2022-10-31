@@ -1,6 +1,7 @@
+import fetch from 'node-fetch';
+
 import { Downloader } from './downloader';
 import {
-  fetch,
   getGithubFileMeta,
   csv2array,
   checkUniqueKeys
@@ -35,9 +36,10 @@ export class DownloaderHospitalisierungen extends Downloader {
     };
   }
 
+
   async doUpdate() {
     const csv = await fetch(this.status.sources.hospitalisierung.url);
-    const data = csv2array(csv.toString());
+    const data = csv2array(await csv.text());
 
     const dataBL: GenericObject[] = [];
     const dataDE: GenericObject[] = [];
@@ -73,7 +75,7 @@ export class DownloaderHospitalisierungen extends Downloader {
 
     this.saveTable('bl', dataBL);
     this.saveTable('de', dataDE);
-    
+
     function cleanAltersgruppe(text: string) {
       switch (text) {
         case '00+':

@@ -1,38 +1,7 @@
-import https from 'https';
+import fetch from 'node-fetch';
 import { GenericObject, GithubFile, GithubCommit } from './types';
 import { config } from './config';
 
-// @TODO Replace with node-fetch or a similar lib
-export async function fetch(url: string, headers = {}): Promise<string> {
-  return new Promise((resolve, reject) => {
-    https
-      .get(url, { headers }, (response) => {
-        const result: any[] = [];
-        response.on('data', (data) => result.push(data));
-        response.on('end', () => {
-          const buffer = Buffer.concat(result);
-          if (response.statusCode === 200) {
-            resolve(buffer.toString());
-          } else {
-            console.log('url:', url);
-            console.log('response:', response);
-            console.log(`Buffer: "${buffer.toString()}"`);
-            reject(buffer.toString());
-          }
-        });
-        response.on('error', (e) => {
-          console.log(e);
-          reject(e);
-        });
-      })
-      .on('error', (e) => {
-        console.log(e);
-        reject(e);
-      });
-  });
-}
-
-// @TODO Use Github client library instead
 export async function getGithubFileMeta(repo: string, filename: string) {
   if (!config.githubAccessToken) {
     throw Error('Please provide a Github access token (GITHUB_ACCESS_TOKEN)');
@@ -40,18 +9,21 @@ export async function getGithubFileMeta(repo: string, filename: string) {
 
   // Header für GitHub-API-Requests
   const gitHubAPIHeader = {
-    'User-Agent': 'curl/7.64.1',
-    Authorization:
-      'Basic ' + Buffer.from(config.githubAccessToken).toString('base64'),
-    'Content-Type': 'application/json;charset=UTF-8',
-    Accept: 'application/vnd.github.+json'
+    headers: {
+      'User-Agent': 'curl/7.64.1',
+      Authorization:
+        'Basic ' + Buffer.from(config.githubAccessToken).toString('base64'),
+      'Content-Type': 'application/json;charset=UTF-8',
+      Accept: 'application/vnd.github.+json'
+    }
   };
 
   const filesRes = await fetch(
     `https://api.github.com/repos/${repo}/contents`,
     gitHubAPIHeader
   );
-  const files = JSON.parse(filesRes) as GithubFile[];
+
+  const files = await filesRes.json() as GithubFile[];
   const file = files.find((file) => file.name === filename);
 
   if (!file) {
@@ -64,7 +36,7 @@ export async function getGithubFileMeta(repo: string, filename: string) {
     `https://api.github.com/repos/${repo}/commits?path=${filename}&per_page=1`,
     gitHubAPIHeader
   );
-  const commits = JSON.parse(commitsRes) as GithubCommit[];
+  const commits = await commitsRes.json() as GithubCommit[];
   file.lastCommit = commits[0];
 
   if (file.lastCommit) {

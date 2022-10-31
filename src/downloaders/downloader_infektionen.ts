@@ -1,7 +1,9 @@
 import fs from 'fs';
+import fetch from 'node-fetch';
+
 import { resolve } from 'path';
 import { Downloader } from './downloader';
-import { fetch, getGithubFileMeta, csv2array, summarizer } from '../lib/helper';
+import { getGithubFileMeta, csv2array, summarizer } from '../lib/helper';
 import { GenericObject } from '../lib/types';
 import { config } from '../lib/config';
 
@@ -38,7 +40,7 @@ export class DownloaderInfektionen extends Downloader {
 
     console.log('      process');
 
-    const data = csv2array(csv.toString(), ',', '\r\n');
+    const data = csv2array(await csv.text(), ',', '\r\n');
 
     const summaryLK = summarizer(
       ['meldedatum', 'bundeslandId', 'landkreisId'],
