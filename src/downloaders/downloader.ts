@@ -73,15 +73,20 @@ export class Downloader {
   }
 
   // Lade das letzte Status-Objekt, bzw. erstelle ein neues Status-Objekt
-  loadStatus() {
-    if (existsSync(this.statusFilename)) {
+  async loadStatus() {
+    try {
+      this.status = await import(this.statusFilename);
+    } catch (err) {
+      throw err;
+    } 
+    //if (existsSync(this.statusFilename)) {
       //let test_name = this.statusFilename;
       //this.status = await import(test_name);
-      this.status = JSON.parse(readFileSync(this.statusFilename).toString());
-    } else {
+      //this.status = JSON.parse(readFileSync(this.statusFilename).toString());
+    //} else {
       // @ts-ignore @TODO Add proper definition
-      this.status = {};
-    }
+      //this.status = {};
+    //}
     this.status.dateStart = Date.now();
   }
 
