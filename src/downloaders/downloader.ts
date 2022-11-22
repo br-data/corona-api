@@ -75,8 +75,16 @@ export class Downloader {
   // Lade das letzte Status-Objekt, bzw. erstelle ein neues Status-Objekt
   async loadStatus() {
     try {
-      this.status = await import(this.statusFilename);
+      if (existsSync(this.statusFilename)) {
+        this.status = await import(this.statusFilename);
+      } else {
+        // @ts-ignore @TODO Add proper definition
+        this.status = {};
+      }
+      
     } catch (err) {
+      //@ts-ignore @TODO Add proper definition
+      //this.status = {};
       throw err;
     } 
     //if (existsSync(this.statusFilename)) {
