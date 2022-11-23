@@ -82,13 +82,7 @@ export class DownloaderInfektionen extends Downloader {
       ['meldedatum', 'altersgruppe'],
       ['anzahlFall', 'anzahlTodesfall', 'anzahlGenesen']
     );
-    /**
-    const regierungsbezirke = JSON.parse(
-      fs
-        .readFileSync(resolve(config.folders.static, 'regierungsbezirke.json'))
-        .toString()
-    );
-     */
+  
     let dateMin = '2020-01-01';
     let dateMax = '2020-01-01'; // @TODO Is this correct?
 

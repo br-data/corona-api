@@ -124,25 +124,13 @@ export class Downloader {
         
         case 'deutschland-einwohner':
           
-          {/**
-            const deutschland = JSON.parse(
-              readFileSync(
-                resolve(dataFolder, 'deutschland-einwohner.json')
-              ).toString()
-            );
-            */
+          {
             data.forEach((e) => Object.assign(e, deutschland));
           }
           break;
 
         case 'deutschland-alter':
           {
-            /**const deutschland = JSON.parse(
-              readFileSync(
-                resolve(dataFolder, 'deutschland-alter.json')
-              ).toString()
-            );
-            */
             data.forEach((e) => {
               e.einwohnerzahl = getAltersgruppen(
                 e.altersgruppe,
@@ -154,11 +142,7 @@ export class Downloader {
           break;
 
         case 'bundeslaender':
-          {/**
-            const bundeslaender = JSON.parse(
-              readFileSync(resolve(dataFolder, 'bundeslaender.json')).toString()
-            );
-             */
+          {
             data.forEach((e) =>
               Object.assign(e, bundeslaender[e.bundeslandId])
             );
@@ -166,13 +150,7 @@ export class Downloader {
           break;
 
         case 'bundeslaender-einwohner':
-          {/**
-            const bundeslaender = JSON.parse(
-              readFileSync(
-                resolve(dataFolder, 'bundeslaender-einwohner.json')
-              ).toString()
-            );
-            */
+          {
             data.forEach((e) =>
               Object.assign(e, bundeslaender_einwohner[e.bundeslandId])
             );
@@ -180,12 +158,7 @@ export class Downloader {
           break;
 
         case 'bundeslaender-alter':
-          {/** 
-            const bundeslaender = JSON.parse(
-              readFileSync(
-                resolve(dataFolder, 'bundeslaender-alter.json')
-              ).toString()
-            );*/
+          {
             data.forEach((e) => {
               const obj = Object.assign({}, bundeslaender_alter[e.bundeslandId]);
               obj.einwohnerzahl = getAltersgruppen(
@@ -199,18 +172,7 @@ export class Downloader {
           break;
 
         case 'regierungsbezirke-einwohner':
-          { /**
-            const landkreise = JSON.parse(
-              readFileSync(
-                resolve(dataFolder, 'landkreise-einwohner.json')
-              ).toString()
-            );
-            const landkreis2regierungsbezirk = JSON.parse(
-              readFileSync(
-                resolve(dataFolder, 'regierungsbezirke.json')
-              ).toString()
-            );
-             */
+          { 
             const regierungsbezirke = new Map();
             Object.entries(landkreis2regierungsbezirk).forEach(
               ([landkreisId, regierungsbezirk]) => {
@@ -227,23 +189,13 @@ export class Downloader {
           break;
 
         case 'landkreise':
-          { /**
-            const landkreise = JSON.parse(
-              readFileSync(resolve(dataFolder, 'landkreise.json')).toString()
-            );
-             */
+          {
             data.forEach((e) => Object.assign(e, landkreise[e.landkreisId]));
           }
           break;
 
         case 'landkreise-einwohner':
-          { /** 
-            const landkreise = JSON.parse(
-              readFileSync(
-                resolve(dataFolder, 'landkreise-einwohner.json')
-              ).toString()
-            );
-            */
+          {
             data.forEach((e) => Object.assign(e, landkreise_einwohner[e.landkreisId]));
           }
           break;
