@@ -78,9 +78,7 @@ export class Downloader {
   async loadStatus() {
     if (existsSync(this.statusFilename)) {
       var file_name = this.statusFilename.toString();
-      console.log('1 ', file_name);
       this.status = await import(file_name).then(module => module.default);
-      console.log('2 ', this.status);
     } else {
       // @ts-ignore @TODO Add proper definition
       this.status = {};
