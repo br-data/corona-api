@@ -4,7 +4,7 @@ import { Downloader } from './downloader';
 import { fetch, csv2array } from '../lib/helper';
 import { config } from '../lib/config';
 import { GenericObject } from '../lib/types';
-import stateMap from '../../static/regierungsbezirke.json';
+import stateMap from '../../static/bundeslaender-divi.json';
 
 export class DownloaderIntensivpatienten extends Downloader {
   constructor() {

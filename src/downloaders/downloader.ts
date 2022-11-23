@@ -9,14 +9,16 @@ import { resolve } from 'path';
 import { config } from '../lib/config';
 import { GenericObject } from '../lib/types';
 import deutschland from '../../static/deutschland-einwohner.json';
-import deutschland_alter from '../../static/deutschland-alter.json';
+import deutschland_alter from '../../static/deutschland-alter.json'; 
 import bundeslaender from '../../static/bundeslaender.json';
 import bundeslaender_einwohner from '../../static/bundeslaender-einwohner.json';
-import bundeslaender_alter from '../../static/deutschland-alter.json';
+import bundeslaender_alter from '../../static/bundeslaender-alter.json';
 import landkreise_einwohner from '../../static/landkreise-einwohner.json';
 import landkreis2regierungsbezirk from '../../static/regierungsbezirke.json';
 import landkreise from '../../static/landkreise.json';
 import { type } from 'os';
+import console, { assert } from 'console';
+import { response } from 'express';
 
 
 export class Downloader {
@@ -42,7 +44,7 @@ export class Downloader {
 
   async run() {
     // Lade den letzten Status
-    this.loadStatus();
+    await this.loadStatus();
     this.status.error = undefined;
 
     try {
@@ -74,32 +76,20 @@ export class Downloader {
 
   // Lade das letzte Status-Objekt, bzw. erstelle ein neues Status-Objekt
   async loadStatus() {
-    try {
-      if (existsSync(this.statusFilename)) {
-        this.status = await import(this.statusFilename);
-      } else {
-        // @ts-ignore @TODO Add proper definition
-        this.status = {};
-      }
-      
-    } catch (err) {
-      //@ts-ignore @TODO Add proper definition
-      //this.status = {};
-      throw err;
-    } 
-    //if (existsSync(this.statusFilename)) {
-      //let test_name = this.statusFilename;
-      //this.status = await import(test_name);
-      //this.status = JSON.parse(readFileSync(this.statusFilename).toString());
-    //} else {
+    if (existsSync(this.statusFilename)) {
+      var file_name = this.statusFilename.toString();
+      console.log('1 ', file_name);
+      this.status = await import(file_name).then(module => module.default);
+      console.log('2 ', this.status);
+    } else {
       // @ts-ignore @TODO Add proper definition
-      //this.status = {};
-    //}
+      this.status = {};
+    }
     this.status.dateStart = Date.now();
   }
 
   // Speicher das Status-Objekt
-  saveStatus() {
+  async saveStatus() {
     this.status.name = this.name;
     this.status.dateEnd = Date.now();
 
