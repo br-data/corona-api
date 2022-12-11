@@ -6,6 +6,7 @@ import { Downloader } from './downloader';
 import { csv2array } from '../lib/helper';
 import { config } from '../lib/config';
 import { GenericObject } from '../lib/types';
+import stateMap from '../../static/bundeslaender-divi.json';
 
 export class DownloaderIntensivpatienten extends Downloader {
   constructor() {
@@ -58,11 +59,7 @@ export class DownloaderIntensivpatienten extends Downloader {
   }
 
   transformData(data: GenericObject[], hasStates = true) {
-    const stateMap = JSON.parse(
-      fs
-        .readFileSync(resolve(config.folders.static, 'bundeslaender-divi.json'))
-        .toString()
-    );
+   
     const states = hasStates ? stateMap : [];
 
     return data

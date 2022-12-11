@@ -8,6 +8,18 @@ import {
 import { resolve } from 'path';
 import { config } from '../lib/config';
 import { GenericObject } from '../lib/types';
+import deutschland from '../../static/deutschland-einwohner.json';
+import deutschland_alter from '../../static/deutschland-alter.json'; 
+import bundeslaender from '../../static/bundeslaender.json';
+import bundeslaender_einwohner from '../../static/bundeslaender-einwohner.json';
+import bundeslaender_alter from '../../static/bundeslaender-alter.json';
+import landkreise_einwohner from '../../static/landkreise-einwohner.json';
+import landkreis2regierungsbezirk from '../../static/regierungsbezirke.json';
+import landkreise from '../../static/landkreise.json';
+import { type } from 'os';
+import console, { assert } from 'console';
+import { response } from 'express';
+
 
 export class Downloader {
   name: string;
@@ -32,7 +44,7 @@ export class Downloader {
 
   async run() {
     // Lade den letzten Status
-    this.loadStatus();
+    await this.loadStatus();
     this.status.error = undefined;
 
     try {
@@ -63,9 +75,10 @@ export class Downloader {
   }
 
   // Lade das letzte Status-Objekt, bzw. erstelle ein neues Status-Objekt
-  loadStatus() {
+  async loadStatus() {
     if (existsSync(this.statusFilename)) {
-      this.status = JSON.parse(readFileSync(this.statusFilename).toString());
+      var file_name = this.statusFilename.toString();
+      this.status = await import(file_name).then(module => module.default);
     } else {
       // @ts-ignore @TODO Add proper definition
       this.status = {};
@@ -74,7 +87,7 @@ export class Downloader {
   }
 
   // Speicher das Status-Objekt
-  saveStatus() {
+  async saveStatus() {
     this.status.name = this.name;
     this.status.dateEnd = Date.now();
 
@@ -108,29 +121,21 @@ export class Downloader {
       const cacheAltergruppen = new Map();
 
       switch (field) {
+        
         case 'deutschland-einwohner':
+          
           {
-            const deutschland = JSON.parse(
-              readFileSync(
-                resolve(dataFolder, 'deutschland-einwohner.json')
-              ).toString()
-            );
             data.forEach((e) => Object.assign(e, deutschland));
           }
           break;
 
         case 'deutschland-alter':
           {
-            const deutschland = JSON.parse(
-              readFileSync(
-                resolve(dataFolder, 'deutschland-alter.json')
-              ).toString()
-            );
             data.forEach((e) => {
               e.einwohnerzahl = getAltersgruppen(
                 e.altersgruppe,
                 e.altersgruppe,
-                deutschland.einwohnerzahl
+                deutschland_alter.einwohnerzahl
               );
             });
           }
@@ -138,9 +143,6 @@ export class Downloader {
 
         case 'bundeslaender':
           {
-            const bundeslaender = JSON.parse(
-              readFileSync(resolve(dataFolder, 'bundeslaender.json')).toString()
-            );
             data.forEach((e) =>
               Object.assign(e, bundeslaender[e.bundeslandId])
             );
@@ -149,26 +151,16 @@ export class Downloader {
 
         case 'bundeslaender-einwohner':
           {
-            const bundeslaender = JSON.parse(
-              readFileSync(
-                resolve(dataFolder, 'bundeslaender-einwohner.json')
-              ).toString()
-            );
             data.forEach((e) =>
-              Object.assign(e, bundeslaender[e.bundeslandId])
+              Object.assign(e, bundeslaender_einwohner[e.bundeslandId])
             );
           }
           break;
 
         case 'bundeslaender-alter':
           {
-            const bundeslaender = JSON.parse(
-              readFileSync(
-                resolve(dataFolder, 'bundeslaender-alter.json')
-              ).toString()
-            );
             data.forEach((e) => {
-              const obj = Object.assign({}, bundeslaender[e.bundeslandId]);
+              const obj = Object.assign({}, bundeslaender_alter[e.bundeslandId]);
               obj.einwohnerzahl = getAltersgruppen(
                 e.bundeslandId + '_' + e.altersgruppe,
                 e.altersgruppe,
@@ -180,24 +172,14 @@ export class Downloader {
           break;
 
         case 'regierungsbezirke-einwohner':
-          {
-            const landkreise = JSON.parse(
-              readFileSync(
-                resolve(dataFolder, 'landkreise-einwohner.json')
-              ).toString()
-            );
-            const landkreis2regierungsbezirk = JSON.parse(
-              readFileSync(
-                resolve(dataFolder, 'regierungsbezirke.json')
-              ).toString()
-            );
+          { 
             const regierungsbezirke = new Map();
             Object.entries(landkreis2regierungsbezirk).forEach(
               ([landkreisId, regierungsbezirk]) => {
                 if (!regierungsbezirke.has(regierungsbezirk))
                   regierungsbezirke.set(regierungsbezirk, { einwohnerzahl: 0 });
                 regierungsbezirke.get(regierungsbezirk).einwohnerzahl +=
-                  landkreise[landkreisId].einwohnerzahl;
+                  landkreise_einwohner[landkreisId].einwohnerzahl;
               }
             );
             data.forEach((e) =>
@@ -208,21 +190,13 @@ export class Downloader {
 
         case 'landkreise':
           {
-            const landkreise = JSON.parse(
-              readFileSync(resolve(dataFolder, 'landkreise.json')).toString()
-            );
             data.forEach((e) => Object.assign(e, landkreise[e.landkreisId]));
           }
           break;
 
         case 'landkreise-einwohner':
           {
-            const landkreise = JSON.parse(
-              readFileSync(
-                resolve(dataFolder, 'landkreise-einwohner.json')
-              ).toString()
-            );
-            data.forEach((e) => Object.assign(e, landkreise[e.landkreisId]));
+            data.forEach((e) => Object.assign(e, landkreise_einwohner[e.landkreisId]));
           }
           break;
 
