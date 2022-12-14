@@ -162,3 +162,4 @@ Die Methode `queryData(tableName, query)` ist das Herz der API. Hier wird in den
 3. Sortiere die Daten anhand der GET-Parameter `sort`.
 4. Limitiere die Anzahl der Ergebnisse anhand des GET-Parameters `limit`.
 5. Formatiere die Daten anhand des GET-Parameters `format`.
+
