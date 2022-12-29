@@ -6,11 +6,15 @@ build:
 run:
   command: npm start
   envs:
+    - name: NODE_OPTIONS
+      value: '--max-old-space-size=8192'
     - name: GITHUB_ACCESS_TOKEN
       value: 'sm://{{.projectId}}/github-access-token'
 settings:
   type: service
   inSecure: true
+  resources:
+    memory: 10Gi
   persistentVolume:
     size: 5
     mountPath: /home/app/data
