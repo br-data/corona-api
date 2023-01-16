@@ -16,10 +16,6 @@ import bundeslaender_alter from '../../static/bundeslaender-alter.json';
 import landkreise_einwohner from '../../static/landkreise-einwohner.json';
 import landkreis2regierungsbezirk from '../../static/regierungsbezirke.json';
 import landkreise from '../../static/landkreise.json';
-import { type } from 'os';
-import console, { assert } from 'console';
-import { response } from 'express';
-
 
 export class Downloader {
   name: string;

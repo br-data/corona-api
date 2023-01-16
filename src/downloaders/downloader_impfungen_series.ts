@@ -5,7 +5,6 @@ import { Downloader } from './downloader';
 import { GenericObject } from '../lib/types';
 import { config } from '../lib/config';
 
-
 export class DownloaderImpfungenSerie extends Downloader {
   githubRepo = 'robert-koch-institut/COVID-19-Impfungen_in_Deutschland';
   githubFile = 'Aktuell_Deutschland_Bundeslaender_COVID-19-Impfungen.csv';

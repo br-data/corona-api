@@ -1,13 +1,10 @@
-import fs from 'fs';
 import fetch from 'node-fetch';
 
-import { resolve } from 'path';
 import { Downloader } from './downloader';
 import { getGithubFileMeta, csv2array, summarizer } from '../lib/helper';
 import { GenericObject } from '../lib/types';
 import { config } from '../lib/config';
 import regierungsbezirke from '../../static/regierungsbezirke.json';
-
 
 export class DownloaderInfektionen extends Downloader {
   githubRepo = 'robert-koch-institut/SARS-CoV-2-Infektionen_in_Deutschland';

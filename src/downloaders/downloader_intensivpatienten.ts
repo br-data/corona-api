@@ -1,10 +1,7 @@
-import fs from 'fs';
 import fetch from 'node-fetch';
 
-import { resolve } from 'path';
 import { Downloader } from './downloader';
 import { csv2array } from '../lib/helper';
-import { config } from '../lib/config';
 import { GenericObject } from '../lib/types';
 import stateMap from '../../static/bundeslaender-divi.json';
 
