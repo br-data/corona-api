@@ -13,7 +13,8 @@ export const config = {
   // generate one at: https://github.com/settings/tokens/new
   githubAccessToken: process.env.GITHUB_ACCESS_TOKEN,
 
-  updateEvery: 10 * 60 * 1000,
+  // Update every hour
+  updateEvery: 60 * 60 * 1000,
 
   // Die Versionsnummer wird den Datei-Hashes angefügt.
   // Wenn man sie erhöht, erzwingt man einen Datenupdate.
