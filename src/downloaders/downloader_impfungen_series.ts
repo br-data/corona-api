@@ -49,9 +49,7 @@ export class DownloaderImpfungenSerie extends Downloader {
       ['datum', 'bundeslandId', 'impfserie'],
       ['anzahl']
     );
-    const summaryDESerie = summarizer(['datum', 'impfserie'],
-      ['anzahl']
-    );
+    const summaryDESerie = summarizer(['datum', 'impfserie'], ['anzahl']);
 
     data.forEach((e) => {
       const entry = {
@@ -82,13 +80,11 @@ export class DownloaderImpfungenSerie extends Downloader {
     // dataDESeries dataset, and finally this new dataset is combined
     // with dataBLSeries.
     const dataDESerieWithBLId = dataDESerie;
-    const bundeslandDELabel = JSON.parse(
-      '{"bundeslandId":0}');
+    const bundeslandDELabel = JSON.parse('{"bundeslandId":0}');
 
-    dataDESerieWithBLId.forEach((e) =>
-    Object.assign(e, bundeslandDELabel))
+    dataDESerieWithBLId.forEach((e) => Object.assign(e, bundeslandDELabel));
 
-    dataBLSerie = dataBLSerie.concat(dataDESerieWithBLId)
+    dataBLSerie = dataBLSerie.concat(dataDESerieWithBLId);
 
     // this.addMetadata(dataBLFull, ['bundeslaender-einwohner']);
     // this.addMetadata(dataDEFull, ['deutschland-einwohner']);
@@ -113,7 +109,11 @@ export class DownloaderImpfungenSerie extends Downloader {
       'Erstimpfung',
       'Zweitimpfung',
       'Drittimpfung',
-      'Viertimpfung'
+      'Viertimpfung',
+      'Fünftimpfung',
+      'Sechstimpfung',
+      'Siebtimpfung',
+      'Achtimpfung'
     ];
     const uniqueDates = [...new Set(data.map((d) => d.datum))];
     const uniqueStates = [...new Set(data.map((d) => d.bundesland))];
@@ -130,7 +130,8 @@ export class DownloaderImpfungenSerie extends Downloader {
 
           return currentGroup.reduce((result, entry) => {
             const currentSuffix = suffixe[entry.impfserie];
-            const rate = Math.round((entry.summe / entry.einwohnerzahl) * 1000) / 10;
+            const rate =
+              Math.round((entry.summe / entry.einwohnerzahl) * 1000) / 10;
 
             result[`anzahl${currentSuffix}`] = entry.anzahl;
             result[`summe${currentSuffix}`] = entry.summe;
