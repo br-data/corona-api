@@ -20,9 +20,9 @@ export class DownloaderIntensivpatienten extends Downloader {
     this.status.sources = {
       intensivpatienten: {
         urlDE:
-          'https://diviexchange.blob.core.windows.net/%24web/zeitreihe-deutschland.csv',
+        'https://raw.githubusercontent.com/robert-koch-institut/Intensivkapazitaeten_und_COVID-19-Intensivbettenbelegung_in_Deutschland/main/Intensivregister_Bundeslaender_Kapazitaeten.csv',
         urlBL:
-          'https://diviexchange.blob.core.windows.net/%24web/zeitreihe-bundeslaender.csv'
+        'https://raw.githubusercontent.com/robert-koch-institut/Intensivkapazitaeten_und_COVID-19-Intensivbettenbelegung_in_Deutschland/main/Intensivregister_Bundeslaender_Kapazitaeten.csv',
       }
     };
   }
@@ -60,28 +60,28 @@ export class DownloaderIntensivpatienten extends Downloader {
     const states = hasStates ? stateMap : [];
 
     return data
-      .filter((d) => d.Behandlungsgruppe === 'ERWACHSENE')
+      .filter((d) => d.behandlungsgruppe === 'Erwachsene')
       .map((d) => ({
-        datum: d.Datum.split('T')[0],
+        datum: d.datum,
         ...(hasStates && {
-          bundesland: states[d.Bundesland].bundesland,
-          bundeslandId: states[d.Bundesland].bundeslandId
+          bundesland: d.bundesland_name,
+          bundeslandId: d.bundesland_id
         }),
-        anzahlIntensivpatienten: parseInt(d.Aktuelle_COVID_Faelle_ITS, 10),
-        anzahlMeldebereiche: parseInt(d.Anzahl_Meldebereiche, 10),
-        bettenBelegt: parseInt(d.Belegte_Intensivbetten, 10),
-        bettenFrei: parseInt(d.Freie_Intensivbetten, 10),
-        bettenReserve: parseInt(d['7_Tage_Notfallreserve'], 10),
-        situationNormal: parseInt(d.Betriebssituation_Regulaerer_Betrieb, 10),
+        anzahlIntensivpatienten: parseInt(d.faelle_covid_aktuell, 10),
+        anzahlMeldebereiche: parseInt(d.anzahl_meldebereiche, 10),
+        bettenBelegt: parseInt(d.intensivbetten_belegt, 10),
+        bettenFrei: parseInt(d.intensivbetten_frei, 10),
+        bettenReserve: parseInt(d.intensivbetten_7_tage_notfallreserve, 10),
+        situationNormal: parseInt(d.betriebssituation_regulaerer_betrieb, 10),
         situationEingeschraenkt: parseInt(
-          d.Betriebssituation_Teilweise_Eingeschraenkt,
+          d.betriebssituation_teilweise_eingeschraenkt,
           10
         ),
         situationTeilweiseEingeschraenkt: parseInt(
-          d.Betriebssituation_Eingeschraenkt,
+          d.betriebssituation_eingeschraenkt,
           10
         ),
-        situationUnbekannt: parseInt(d.Betriebssituation_Keine_Angabe, 10)
+        situationUnbekannt: parseInt(d.betriebssituation_keine_angabe, 10)
       }));
   }
 
