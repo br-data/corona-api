@@ -7,7 +7,7 @@ import { config } from '../lib/config';
 
 export class DownloaderImpfungenAktuell extends Downloader {
   githubRepo = 'robert-koch-institut/COVID-19-Impfungen_in_Deutschland';
-  githubFile = 'Aktuell_Deutschland_Impfquoten_COVID-19.csv';
+  githubFile = 'Deutschland_Impfquoten_COVID-19.csv';
 
   constructor() {
     super('impfungen');
