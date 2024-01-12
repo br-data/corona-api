@@ -18,7 +18,7 @@ export const config = {
 
   // Die Versionsnummer wird den Datei-Hashes angefügt.
   // Wenn man sie erhöht, erzwingt man einen Datenupdate.
-  version: '2.0.0'
+  version: '2.1.0'
 };
 
 // @TODO Move this to a preparation script
